@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+\title{Distribution and Factoring Set A}
+\author{}
+\date{}
+\begin{document}
+    \maketitle
+    \noindent Problems should be solved without calculators unless otherwise specified. Remember to explain how you solved each problem.
+    \begin{enumerate}
+        \item What is the value of $\left(\frac{1}{2}\right)^{-3}$?
+        \begin{solution}
+            To compute a negative exponent, we take the reciprocal of the base raised to the positive exponent.
+            \[\left(\frac{1}{2}\right)^{-3} = \frac{1}{\left(\frac{1}{2}\right)^3} = \frac{1}{\frac{1}{8}} = 8\]
+            We can also take the reciprocal of the base first and the raise it to the positive exponent.
+            \[\left(\frac{1}{2}\right)^{-3} = 2^3 = 8\]
+        \end{solution}
+        \item Show that $a^3 - b^3 = (a - b)(a^2 + ab + b^2)$ and $a^3 + b^3 = (a + b)(a^2 - ab + b^2)$.
+        \begin{solution}
+            \[\begin{split}
+                (a - b)(a^2 + ab + b^2) & = a(a^2 + ab + b^2) - b(a^2 + ab + b^2) \\
+                & = a^3 + a^2 b + ab^2 - a^2 b - ab^2 - b^3 \\
+                & = a^3 - b^3
+            \end{split}\]
+            \[\begin{split}
+                (a + b)(a^2 - ab + b^2) & = a(a^2 - ab + b^2) + b(a^2 - ab + b^2) \\
+                & = a^3 - a^2 b + ab^2 + a^2 b - ab^2 + b^3 \\
+                & = a^3 + b^3
+            \end{split}\]
+        \end{solution}
+        \item What is the largest prime factor of $8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 - 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1$?
+        \begin{solution}
+            We can factor out $6 \cdot 5 \cdot 4 \cdot 3 \cdot 2$ to get $6 \cdot 5 \cdot 4 \cdot 3 \cdot (4 \cdot 7 - 1) = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 27$. If we factor each of the numbers, we get $2 \cdot 3 \cdot 5 \cdot 2 \cdot 2 \cdot 3 \cdot 2 \cdot 3 \cdot 3 \cdot 3$. The largest prime factor is $5$.
+        \end{solution}
+        \item If $(x^2 y^3)^4 (x^4 y^5)^6 = x^a y^b$ for all real numbers $x$ and $y$, what is the sum of $a$ and $b$?
+        \begin{solution}
+            Exponents distribute over multiplication, so $(x^2 y^3)^4 (x^4 y^5)^6 = (x^2)^4 (y^3)^4 (x^4)^6 (y^5)^6$. Raising a number to two exponents is the same as raising it to the product of the two exponents, so this equal to $x^8 y^{12} x^{24} y^{30}$. The product of a base raised to two different exponents is the same as the base raised to the sum of the exponents, so this can be simplified to $x^{32} y^{42}$. This must be equal to $x^a y^b$ for all values of $x$ and $y$, therefore $a = 32$ and $b = 42$ so $a + b = 74$.
+        \end{solution}
+        \item This problem is an introduction to solving quadratic equations by factoring. \textbf{Quadratic equations} are essentially equations containing $x^2$. They are often written in \textbf{standard form}, which is $ax^2 + bx + c = 0$ where $a$, $b$, and $c$ are constants. For example, $3x^2 + 4x - 7 = 0$ is a quadratic equation. Factoring is the fastest way to solve a quadratic, but this method can't be used to solve all quadratics.
+        \begin{enumerate}
+            \item Show that $(x + a)(x + b) = x^2 + (a + b)x + ab$.
+            \begin{solution}
+                \[\begin{split}
+                    (x + a)(x + b) & = x^2 + ax + bx + ab \\
+                    & = x^2 + (a + b)x + ab
+                \end{split}\]
+            \end{solution}
+            \item If $(x + a)(x + b) = x^2 + 5x + 6$, find $a$ and $b$. Hint: Using the result from part a, we see that
+            \[\begin{alignedat}{3}
+                (x + a)(x + b) & = x^2 &{} + (a + b)x &&{} + ab &\\
+                & = x^2 &{} + 5x &&{} + 6 &
+            \end{alignedat}\]
+            Determine the values of $a + b$ and $ab$, then use guess-and-check to find $a$ and $b$.
+            \begin{solution}
+                In order for $(x + a)(x + b) = x^2 + (a + b)x + ab$ to be equal to $x^2 + 5x + 6$, $a + b$ must be $5$ and $ab$ must be $6$. This means that $a = 2$ and $b = 3$, or $a = 3$ and $b = 2$.
+            \end{solution}
+            \item To solve $x^2 + 5x + 6 = 0$, we can first \textbf{factor} the left side by rewriting it as $(x + a)(x + b)$ for some constants $a$ and $b$ so that we have $(x + a)(x + b) = 0$. Now that you've found $a$ and $b$, what are the solutions to this equation? Note that ``solutions'' is plural.
+            \begin{solution}
+                We know that $x^2 + 5x + 6 = (x + 2)(x + 3)$. In order for $(x + 2)(x + 3)$ to be equal to $0$, either $x + 2$ or $x + 3$ must be $0$. This means that $x = -2$ or $x = -3$.
+            \end{solution}
+        \end{enumerate}
+    \end{enumerate}
+\end{document}

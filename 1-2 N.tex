@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\title{1.2 Notes}
+\author{}
+\date{}
+\begin{document}
+    \maketitle
+    \section*{Important Concepts}
+    \subsection*{Slope-Intercept Form}
+    The \textbf{graph} of an equation is a visualization of the set of points which satisfy the equation. The graph of linear equations are straight lines. There are many possible forms of linear equations. One of the most common forms is the \textbf{slope intercept form}, where the linear equation is written as $y = mx + b$. $x$ and $y$ are the two variables representing the coordinates of a point on the graph. $m$ and $b$ are constants which determine what the line looks like. $m$ is called the \textbf{slope}, and it determines how steep the line is. $b$ is the $y$-coordinate of the \textbf{$y$-intercept}. The $y$-intercept is the point where the line intersects the $y$-axis.
+
+    The $b$ value controls the vertical position of the line. Increasing it moves the line up, and decreasing it moves the line down. The $m$ value, which is the slope, is defined as the ratio between a change in $y$ and a change in $x$. In other words, $m = \frac{\Delta y}{\Delta x}$. For any two points $(x_1, y_2)$ and $(x_2, y_2)$ on the line, $m = \frac{y_2 - y_1}{x_2 - x_1}$. Increasing $m$ rotates the line counterclockwise and decreasing it rotates the line clockwise. You can use Desmos, an online graphing tool, to experiment with the linear equations and see how the values of $m$ and $b$ affect the line here: \url{https://www.desmos.com/calculator/gs6yfwyido}.
+
+    Two lines are parallel if they never intersect. This means that they are pointing in the same direction. Since $m$ controls the direction of the line, two lines in slope-intercept form are parallel if and only if they have the same $m$ values. Two lines are perpendicular if and only if their slopes are opposite reciprocals of each other. In other words, two lines with slope $m_1$ and $m_2$ are perpendicular if and only if $m_2 = -\frac{1}{m_1}$.
+    \subsection*{Point-Slope Form}
+    Another form of linear equations is the point-slope form. It looks like $y = m(x - h) + k$. $m$ is the slope, and $(h, k)$ is a point on the line. This form is useful if you need to write the equation of a line with a given slope that passes through a given point. You can experiment with point-slope form here: \url{https://www.desmos.com/calculator/9xhxlkoyjn}. Note that unlike slope-intercept form, a line can be represented by multiple different equations in point-slope form.
+    \subsection*{Standard Form}
+    A linear equation in standard form looks like $ax + by = c$, or sometimes $ax + by + c = 0$. $a$ and $b$ controls the direction of the line, and $c$ controls the position of the line. You can experiment with it here: \url{https://www.desmos.com/calculator/7fcxskqe5l}. To find a line that is perpendicular to another line in standard form, we swap the $a$ and $b$ values and negate one of them. The lines that are perpendicular to $ax + by + c$ are $bx - ay = c_1$, where $c_1$ can have any value. Note that a line can also be represented by multiple different equations in standard form.
+    \subsection*{Horizontal and Vertical Lines}
+    Horizontal lines have a slope of $0$. Therefore, they can be written as $y = a$, where $a$ is the $y$-coordinate of the line. Vertical lines have undefined slope, so they cannot be written in slope-intercept or point-slope form. They are usually written as $x = a$, where $a$ is the $x$-coordinate of the line.
+    \subsection*{Intersection of Lines}
+    The intersection of two lines is the point that is on both lines. Since a line represents the set of points that satisfies a linear equation, the coordinates of the intersection of two lines is the pair of values that satisfies both linear equations. Therefore, to find the intersection of two lines given their equations, we treat the two equations as a system of equations and solve it.
+    \subsection*{Intercepts}
+    The $x$-intercept is the point where a line intersects the $x$-axis and the $y$-intercept is the point where a line intersects the $y$-axis. The $x$-intercept has $0$ as its $y$-coordinate and the $y$-intercept has $0$ as its $x$-coordinate. \textbf{Note that technically, the $x$-intercept and $y$-intercept are points, not single values. If you're asked for the $y$-intercept of $y = 3x + 4$, you should write $(0, 4)$, not just $4$. We sometimes use the word ``$y$-intercept'' to refer to the $y$-coordinate of the $y$-intercept for convenience, but they really are different things.}
+    \section*{Example Problems}
+    \subsection*{Variables and Equations Review}
+    \begin{enumerate}
+        \item The sum of four consecutive even integers is equal to three times the smallest integer. What is the sum of the four integers?
+        \vspace{3cm}
+    \end{enumerate}
+    \subsection*{Linear Equations}
+    \begin{enumerate}[resume]
+        \item What is the slope of the line that passes through $(-9, 9)$ and the origin?
+        \vspace{3cm}
+        \item Find the sum of the $x$-coordinate of the $x$-intercept and the $y$-coordinate of the $y$-intercept of $3x - 5y = 8$.
+        \vspace{3cm}
+        \item If the graphs of the lines $2x - 5y = 7$ and $10x + by = 7$ are perpendicular, what is the value of $b$?
+        \vspace{3cm}
+        \item What are the points of intersection for the graphs of the following equations?
+        \begin{align*}
+            2x + 3y & = 21 \\
+            3x - 4y & = -45
+        \end{align*}
+        \vspace{3cm}
+    \end{enumerate}
+    \subsection*{Systems of Equations}
+    \begin{enumerate}[resume]
+        \item Shane thinks of three integers. Added two at a time, their sums are $37$, $41$, and $44$. What is the product of the three integers?
+        \vspace{3cm}
+        \item If $3$ zoogs are worth $5$ moogs, and $7$ joogs have the same value of $3$ moogs, how many joogs would you expect to get in fair trade for $36$ zoogs?
+        \vspace{3cm}
+        \item Four neighbors go to purchase letters to spell their house numbers at a local hardware store. Each letter is priced separately. The first neighbor, who lives in house number one, purchases the letters ONE for $\$2$. The second neighbor buys TWO for $\$3$ and the third pays $\$5$ for the letters to spell ELEVEN. How much will he letters in the word TWELVE cost thr fourth neighbor?
+        \vspace{3cm}
+        \item The units digit in a two-digit number is three times the tens digit. If the digits are reversed, the resulting number is $54$ more than the original number. Find the original number.
+        \vspace{3cm}
+        \item George has a farm with pigs and chickens. He counted $27$ heads and $94$ legs. Assuming all the animals on the farm have all of their limbs, how many chickens are there?
+        \vspace{3cm}
+    \end{enumerate}
+\end{document}

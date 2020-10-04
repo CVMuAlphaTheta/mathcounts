@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{asymptote}
+\title{Distribution and Factoring Set B}
+\author{}
+\date{}
+\begin{document}
+    \maketitle
+    \noindent Problems should be solved without calculators unless otherwise specified. Remember to explain how you solved each problem.
+    \begin{enumerate}
+        \item What is the sum of the distinct prime factors of $156$?
+        \vspace{3cm}
+        \item What is the sum of two consecutive positive integers whose squares differ by $45$?
+        \vspace{3cm}
+        \item This problem will introduce one of the many proofs of the \textbf{Pythagorean theorem}. This important theorem establishes a relationship between the lengths of the sides of right triangles:
+        \begin{center}
+            \begin{asy}
+                import olympiad;
+                pair a = (0, 0), b = (0, 60), c = (80, 0);
+                draw(a -- b -- c -- cycle);
+                draw(rightanglemark(c, a, b, 160));
+                label("$a$", a -- b, W);
+                label("$b$", a -- c, S);
+                label("$c$", b -- c, NE);
+            \end{asy}
+        \end{center}
+        \[a^2 + b^2 = c^2\]
+        $a$ and $b$ are the lengths of the legs, which are the sides of a right triangle that form the right angle. $c$ is the length of the hypotenuse, which is the side opposite to the right angle. This proof uses a square inscribed inside another square, forming four congruent right triangles:
+        \begin{center}
+            \begin{asy}
+                import olympiad;
+                pair a = (-50, -50), b = (-50, 50), c = (50, 50), d = (50, -50);
+                draw(a -- b -- c -- d -- cycle);
+                pair p = waypoint(a -- b, 0.3), q = waypoint(b -- c, 0.3), r = waypoint(c -- d, 0.3), s = waypoint(d -- a, 0.3);
+                draw(p -- q -- r -- s -- cycle);
+                draw(rightanglemark(p, a, s, 160));
+                label("$a$", a -- p, W);
+                label("$b$", a -- s, S);
+                label("$c$", p -- s, NE);
+                label("$a$", s -- d, S);
+            \end{asy}
+        \end{center}
+        \begin{enumerate}
+            \item Write an expression for the area of the smaller square in terms of $c$.
+            \vspace{3cm}
+            \item Write an expression for the area of the smaller square in terms of $a$ and $b$. Hint: find the area of the larger square by squaring its side length and then subtract the area of the four triangles.
+            \vspace{3cm}
+            \item Explain why this proves the Pythagorean theorem.
+            \vspace{3cm}
+        \end{enumerate}
+        \item If $a + b = 1$ and $a^2 + b^2 = 2$, find $a^4 + b^4$.
+        \vspace{3cm}
+        \item Given that $9876^2 = 97535376$, find $9877^2$ without using multiplication.
+        \vspace{3cm}
+    \end{enumerate}
+\end{document}
