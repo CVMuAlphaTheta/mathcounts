@@ -1,4 +1,5 @@
 *.asy
+!olympiad.asy
 *.pdf
 
 ## Core latex/pdflatex auxiliary files:
