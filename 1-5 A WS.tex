@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Sequences, Series, and Patterns Set A}
+\date{}
+\author{}
+
+\begin{document}
+    \maketitle
+    \noindent Problems should be solved without calculators unless otherwise specified. Remember to explain how you solved a problem.
+    \begin{enumerate}
+        \item What is the value of $k$ in the arithmetic sequence $-13, -7, -1, k, 11$?
+        \begin{solution}
+            An arithmetic sequence has a constant difference between consecutive
+            terms. We can see that the difference between each number is $6$ so
+            the value of $k$ must be $-1 + 6 = 5$
+        \end{solution}
+        \item Insert two geometric means between $2$ and $16$.
+        \begin{solution}
+            We wish to find $x$ and $y$ such that $2, x, y, 16$ is a geometric
+            sequence. Thus, $x = 2r$, $y = xr$, and $16 = yr$ for some r, so $16
+            = yr = xr^2 = 2r^3$ and $r = 2$. Thus, the two numbers are $x = 2r =
+            4$ and $y = 2x = 2 \cdot 4 = 8$.
+        \end{solution}
+        \item The students from Regent Middle School sat $20$ rows in such a way
+        that each row after the first had $3$ more students sitting in it than
+        the previous row. If $16$ students sat in the fifth row, how many
+        students are there in total?
+        \begin{solution}
+            The number of students in each row form an arithmetic series, and we
+            need to find its sum. We know that there are $16$ students in the
+            fifth row, so to find the number of students in the first row we can
+            use the formula for the terms of an arithmetic sequence to get $a_1
+            = a_5 + (1 - 5)3 = 16 - 12 = 4$. Similarly, the $20$th term is $a_5
+            + (20 - 5)3 = 16 + 45 = 61$. Using the arithmetic series sum
+            formula, we see that there are a total of $\frac{20(4 + 61)}{2} =
+            650$ students.
+        \end{solution}
+        \item A rectangular lawn is mowed every five days. On each of these days, the lawn is mowed in one direction, but the direction varies from one mowing to the next in the following order: East-West (E-W), Northeast-Southwest (NE-SW), North-South (N-S), and Northwest-Southeast (NW-SE). If the lawn is first mowed E-W on Day $1$, on Day $201$ in which direction is the lawn mowed, E-W, NE-SW, N-S, or NW-SE?
+        \begin{solution}
+            The lawn is mowed on days $1, 6, 11, 16, \dot, 191, 196, 201$. This
+            is an arithmetic sequence and the common difference is $5$, since
+            the lawn is mowed every $5$ days. To get from $1$ to $201$, the common
+            difference will have been added $\frac{201 - 1}{5} = \frac{200}{5} =
+            40$ times. This means day $201$ will be the $41$st mowing. For the
+            first $40$ mowing days, the lawn will have been mowed $\frac{40}{4} =
+            10$ times in each of the directions E-W, NE-SW, N-S, and NW-SE.
+            Therefore, for the $41$st mowing, on Day $201$, the sequence of
+            directions will begin again with a mowing in the direction on E-W or
+            East-West.
+        \end{solution}
+        \item Cara received a rose that has $n$ petals, $\frac{n + 5}{3}$ leaves, and $\frac{n-2}{4}$ thorns. The number of petals, leaves, and thorns are all numbers in the Fibonacci sequence $(1, 1, 2, 3, 5, 8, \dots)$, and $n < 100$. How many leaves does Cara's rose have?
+        \begin{solution}
+            Since $n < 100$, the number of petals on Cara's rose has to be one of the following Fibonacci numbers: $1, 1, 2, 3, 5, 8, 13, 21, 34, 55, and 89$. The number of leaves is $\frac{n + 5}{3}$, so $n$ must be less than a multiple of $3$, which narrows it down to $1$, $13$, $34$, and $55$. The numbers of thorns is $\frac{n - 2}{4}$, so $n$ must also be an even number, which narrows it down to just $34$. Cara's rose has $34$ petals, $\frac{34 + 5}{3} = 13$ leaves, and $\frac{34 - 2}{4} = 8$ thorns, and all of these are indeed Fibonacci numbers.
+        \end{solution}
+    \end{enumerate}
+\end{document}

@@ -1,0 +1,107 @@
+\documentclass{article}
+
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Sequences, Series, and Patterns Set B}
+\date{}
+\author{}
+
+\begin{document}
+    \maketitle
+    \noindent Problems should be solved without calculators unless otherwise
+    specified. Remember to explain how you solved a problem.
+    \begin{enumerate}
+        \item The fourth term of an arithmetic sequence is $3$, and the ninth
+        term is $23$. What is the first term of this sequence?
+        \begin{solution}
+            In an arithmetic sequence there is a constant difference between
+            consecutive terms. To get from the fourth term to the ninth term,
+            which is $23$, the constant difference $d$ must be added $5$ times.
+            We can write $3 + 5d = 23$, so $5d = 20$ and $d = 4$. Now to go
+            backward from the fourth term to this first term, we need to
+            subtract the common difference $3$ times. So, the first term of this
+            sequence is $3 - 3 \cdot 4 = 3 - 12 = -9$.
+        \end{solution}
+        \item Once upon a time, Carl and Steve played a game of ping pong. Carl
+        lost, and he was very salty. He wanted to be better than Steve at
+        something, so he challenged Steve to solve a math problem. Steve was too
+        lazy, so Carl said that he would give Steve $\$25$ if he could compute
+        the total distance which a ping pong ball dropped from a height of $10$
+        meters will travel, assuming that ping pong balls always bounce up to
+        $\frac{2}{3}$ of the height from which they fell. Steve is very bad at
+        math but he really wants $\$25$ to buy Minecraft, so he asked you to
+        help him. Help Steve buy Minecraft by solving this problem for him.
+        Hint: Count the initial fall separately. After the first bounce, the
+        ball will rise to $10\left(\frac{2}{3}\right)$ meters before falling
+        back down. After the second bounce, the ball will rise up to
+        $10\left(\frac{2}{3}\right)^2$ meters before falling back down. This
+        continues forever. How far does the ball travel between the first bounce
+        and the second bounce? How far does it travel between the second bounce
+        and the third bounce?
+        \begin{solution}
+            The ball first falls $10$ meters. Then it bounces up
+            $10\left(\frac{2}{3}\right)$ meters and falls back down, so it
+            traveled $20\left(\frac{2}{3}\right)$ between the first and the
+            second bounce. The maximum height after the second bounce is
+            $10\left(\frac{2}{3}\right)^2$ meters, so the ball traveled
+            $20\left(\frac{2}{3}\right)^2$ meters between the second and third
+            bounce. Notice that we have an infinite geometric series here, with
+            first term $20\left(\frac{2}{3}\right) = \frac{40}{3}$ and common
+            ratio $\frac{2}{3}$. Its sum is $\frac{\frac{40}{3}}{1 -
+            \frac{2}{3}} = 40$. Adding the initial $10$ meter fall, we see that
+            the ball will travel a total of $40 + 10 = 50$ meters.
+        \end{solution}
+        \item A fable says that a wise woman solved a king's dire problem, and
+        the king said she could have anything she wanted in return. She demurely
+        asked only for a chessboard with $1$ grain of wheat on the first square,
+        $2$ on the second, $4$ on the third, $8$ on the fourth, and so on up to
+        the sixty-fourth square.
+        \begin{enumerate}
+            \item How many grains of wheat did the wise woman ask for?
+            \begin{solution}
+                $\frac{1 - 2^{64}}{1 - 2} = 2^{64} - 1$
+            \end{solution}
+            \item How many grains would she have is she had asked for $1, 2, 3,
+            4, \dots$, rather than $1, 2, 4, 8, \dots$?
+            \begin{solution}
+                By the formula we derived for the sum of the first $n$ integers,
+                she would have $\frac{64 \cdot 65}{2} = 2080$ grains.
+            \end{solution}
+        \end{enumerate}
+        \item The movies in the Revengers series have been coming out every
+        three years. The sum of the years in which the first six movies came out
+        is $12057$. In what year will the seventh movie come out if the pattern
+        continues?
+        \begin{solution}
+            Let's say that the first movie in the series came out in the year
+            $Y$. Then the second movie came out in year $Y + 3$, the third in
+            year $Y + 6$, and so on. The sum of the release years of the first
+            six movies is $Y + (Y + 3) + (Y + 6) + (Y + 9) + (Y + 12) + (Y + 15)
+            = 6Y + 45$. We are told this sum equals $12057$, so we can solve
+            $6Y + 45 = 12057$ for $Y$. Doing so, we get $6Y = 12012$ and $Y =
+            2002$. If the movie came out in $2002$, then the seventh movie is
+            expected to come out in $2002 + 3 \cdot 6 = 2002 + 18 = 2020$.
+        \end{solution}
+        \item A bucket initially has $5$ milliliters of water. Every day, Emily
+        removes half of the water, and then Katie adds $5$ milliliters of water.
+        Write a formula for the number of milliliters of water in the bucket
+        after $x$ days. Hint: After the first day, the amount of water in the
+        bucket is $5 \cdot \frac{1}{2} + 5$. After the second day, the amount of
+        water in the bucket is $\left(5 \cdot \frac{1}{2} + 5\right)\frac{1}{2}
+        + 5 = 5\left(\frac{1}{2}\right)^2 + 5 \cdot \frac{1}{2} + 5$
+        milliliters. After the third day, the amount of water in the bucket is
+        $\left(\left(5 \cdot \frac{1}{2} + 5\right)\frac{1}{2} +
+        5\right)\frac{1}{2} + 5 = 5\left(\frac{1}{2}\right)^3 +
+        5\left(\frac{1}{2}\right)^2 + 5 \cdot \frac{1}{2} + 5$.
+        \begin{solution}
+            The first term of the geometric series is $5$ and the common ratio
+            is $\frac{1}{2}$. The number of terms in the series is one more than
+            the number of days. Therefore, there are $x + 1$ terms, so the sum
+            is $5 \cdot \frac{1 - \left(\frac{1}{2}\right)^{x + 1}}{1 -
+            \frac{1}{2}} = 10 - \frac{5}{2^x}$.
+        \end{solution}
+    \end{enumerate}
+\end{document}
