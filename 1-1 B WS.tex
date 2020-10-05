@@ -12,35 +12,93 @@
 \begin{document}
     \maketitle
     \begin{enumerate}
-        \item What is the value of $127^2 - 14 \cdot 127 + 49$? Bonus: Solve using only simple mental math without writing anything.
+        \item What is the value of $127^2 - 14 \cdot 127 + 49$? Bonus: Solve
+        using only simple mental math without writing anything.
         \begin{solution}
             One way to solve this is to directly evaluate the expression:
-            \[\begin{split}
-                127^2 - 14 \cdot 127 + 49 & = 16129 - 1778 + 49 \\
+            \[\begin{split} 127^2 - 14 \cdot 127 + 49 & = 16129 - 1778 + 49 \\
                 & = 14351 + 49 \\
-                & = 14400
-            \end{split}\]
-            However, there's an easier way. Notice that the expression resembles a quadratic. We can rewrite it as $127^2 - 2 \cdot 7 \cdot 127 + 7^2$, which is the same as $(127 - 7)^2$. Therefore, we simply have to compute $120^2 = 14400$.
+                & = 14400 \end{split}\] However, there's an easier way. Notice
+            that the expression resembles a quadratic. We can rewrite it as
+            $127^2 - 2 \cdot 7 \cdot 127 + 7^2$, which is the same as $(127 -
+            7)^2$. Therefore, we simply have to compute $120^2 = 14400$.
         \end{solution}
-        \item Twins Miley and Riley leave home at the same time, riding their bicycles in opposite directions. Miley goes northbound traveling \SI{18}{\mile\per\hour}. After $1$ hour, the twins are $32$ miles apart. How fast was Riley traveling in the southbound direction?
+        \item Twins Miley and Riley leave home at the same time, riding their
+        bicycles in opposite directions. Miley goes northbound traveling
+        \SI{18}{\mile\per\hour}. After $1$ hour, the twins are $32$ miles apart.
+        How fast was Riley traveling in the southbound direction?
         \begin{solution}
-            Miley was going \SI{18}{\mile\per\hour}, so after one hour she is $18$ miles from home. Since Miley and Riley are now 32 miles apart, Riley must be $32 - 18 = 14$ miles from home. Therefore, Riley's speed was \SI{14}{\mile\per\hour}.
+            Miley was going \SI{18}{\mile\per\hour}, so after one hour she is
+            $18$ miles from home. Since Miley and Riley are now 32 miles apart,
+            Riley must be $32 - 18 = 14$ miles from home. Therefore, Riley's
+            speed was \SI{14}{\mile\per\hour}.
         \end{solution}
-        \item On a certain standardized test with $50$ problems, $5$ points were awarded for each correct answer, and $1$ point was deducted for each incorrect answer. Chloe answered all the questions on the test and scored a total of $184$ points. How many questions did she answer correctly?
+        \item On a certain standardized test with $50$ problems, $5$ points were
+        awarded for each correct answer, and $1$ point was deducted for each
+        incorrect answer. Chloe answered all the questions on the test and
+        scored a total of $184$ points. How many questions did she answer
+        correctly?
         \begin{solution}
-            A perfect score on the standardized test would be $50 \cdot 5 = 250$ points. Chloe earned $250 - 184 = 66$ points less than perfect. Each problem that Chloe got wrong cost her $6$ points, since she both failed to earn the $5$ points and had $1$ point deducted. Therefore, she must have answered $\frac{66}{6} = 11$ questions incorrectly, which means she answered $50 - 11 = 39$ questions correctly. This checks out since $39 \cdot 5 - 11 = 195 - 11 = 184$.
+            A perfect score on the standardized test would be $50 \cdot 5 = 250$
+            points. Chloe earned $250 - 184 = 66$ points less than perfect. Each
+            problem that Chloe got wrong cost her $6$ points, since she both
+            failed to earn the $5$ points and had $1$ point deducted. Therefore,
+            she must have answered $\frac{66}{6} = 11$ questions incorrectly,
+            which means she answered $50 - 11 = 39$ questions correctly. This
+            checks out since $39 \cdot 5 - 11 = 195 - 11 = 184$.
 
-            To solve this using a system of equations, let $a$ be the number of correctly answered questions and let $b$ be the number of incorrectly answered questions. $a + b = 50$ and $5a - b = 184$. If we add the two equations, we get $a + b + 5a - b = 50 + 184$, so $6a = 234$ and $a = 39$.
+            To solve this using a system of equations, let $a$ be the number of
+            correctly answered questions and let $b$ be the number of
+            incorrectly answered questions. $a + b = 50$ and $5a - b = 184$. If
+            we add the two equations, we get $a + b + 5a - b = 50 + 184$, so $6a
+            = 234$ and $a = 39$.
         \end{solution}
-        \item Two Julias and one Chloe can finish a cup of bubble tea together in $10$ seconds. One Julia and three Chloes can finish a cup of bubble tea together in $8$ seconds. How long will it take for one Julia and one Chloe to finish a cup of bubble tea together? Assume that each person drinks bubble tea at a constant rate.
+        \item Two Julias and one Chloe can finish a cup of bubble tea together
+        in $10$ seconds. One Julia and three Chloes can finish a cup of bubble
+        tea together in $8$ seconds. How long will it take for one Julia and one
+        Chloe to finish a cup of bubble tea together? Assume that each person
+        drinks bubble tea at a constant rate.
         \begin{solution}
-            Since two Julias and one Chloe can finish a cup of bubble tea in $10$ seconds, they can drink $\frac{1}{10}$ cups of bubble tea every second. Similarly, one Julia and three Chloes can drink $\frac{1}{8}$ cups of bubble tea every second. If $a$ is the number of cups of bubble tea which one Julia can drink in a second and $b$ is the number of cups of bubble tea which one Chloe can drink in a second, $2a + b = \frac{1}{10}$ and $a + 3b = \frac{1}{8}$. If we multiply the second equation by $-2$, we get $-2a - 6b = -\frac{1}{4}$. Adding this to the first equation results in $2a + b - 2a - 6b = \frac{1}{10} - \frac{1}{4}$, so $-5b = -\frac{3}{20}$ and $b = \frac{3}{100}$. We can substitute this into the second equation to find $a$. We ahve $a + 3 \cdot \frac{3}{100} = \frac{1}{8}$, so $a = \frac{7}{200}$. Therefore, one Julia and one Chloe can drink $a + b = \frac{3}{100} + \frac{7}{200} = \frac{13}{200}$ cups of bubble tea per second, and it will take them $\frac{200}{13}$ seconds to finish a cup of bubble tea.
+            Since two Julias and one Chloe can finish a cup of bubble tea in
+            $10$ seconds, they can drink $\frac{1}{10}$ cups of bubble tea every
+            second. Similarly, one Julia and three Chloes can drink
+            $\frac{1}{8}$ cups of bubble tea every second. If $a$ is the number
+            of cups of bubble tea which one Julia can drink in a second and $b$
+            is the number of cups of bubble tea which one Chloe can drink in a
+            second, $2a + b = \frac{1}{10}$ and $a + 3b = \frac{1}{8}$. If we
+            multiply the second equation by $-2$, we get $-2a - 6b =
+            -\frac{1}{4}$. Adding this to the first equation results in $2a + b
+            - 2a - 6b = \frac{1}{10} - \frac{1}{4}$, so $-5b = -\frac{3}{20}$
+            and $b = \frac{3}{100}$. We can substitute this into the second
+            equation to find $a$. We ahve $a + 3 \cdot \frac{3}{100} =
+            \frac{1}{8}$, so $a = \frac{7}{200}$. Therefore, one Julia and one
+            Chloe can drink $a + b = \frac{3}{100} + \frac{7}{200} =
+            \frac{13}{200}$ cups of bubble tea per second, and it will take them
+            $\frac{200}{13}$ seconds to finish a cup of bubble tea.
         \end{solution}
-        \item Working together, Aiden, Barry, and Cynthia can carry \SI{48}{\kilogram}. Barry, Cynthia, and Daniela can carry \SI{50}{\kilogram}. Cynthia, Daniela, and Aiden can carry \SI{54}{\kilogram}. How many kilograms can two Barrys and one Cynthia carry together?
+        \item Working together, Aiden, Barry, and Cynthia can carry
+        \SI{48}{\kilogram}. Barry, Cynthia, and Daniela can carry
+        \SI{50}{\kilogram}. Cynthia, Daniela, and Aiden can carry
+        \SI{54}{\kilogram}. How many kilograms can two Barrys and one Cynthia
+        carry together?
         \begin{solution}
-            If $a$, $b$, $c$, and $d$ are the number of kilograms which Aiden, Barry, Cynthia, and Daniela can carry respectively, then we know that $a + b + c = 48$, $b + c + d = 50$, and $a + c + d = 54$. We wish to find $2b + c$. We can try adding or subtracting the equations to try to obtain $2b + c$ on the left side. After some experimentation, you might find that if we add the first two equations and subtract the third one, we get $a + b + c + b + c + d - a - c - d = 48 + 50 - 54$, so $2b + c = 44$. Therefore, two Barrys and one Cynthia can carry \SI{44}{\kilogram}.
+            If $a$, $b$, $c$, and $d$ are the number of kilograms which Aiden,
+            Barry, Cynthia, and Daniela can carry respectively, then we know
+            that $a + b + c = 48$, $b + c + d = 50$, and $a + c + d = 54$. We
+            wish to find $2b + c$. We can try adding or subtracting the
+            equations to try to obtain $2b + c$ on the left side. After some
+            experimentation, you might find that if we add the first two
+            equations and subtract the third one, we get $a + b + c + b + c + d
+            - a - c - d = 48 + 50 - 54$, so $2b + c = 44$. Therefore, two Barrys
+            and one Cynthia can carry \SI{44}{\kilogram}.
 
-            If you tried to find the values of each of the variables, you might have noticed that it this system of equations actually has infinitely many solutions. This is because in a system of linear equations with $n$ variables, you need at least $n$ equations in order to uniquely determine the value of all of the variables. In this case, even though there are infinitely many solutions, the value of $2b + c$ is the same for every possible solution.
+            If you tried to find the values of each of the variables, you might
+            have noticed that it this system of equations actually has
+            infinitely many solutions. This is because in a system of linear
+            equations with $n$ variables, you need at least $n$ equations in
+            order to uniquely determine the value of all of the variables. In
+            this case, even though there are infinitely many solutions, the
+            value of $2b + c$ is the same for every possible solution.
         \end{solution}
     \end{enumerate}
 \end{document}

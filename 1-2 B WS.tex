@@ -8,30 +8,89 @@
 \date{}
 \begin{document}
     \maketitle
-    \noindent Problems should be solved without calculators unless otherwise specified. Remember to explain how you solved a problem.
+    \noindent Problems should be solved without calculators unless otherwise
+    specified. Remember to explain how you solved a problem.
     \begin{enumerate}
-        \item Donny has two part-time jobs. He earns $\$12$ per hour tutoring, and he earns $\$20$ per hour baby-sitting. Donny would like to work a combination of hours at both jobs to earn exactly $\$360$. If he works at least one hour at each job, with no partial hours worked at either job, what is the difference between the maximum and minimum total hours that Donny can work to earn that amount?
+        \item Donny has two part-time jobs. He earns $\$12$ per hour tutoring,
+        and he earns $\$20$ per hour baby-sitting. Donny would like to work a
+        combination of hours at both jobs to earn exactly $\$360$. If he works
+        at least one hour at each job, with no partial hours worked at either
+        job, what is the difference between the maximum and minimum total hours
+        that Donny can work to earn that amount?
         \begin{solution}
-            Let's say that Donny works $x$ hours at $\$12$ per hour and $y$ hours at $\$20$ per hour. Then we are looking for integer values of $x$ and $y$ such that $12x + 20y = 360$, which can be simplified to $3x + 5y = 90$ by dividing both sides by $4$. If Donny wanted to maximize the total number of hours, he should try to work more at the job that pays less since the total amount that he earns is constant. He needs to work at least one hour both jobs, so $x \geq 1$ and $y \geq 1$. We want to maximize $x$ and minimize $y$, so we can first try setting $y$ to $1$. The problem is that we end up with $3x = 85$, which doesn't work because $x$ must be an integer. We can then try higher values of $y$, until we find that $y = 3$ results in $3x + 75$ so $x = 25$. Therefore, the maximum number of hours which Donny can work is $25 + 3 = 28$. To find the minimum number of hours which Donny can work, we need to minimize $x$ and maximize $y$. If you tried out different values of $x$, you would find that the minimum value of $x$ that makes $y$ an integer is $5$. If $x = 5$, then $y = 15$, so the total number of hours is $20$. The difference between $28$ and $20$ is $8$, which is the difference between the maximum and the minimum number of hours which Donny can work.
+            Let's say that Donny works $x$ hours at $\$12$ per hour and $y$
+            hours at $\$20$ per hour. Then we are looking for integer values of
+            $x$ and $y$ such that $12x + 20y = 360$, which can be simplified to
+            $3x + 5y = 90$ by dividing both sides by $4$. If Donny wanted to
+            maximize the total number of hours, he should try to work more at
+            the job that pays less since the total amount that he earns is
+            constant. He needs to work at least one hour both jobs, so $x \geq
+            1$ and $y \geq 1$. We want to maximize $x$ and minimize $y$, so we
+            can first try setting $y$ to $1$. The problem is that we end up with
+            $3x = 85$, which doesn't work because $x$ must be an integer. We can
+            then try higher values of $y$, until we find that $y = 3$ results in
+            $3x + 75$ so $x = 25$. Therefore, the maximum number of hours which
+            Donny can work is $25 + 3 = 28$. To find the minimum number of hours
+            which Donny can work, we need to minimize $x$ and maximize $y$. If
+            you tried out different values of $x$, you would find that the
+            minimum value of $x$ that makes $y$ an integer is $5$. If $x = 5$,
+            then $y = 15$, so the total number of hours is $20$. The difference
+            between $28$ and $20$ is $8$, which is the difference between the
+            maximum and the minimum number of hours which Donny can work.
         \end{solution}
-        \item A rectangular garden $60$ feet long and $20$ feet wide is enclosed by a fence. To make the garden larger, while using the same fence, its shape is changed to a square. By how many square feet does this enlarge the garden?
+        \item A rectangular garden $60$ feet long and $20$ feet wide is enclosed
+        by a fence. To make the garden larger, while using the same fence, its
+        shape is changed to a square. By how many square feet does this enlarge
+        the garden?
         \begin{solution}
-            The perimeter of the rectangular garden is $2(60 + 20) = 160$ feet. A square with this perimeter has side length $\frac{160}{4} = 40$ feet. The area of the rectangular garden is $60 \cdot 20 = 1200$ square feet and the area of the square garden is $40^2 = 1600$ square feet. Therefore the area increased by $1600 - 1200 = 400$ square feet.
+            The perimeter of the rectangular garden is $2(60 + 20) = 160$ feet.
+            A square with this perimeter has side length $\frac{160}{4} = 40$
+            feet. The area of the rectangular garden is $60 \cdot 20 = 1200$
+            square feet and the area of the square garden is $40^2 = 1600$
+            square feet. Therefore the area increased by $1600 - 1200 = 400$
+            square feet.
         \end{solution}
-        \item The average (mean) age of the $40$ members of a computer science camp is $17$ years. There are $20$ girls, $15$ boys, and $5$ adults. If the average age of the girls is $15$ and the average age of the boys is $16$, what is the average age of the adults?
+        \item The average (mean) age of the $40$ members of a computer science
+        camp is $17$ years. There are $20$ girls, $15$ boys, and $5$ adults. If
+        the average age of the girls is $15$ and the average age of the boys is
+        $16$, what is the average age of the adults?
         \begin{solution}
-            If $a$ is the average age, $s$ is the sum of the ages, and $n$ is the number of people, then $a = \frac{s}{n}$. This means that $an = s$, so the sum of the ages is the number of people multiplied by the average age. Since the average is $17$ and the number of people is $40$, the sum of the ages is $17 \cdot 40 = 680$. Similarly, the sum of the ages of the girls is $20 \cdot 15 = 300$ and the sum of the ages of the boys is $15 \cdot 16 = 240$. We subtract $240$ and $300$ from $680$ to find the sum of the ages of the adults, which is $140$. Therefore, the average age of the adults is $\frac{140}{5} = 28$.
+            If $a$ is the average age, $s$ is the sum of the ages, and $n$ is
+            the number of people, then $a = \frac{s}{n}$. This means that $an =
+            s$, so the sum of the ages is the number of people multiplied by the
+            average age. Since the average is $17$ and the number of people is
+            $40$, the sum of the ages is $17 \cdot 40 = 680$. Similarly, the sum
+            of the ages of the girls is $20 \cdot 15 = 300$ and the sum of the
+            ages of the boys is $15 \cdot 16 = 240$. We subtract $240$ and $300$
+            from $680$ to find the sum of the ages of the adults, which is
+            $140$. Therefore, the average age of the adults is $\frac{140}{5} =
+            28$.
         \end{solution}
-        \item On a twenty-question test, each correct answer is worth $5$ points, each unanswered question is worth $1$ point and each incorrect answer is worth $0$ points. Which of the following scores is NOT possible?
+        \item On a twenty-question test, each correct answer is worth $5$
+        points, each unanswered question is worth $1$ point and each incorrect
+        answer is worth $0$ points. Which of the following scores is NOT
+        possible?
         \begin{enumerate*}
             \item $90$ \item $91$ \item $92$ \item $95$ \item $97$
         \end{enumerate*}
         \begin{solution}
-            If you got all the questions right, you would get the highest score which is $20 \cdot 5 = 100$. The second highest score possible for a single question is $1$, which is $4$ less than the highest possible score for a single question. Therefore, if you didn't get all the questions right, you lost at least $4$ points, so a score of $97$ is not possible.
+            If you got all the questions right, you would get the highest score
+            which is $20 \cdot 5 = 100$. The second highest score possible for a
+            single question is $1$, which is $4$ less than the highest possible
+            score for a single question. Therefore, if you didn't get all the
+            questions right, you lost at least $4$ points, so a score of $97$ is
+            not possible.
         \end{solution}
-        \item Find two numbers which differ by $2$ such that $\frac{1}{3}$ of the smaller number plus twice the larger number equals $7$ more than the sum of the two numbers.
+        \item Find two numbers which differ by $2$ such that $\frac{1}{3}$ of
+        the smaller number plus twice the larger number equals $7$ more than the
+        sum of the two numbers.
         \begin{solution}
-            Let the smaller number be $x$, so the larger number is $x + 2$. We have $\frac{x}{3} + 2(x + 2) = x + x + 2 + 7$. Expanding the multiplication on the left side and simplifying the right side results in $\frac{x}{3} + 2x + 4 = 2x + 9$. Subtracting $2x + 4$ from both sides gives $\frac{x}{3} = 5$, so $x = 15$. Therefore, the numbers are $15$ and $17$.
+            Let the smaller number be $x$, so the larger number is $x + 2$. We
+            have $\frac{x}{3} + 2(x + 2) = x + x + 2 + 7$. Expanding the
+            multiplication on the left side and simplifying the right side
+            results in $\frac{x}{3} + 2x + 4 = 2x + 9$. Subtracting $2x + 4$
+            from both sides gives $\frac{x}{3} = 5$, so $x = 15$. Therefore, the
+            numbers are $15$ and $17$.
         \end{solution}
     \end{enumerate}
 \end{document}
