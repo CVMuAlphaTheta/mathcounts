@@ -1,6 +1,7 @@
 \documentclass{article}
 
 \usepackage{amsthm}
+\usepackage{amsmath}
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
@@ -54,23 +55,22 @@
             \frac{2}{3}} = 40$. Adding the initial $10$ meter fall, we see that
             the ball will travel a total of $40 + 10 = 50$ meters.
         \end{solution}
-        \item A fable says that a wise woman solved a king's dire problem, and
-        the king said she could have anything she wanted in return. She demurely
-        asked only for a chessboard with $1$ grain of wheat on the first square,
-        $2$ on the second, $4$ on the third, $8$ on the fourth, and so on up to
-        the sixty-fourth square.
-        \begin{enumerate}
-            \item How many grains of wheat did the wise woman ask for?
-            \begin{solution}
-                $\frac{1 - 2^{64}}{1 - 2} = 2^{64} - 1$
-            \end{solution}
-            \item How many grains would she have is she had asked for $1, 2, 3,
-            4, \dots$, rather than $1, 2, 4, 8, \dots$?
-            \begin{solution}
-                By the formula we derived for the sum of the first $n$ integers,
-                she would have $\frac{64 \cdot 65}{2} = 2080$ grains.
-            \end{solution}
-        \end{enumerate}
+        \item Evaluate
+        \begin{multline*}
+            (751 - 745) + (748 - 742) + (745 - 739) + (742 - 736) + \dots \\
+            + (499 - 493) + (496 - 490)
+        \end{multline*}
+        \begin{solution}
+            Each pair evaluates to $6$, so we could just count how many pairs
+            there are. We can do this by looking at the arithmetic sequence
+            formed by the first number in each pair. It starts at $751$, ends at
+            $496$, and has a common difference of $-3$, so there are $\frac{496
+            - 751}{-3} + 1 = 86$ terms, and the sum is $86 \cdot 6 = 516$.
+            Another way to solve this would be to notice that the parenthesis
+            don't matter. If we ignore them, we can see that $-745$ and $745$
+            cancel out, $-742$ and $742$ cancel out, and so on. In the end,
+            we're left with $751 + 748 - 493 - 490 = 516$.
+        \end{solution}
         \item The movies in the Revengers series have been coming out every
         three years. The sum of the years in which the first six movies came out
         is $12057$. In what year will the seventh movie come out if the pattern
