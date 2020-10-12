@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Statistics and Probability Set A}
+\date{}
+\author{}
+
+\begin{document}
+    \maketitle
+    \noindent Problems should be solved without calculators unless otherwise
+    specified. Remember to explain how you solved a problem.
+    \begin{enumerate}
+        \item Anwar rolls two dice and takes the sum of the results.
+            \begin{enumerate}
+                \item Find the probability of rolling a six if two six-sided dice are rolled.
+                \begin{solution}
+                    First consider all possible ways in which a $6$ cam arise:
+                    $1-5, 2-4, 3-3, 4-2, 5-1$.  There are 5 different cases to
+                    consider. However, for each case we are looking at a
+                    configuration which can only concur in one way. Since there
+                    are 36 total configurations, each configuration has
+                    probability $\frac{1}{36}$, so that the $5$ configurations
+                    which yield 6 add up to make probability $\frac{5}{36}$.
+                \end{solution}
+            \item Find the probability of all rolls, $2$ to $12$. Try to notice a pattern.
+                \begin{solution}
+                    $2: 1-1$, for probability $\frac{1}{36}$ \\
+                    $3: 1-2, 2-1$, for proability $\frac{2}{36}$ \\
+                    $4: 1-3, 2-2, 3-1$, for probaility $\frac{3}{36}$ \\
+                    And so on. From $2$ to $12$, the numbers of ways to attain the rolls are
+                    $1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1$, and the probabilities are just these
+                    values divided by $36$.
+                \end{solution}
+        \end{enumerate} 
+        \item If there are $3$ boys and $4$ girls in a group are two are chosen to give a report,
+        what is the probability that one boy and one girl are chosen?
+        \begin{solution}
+            There are $3\cdot4 = 12$ different girl-boy partnerships possible. In total,
+            there are $\frac{7\cdot6}{2} = 21$ different partnerships possible. The
+            probaility is $\frac{12}{21}$.
+        \end{solution}
+        \item Alastair's favorite book series has seven books containing 223, 251, 317, 
+        636, 766, 607, and 607 pages. Monatana's favorite book series has seven books 
+        containing 309, 341, 435, 734, 870, 652, and 759 pages. What is the absolute
+        difference between the median numbers of pages in the books of Alastair's and
+        Monatana's favorite book series?
+        \begin{solution}
+            If we arrange Alastair's books from the fewest pages to the most pages, we
+            have 223, 251, 317, 607, 607, 636, and 766. The median is the middle number of
+            pages, which is $607$. Next, arranging Monatana's books in this manner, we have
+            309, 341, 435, 652, 734, 759, and 870. The median of these numbers is $652$.
+            The absolute difference between the two medians, then, is $652 - 607 = 45$.
+        \end{solution}
+        \item There are $270$ bats living in a cave on the first day of June. Every day in
+        June, some number of bats arrive to join the bats already there. At the end of June
+        30, there are $1000$ bats in the cave. On average, how many bats arrived each day
+        in June? Express your answer as a decimal to the nearest tenth.
+        \begin{solution}
+            In the 30 days of June, the numb er of bats in the cave increased by
+            $1000 - 270 = 730$ bats. Each day, on average, $730 \div 30 \approx 24.3$
+            bats arrived.
+        \end{solution}
+    \end{enumerate}
+\end{document}
