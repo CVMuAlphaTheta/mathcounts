@@ -3,6 +3,10 @@
 \usepackage[margin=0.5in]{geometry}
 \usepackage{flushend}
 \usepackage{enumitem}
+\usepackage{amsmath}
+
+\newcommand{\pand}{\mathop\text{and}}
+\newcommand{\por}{\mathop\text{or}}
 
 \title{2.1 Notes}
 \author{}
@@ -78,32 +82,38 @@ $E_2$, or both, occur. This definition extends to more than two events.  In
 a dice roll, the union of the events ``even'' and ``less than $5$'' is
 ``even or less than $5$'', which includes anything other than $5$.
 
-The union of $E_1$ and $E_2$ is written as $E_1 \cup E_2$. The
-\textbf{intersection} of events $E_1$ and $E_2$ is the event that both $E_1$
-and $E_2$ occur. The intersection of $E_1$ and $E_2$ is written as $E_1 \cap
-E_2$.
+The union of $E_1$ and $E_2$ is written as $E_1 \por E_2$, or $E_1 \cup E_2$.
+The \textbf{intersection} of events $E_1$ and $E_2$ is the event that both $E_1$
+and $E_2$ occur. The intersection of $E_1$ and $E_2$ is written as $E_1 \pand
+E_2$, or $E_1 \cap E_2$.
 
 \subsubsection*{Independent Events}
-Two events are said to be \textbf{independent} if knowing the outcome of one
-of the events does not affect the outcome of the other event. If I first
-flip a coin and then roll a die, knowing that the coin flip resulted in
-heads doesn't change the probability that the dice roll will result in an
-odd number, so these events are independent. The event of a dice roll
-resulting in a number greater than or equal to $3$ is not independent from
-the event of the same dice roll resulting in a number greater than or equal
-to $4$, because if we know that it is greater than or equal to $3$, it's
-more likely to be greater than or equal to $4$. Note that events from
-separate processes are always independent, but independent events are not
-necessarily from separate processes. For example, the event that a dice roll
-results in an even number is independent from the event that the same dice
-roll results in a number less than $4$.
+Two events are said to be \textbf{independent} if the outcome of one of the
+events does not affect the probability of the other event. If I first flip a
+coin and then roll a die, knowing that the coin flip resulted in heads doesn't
+change the probability that the dice roll will result in an odd number, so these
+events are independent. The event of a dice roll resulting in a number greater
+than or equal to $3$ is not independent from the event of the same dice roll
+resulting in a number greater than or equal to $4$, because if we know that it
+is greater than or equal to $3$, it's more likely to be greater than or equal to
+$4$. Note that events from separate processes are always independent, but
+independent events are not necessarily from separate processes. For example, the
+event that a dice roll results in an even number is independent from the event
+that the same dice roll results in a number less than $4$.
 
-When two events are independent, the probability of their intersection is
-the product of their probabilities. That is, if $E_1$ and $E_2$ are
-independent, $P(E_1 \cap E_2) = P(E_1)P(E_2)$. The probability of the union
-of two events is the sum of their probabilities minus the probability of
-their intersection. In other words, $P(E_1 \cup E_2) = P(E_1) + P(E_2) -
-P(E_1 \cap E_2)$.
+When two events are independent, the probability of their intersection is the
+product of their probabilities. That is, if $E_1$ and $E_2$ are independent,
+$P(E_1 \pand E_2) = P(E_1)P(E_2)$. The probability of the union of two events is
+the sum of their probabilities minus the probability of their intersection. In
+other words, $P(E_1 \por E_2) = P(E_1) + P(E_2) - P(E_1 \pand E_2)$.
+
+\subsubsection*{Mutually Exclusive Events}
+Two events are \textbf{mutually exclusive} if they never both occur. In other
+words, $E_1$ and $E_2$ are mutually exclusive if $P(E_1 \pand E_2) = 0$. Recall
+that $P(E_1 \por E_2) = P(E_1) + P(E_2) - P(E_1 \pand E_2)$. If $E_1$ and $E_2$
+are mutually exclusive, then this equation becomes $P(E_1 \por E_2) = P(E_1) +
+P(E_2)$, so the probability of the union of two mutually exclusive events is
+simply the sum of the probabilities of the two events.
 
 \section*{Problems}
 
