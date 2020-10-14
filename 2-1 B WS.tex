@@ -1,63 +1,57 @@
 \documentclass{article}
 
-\usepackage{amsthm}
-
-\theoremstyle{definition}
-\newtheorem*{solution}{Solution}
-
-\title{Statistics and Probability}
-\date{}
+\title{2.1 B Solutions}
 \author{}
+\date{}
 
 \begin{document}
-    \maketitle
-    \noindent Problems should be solved without calculators unless otherwise spceified.
-    Remember to explain how you solved a problem.
-    \begin{enumerate}
-        \item Twenty-five students have a combiend average of $84$ on a test,
-        while another group of twenty students have a combined average of $66$.
-        Find the overall average.
-        \begin{solution}
-            The first group's scores have sum $25 \cdot 84 = 2100$, while the second
-            grop's scores have sum $20 \cdot 66 = 1320$. Thus, the $45$ scores have sum
-            $2100 + 1320 = 3420$, so the average, is $\frac{3420}{45} = 76$.
-        \end{solution}
-        \item Three six-sided dice are rolled. What is the probability that at least one
-        comes up with a $5$ or a $6$?
-        \begin{solution}
-            Consider the probability that none of them come up with a $5$ or a $6$. That
-            would be $\frac{4}{6} \cdot \frac{4}{6} \cdot \frac{4}{6} = \frac{8}{27}$. The
-            probability that at least one comes up with a $5$ or a $6$ would be
-            $1 - \frac{8}{27} = \frac{19}{27}$.
-        \end{solution}
-        \item There is a $20\%$ chance it will rain today. If it rains, there is a $10\%$
-        chance that we will be allowed to go outside; otherwise, there is an $80\%$ chance
-        we will be able to go outside. What is the probability that we will be able to
-        go outside?
-        \begin{solution}
-            We split this into the case that it rains and the case that it doesn't. The
-            probability that it rains and we go outside is $0.20 \times 0.10 = 0.02$.
-            The probability that it doesn't rain and we go outside is $(1 - 0.2) \times 0.80 = 0.64$.
-            The overall probability that we go outside is then the sum of these,
-            or $0.64 + 0.02 = 0.66$.
-        \end{solution}
-        \item What is the probability of getting exactly $6$ correct answers on a
-        10-question true-false test by randomly guessing? Express your answer as a common fraction.
-        \begin{solution}
-            Each of the 10 questions will either be true or false, so there are $2 ^ {10} = 1024$ possible
-            combinations of answers for the test. There are ``10 choose 6" or
-            $_{10}C_6 = \frac{10!}{4!6!} = \frac{10\cdot9\cdot8\cdot7}{4\cdot3\cdot2\cdot1} = 10\cdot3\cdot7 = 210$
-            ways to get exactly $6$ correct answers. So, the proabbility is $\frac{210}{1024} = \frac{105}{512}$.
-        \end{solution}
-        \item This stem-and-lead plot shows the heights of the basketball players at East High School.
-        If $6 | 8$ represents $68$ inches, what is the average height of the basketball players
-        at East High School?\\
-        $6 | 8, 8, 9, 9 \\ 7 | 1, 2, 7, 7, 8, 8 \\ 8 | 0, 1$
-        \begin{solution}
-            For the average height, we compute the arithmetic mean by adding up all the heights
-            and diving by the number of heights. The sum of the players' heights is
-            $68 + 68 + 69 + 69+ 71 + 72 + 77 + 77 +78 +78 +80 + 81 = 888$. The average height
-            is $888 \div 12 = 74$ inches.
-        \end{solution}
-    \end{enumerate}
+\maketitle
+
+\begin{enumerate}
+    \item Since the average is the sum divided by the number of students, the 
+        sum is the average multiplied by the number of students. Therefore, the 
+        sum of the scores of the first group of students is $25 \cdot 84 = 
+        2100$, and the sum of the scores of the second group of students is $20 
+        \cdot 66 = 1320$. The sum of all of the scores is then $2100 + 1320 = 
+        3420$, and the average is $\frac{3420}{25 + 20} = 76$.
+    \item Following the hint, we'll count the probability that none of the dice 
+        comes up with a $5$ or a $6$. In other words, we're finding the 
+        probability that all of the dice comes up with a number from $1$ to $4$.  
+        The probability of one dice coming up with a number from $1$ to $4$ is 
+        $\frac{4}{6} = \frac{2}{3}$, since there are $6$ total outcomes and $4$ 
+        of them are from $1$ to $4$. Since the dice are separate and have no 
+        influence on each other, the result of each of the dice are independent.  
+        Therefore, the probability that all of them result in a number from $1$ 
+        to $4$ is equal to the product of the probabilities that each of the 
+        dice individually produce a number from $1$ to $4$. It follows that the 
+        probability that none of the dice produce $5$ or $6$ is 
+        $\left(\frac{2}{3}\right)^3 = \frac{8}{27}$. The event that at least one 
+        of the dice comes up with $5$ or $6$ is the complement of the event that 
+        none of the dice comes up with $5$ or $6$, so the answer is $1 - 
+        \frac{8}{27} = \frac{19}{27}$.
+    \item We consider two cases: the case where it rains and we can go outside, 
+        and the case where it doesn't rain and we can go outside. These two 
+        events are mutually exclusive because it either rains or doesn't rain, 
+        so we can't have both at the same time. Therefore, the probability that 
+        either of those cases occur is the sum of the probability of each of 
+        those events. The probability that it rains and we can go outside is the 
+        product of the probability that it rains and the probability that we can 
+        go outside given that it rains, which is $0.2 \cdot 0.1 = 0.02$. The 
+        probability that it doesn't rain and we can go outside is the product of 
+        the probability that it doesn't rain and the probability that we can go 
+        outside given that it doesn't rain, which is $0.8 \cdot 0.8 = 0.64$.  
+        Adding these up, we get $0.66$ as the probability that we can go 
+        outside.
+    \item There are $10$ ways of getting exactly $9$ heads, since there are $10$ 
+        ways to choose the flip that results in tails. There is $1$ way of 
+        getting $10$ heads. Therefore there are $11$ ways of getting at least 
+        $9$ heads, out of a total of $2^{10}$ outcomes, so the probability is 
+        $\frac{11}{2^{10}} = \frac{11}{1024}$.
+    \item In this stem-and-leaf plot, the digit on the left of the bar is the 
+        first digit of all of the numbers represented by that row, and each 
+        digit on the right of the bar is the second digit of a number.  
+        Therefore, the heights of the players are $68$, $68$, $69$, $69$, $71$, 
+        $72$, $77$, $77$, $78$, $78$, $80$, and $81$. The average height is 
+        therefore $74$ inches.
+\end{enumerate}
 \end{document}
