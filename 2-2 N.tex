@@ -1,0 +1,95 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{flushend}
+\usepackage{amsmath}
+\usepackage{asymptote}
+
+\title{2.2 Notes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Key Concepts}
+
+\subsection*{Terminology}
+A \textbf{set} is a collection of distinct \emph{things}. For example, we can 
+have a set of integers, a set of people, a set of English words, etc. Sets can 
+be written as a list of things enclosed in curly brackets, such as $\{1, 2, 3, 
+4, 5\}$ or $\{\text{Alex}, \text{Chloe}, \text{Cedric}\}$. Sets usually contain 
+things with some similarities, but it's possible to have a set containing 
+completely unrelated things, like $\{\text{Cedric}, 42, 
+\text{``sacrilegious''}\}$.
+
+\subsection*{Venn Diagrams}
+Venn diagrams are useful for visualizing sets with common elements. To draw a 
+Venn diagram for the set of people who like math and the set of people who like 
+to play sports, we would draw two intersecting circles. One circle represents 
+the people who like math, and the other circle represents the people who like to 
+play sports. The area where the circles intersect represent the people who both 
+like math and like to play sports.
+\begin{center}
+	\begin{asy}
+		draw(circle((-40, 0), 80));
+		draw(circle((40, 0), 80));
+		label("Math", (-40, 80), N);
+		label("Sports", (40, 80), N);
+		label(rotate(-90) * "Both math and sports", (0, 0));
+		label("Only math", (-80, 0));
+		label("Only sports", (80, 0));
+		label("Neither math nor sports", (0, -120));
+	\end{asy}
+\end{center}
+From this diagram, we can see that the sum of the number of people who only like 
+math and the number of people who like sports is the number of people who like 
+math or like sports. We can also see that the number of people who only like 
+math is the number of people who like math minus the number of people who like 
+both math and sports. When you solve a problem involving intersecting sets like 
+this, you can use a Venn diagram to help visualize the problem. Write in numbers 
+which you know and try to find the numbers which aren't given.
+
+\subsection*{Inclusion-Exclusion Principle}
+The \textbf{inclusion-exclusion principle} states that the number of things 
+which are in either of two sets is the sum of the sizes of the two sets minus 
+the number of things which are in two sets. For example, if $3$ people like 
+math, $5$ people like sports, and $2$ people like both math and sports, then $3 
++ 5 - 2 = 6$ people like either math or sports (or both). We can use the Venn 
+diagram to see why this works. If we added size of the math circle and the size 
+of the sports circle together, we would count the region where the circles 
+intersect twice. Therefore, we subtract the size of that region to get the size 
+of the region formed by combining the two circles.
+
+Note that the inclusion-exclusion principle can also be used in reverse. We can 
+find the number of people who like both math and sports by adding the number of 
+people who like math to the number of people who like sports and subtracting the 
+number of people who like either math or sports. When we add the size of the 
+math circle with the size of the sports circle, we count the left region once, 
+the middle region twice, and the right region once. When we subtract the size of 
+the region formed by combing the circles, we will end up with just the middle 
+region.
+
+\subsection*{Two-Way Tables}
+\textbf{Two-way tables} are another way to visualize intersecting sets. A 
+two-way table looks like this:
+\begin{center}
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+		& Likes math & Doesn't like math & Total \\
+		\hline
+		Likes sports & $2$ & $3$ & $5$ \\
+		\hline
+		Doesn't like sports & $1$ & $4$ & $5$ \\
+		\hline
+		Total & $3$ & $7$ & $10$ \\
+		\hline
+	\end{tabular}
+\end{center}
+
+Notice that each of the cells in the total row is the sum of the numbers in the 
+corresponding column, and each of the cells in the total column is the sum of 
+the numbers in the corresponding row. For example, the total number of people 
+who like math is the sum of the people who like math and like sports, and the 
+people who like math and don't like sports.
+\end{document}
