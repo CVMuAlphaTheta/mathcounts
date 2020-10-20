@@ -4,6 +4,7 @@
 \usepackage{flushend}
 \usepackage{amsmath}
 \usepackage{asymptote}
+\usepackage{enumitem}
 
 \title{2.2 Notes}
 \author{}
@@ -76,13 +77,13 @@ two-way table looks like this:
 \begin{center}
 	\begin{tabular}{| c | c | c | c |}
 		\hline
-		& Likes math & Doesn't like math & Total \\
+                        & Likes math & Dislikes math & Total \\
 		\hline
-		Likes sports & $2$ & $3$ & $5$ \\
+		Likes sports    & $2$        & $3$           & $5$   \\
 		\hline
-		Doesn't like sports & $1$ & $4$ & $5$ \\
+		Dislikes sports & $1$        & $4$           & $5$   \\
 		\hline
-		Total & $3$ & $7$ & $10$ \\
+		Total           & $3$        & $7$           & $10$  \\
 		\hline
 	\end{tabular}
 \end{center}
@@ -92,4 +93,116 @@ corresponding column, and each of the cells in the total column is the sum of
 the numbers in the corresponding row. For example, the total number of people 
 who like math is the sum of the people who like math and like sports, and the 
 people who like math and don't like sports.
+
+We can solve problems using two way tables by filling in cells which we know and 
+then using the above property to fill in the rest of the cells. For example, 
+lets say out of the $15$ people in a class, $4$ people like dogs, $6$ people 
+like cats, and $2$ people like dogs but don't like cats. We would have the 
+following two-way table, where the letters represent unknown values:
+\begin{center}
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+                      & Likes dogs & Dislike dogs & Total \\
+		\hline
+		 Likes cats   & $A$        & $B$          & $6$   \\
+		 \hline
+		Dislikes cats & $2$        & $C$          & $D$   \\
+		\hline
+		Total         & $4$        & $E$          & $15$  \\
+		\hline
+	\end{tabular}
+\end{center}
+In the first column, we have $A + 2 = 4$, so $A = 2$. In the third column, we 
+see that $6 + D = 15$, therefore $D = 9$. In the last row, $4 + E = 15$, 
+therefore $E = 11$. Now our table looks like this:
+\begin{center}
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+                      & Likes dogs & Dislike dogs & Total \\
+		\hline
+		 Likes cats   & $2$        & $B$          & $6$   \\
+		 \hline
+		Dislikes cats & $2$        & $C$          & $9$   \\
+		\hline
+		Total         & $4$        & $11$         & $15$  \\
+		\hline
+	\end{tabular}
+\end{center}
+In the second row, we see that $2 + C = 9$, therefore $C = 7$. Then in the 
+second column we have $B + 7 = 11$, so $B = 4$. Here's the finished table:
+\begin{center}
+	\begin{tabular}{| c | c | c | c |}
+		\hline
+                      & Likes dogs & Dislike dogs & Total \\
+		\hline
+		 Likes cats   & $2$        & $4$          & $6$   \\
+		 \hline
+		Dislikes cats & $2$        & $7$          & $9$   \\
+		\hline
+		Total         & $4$        & $11$         & $15$  \\
+		\hline
+	\end{tabular}
+\end{center}
+You can verify that everything adds up. Now we know the number of people in any 
+of the categories.
+
+\subsection*{The Fundamental Counting Principle}
+\textbf{The Fundamental Counting Principle} simply states that if there are 
+always $n$ ways to do one thing and $m$ ways to do another thing, there are $nm$ 
+ways to do both things. For example, if I have $6$ shirts and $8$ pairs of 
+pants, then there are $6 \cdot 8 = 48$ possible outfits. Note that the 
+fundamental counting principle only applies if the two things are independent.  
+We can't use it if certain combinations of shirts and pants aren't allowed for 
+example, because then the number of ways to choose the pants would depend on 
+which shirt I chose and not be constant.
+
+\section*{Problems}
+
+\subsection*{Counting Basics and Venn Diagrams}
+\begin{enumerate}
+	\item You are assigned even problems from $10$ through $40$ for tonight's 
+		homework. How many problems is this?
+		\vspace{3cm}
+	\item The circumference of a circular table is $30$ feet. If a set of 
+		silverware is placed every three feet around the circumference of the 
+		table, how many place-settings are there?
+		\vspace{3cm}
+	\item In a science classroom: $19$ students have a brother, $15$ students 
+		have a sister, $7$ students have both a brother and a sister, and $6$ 
+		students don't have any siblings at all. How many students are in the 
+		classroom?
+		\vspace{3cm}
+	\item At the pound there are $40$ dogs. If $22$ dogs have spots and $30$ 
+		dogs have short hair, what is the feweset number of dogs that can have 
+		short hair and spots?
+		\vspace{3cm}
+\end{enumerate}
+
+\subsection*{Handshake Problems}
+\begin{enumerate}[resume]
+	\item $12$ strangers go bowling. If everyone shakes everyone else's hand 
+		exactly once, how many handshakes have occurred?
+		\vspace{3cm}
+	\item What is the general formula for the number of hand-shakes that occur 
+		when $n$ people shake hands?
+		\vspace{3cm}
+	\item Several couples arrive at a dinner party. Each person at the party 
+		shakes the hand of every other person, not including his or her spouse.  
+		If there were a total of $112$ handshakes, how many couples attended the 
+		party?
+		\vspace{3cm}
+	\item If $99$ people stand in a circle, and each skaes the hand of the 
+		person on each side, how many handshakes are there all together?
+		\vspace{3cm}
+\end{enumerate}
+
+\subsection*{Intermediate Counting Problems}
+\begin{enumerate}[resume]
+	\item How many even perfect squares are there from $100$ to $10000$ 
+		inclusive?
+		\vspace{3cm}
+	\item How many whole numbers less than $100$ are multiples of $3$ but not 
+		multiples of $5$?
+		\vspace{3cm}
+\end{enumerate}
 \end{document}
