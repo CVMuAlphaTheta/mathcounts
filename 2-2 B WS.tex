@@ -1,4 +1,6 @@
 \documentclass{article}
+
+\usepackage[group-separator={,}]{siunitx}
 \usepackage{amsthm}
 
 \theoremstyle{definition}
@@ -9,70 +11,101 @@
 \date{}
 
 \begin{document}
-    \maketitle
-    \noindent Problems should be solved without calculators unless otherwise specified.
-    Remember to explain how you solved a problem.
-    \begin{enumerate}
-        \item A 24-hour digital clock displays times from 00:00 to 23:59. How many of the times
-        displayed on this clock contain the digit 2?
+\maketitle
+\begin{enumerate}
+    \item A 24-hour digital clock displays times from 00:00 to 23:59. How 
+        many of the times displayed on this clock contain the digit 2?
         \begin{solution}
-            The fraction of displays that do not contain the digit 2 in either units or tens
-            place of the hour is $\frac{18}{24} = \frac{3}{4}$. The fraction of displays that do
-            not contain the digit 2 in the tens of place of the minute is $\frac{5}{6}$, and the
-            fraction of displays that do not contain the digit 2 in the units place of the minute
-            is  $\frac{9}{10}$. The fraction of displays that do not contain the digit 2, then, is
-            $\frac{3}{4} \cdot \frac{5}{6} \cdot \frac{9}{10} = \frac{9}{16}$. Therefore, the
-            fraction of displays that do not contain the digit 2 is $1 - \frac{9}{16} = \frac{7}{16}$.
-            The total number of displays at 60 displays per hour for 24 hours is $60 \cdot 24 = 1440$ displays.
-            So, the number of displays that contain the digit 2 is $\frac{7}{16} \cdot 1440 = 630$.
+            It's easier to count the number of times displayed which don't have 
+            the digit 2, because this way the possible values of one digit 
+            doesn't depend on whether the other digits contain a 2. By listing 
+            all the $24$ hours, we see that $18$ of them don't contain the digit 
+            $2$. There are always $5$ possible values for the tens digit of the 
+            minute (0, 1, 3, 4, 5) and $9$ possible values for the units digit 
+            of the minute (0, 1, 3, 4, 5, 6, 7, 8, 9), so if we multiply these 
+            values together we get $18 \cdot 5 \cdot 9 = 810$ as the number of 
+            times which don't have the digit 2. There are $24 \cdot 60 = 1440$ 
+            minutes in a day, so $1440 - 810 = 630$ times displayed by the clock 
+            contains the digit 2.
         \end{solution}
-        \item Jeremy owns a rectangular plot of land that is 60 yards long and 30 yards wide.
+    \item Jeremy owns a rectangular plot of land that is 60 yards long and 
+        30 yards wide.
         \begin{enumerate}
-            \item If he places a fence post at each corner and posts are placed every three yards,
-            how many fence posts will there be on each side?
-            \begin{solution}
-                Consider the gaps between the posts. To go 60 yards requires twenty gaps. The first
-                post is placed, and then a post is placed every 3 yards for a total of 21 posts.
-                30 yards requires 10 gaps, or 11 posts.
-            \end{solution}
-            \item If he places a fence post at each corner and posts are placed every three yards,
-            how many fence posts will he need to enclose his land?
-            \begin{solution}
-                If two of the sides have 11 posts, and the other two sides have 21, it would appear
-                that there are 64 posts, but we counted all four corners twice. We must subtract four
-                to get a total of 60 posts.
-            \end{solution}
+            \item If he places a fence post at each corner and posts are placed 
+                every three yards, how many fence posts will there be on each 
+                side?
+                \begin{solution}
+                    The fence posts divide the sides into three yard sections, 
+                    so there are $\frac{60}{3} = 20$ sections on the $60$-yard 
+                    sides. There's a fence post at the beginning of each section 
+                    plus one more at the very end, so there are $21$ fence posts 
+                    on the $60$-yard sides. Similarly, there are $\frac{30}{3} + 
+                    1 = 11$ fence posts on the $30$-yard sides.
+                \end{solution}
+            \item If he places a fence post at each corner and posts are placed 
+                every three yards, how many fence posts will he need to enclose 
+                his land?
+                \begin{solution}
+                    If two of the sides have $11$ posts, and the other two sides 
+                    have $21$, it would appear that there are $64$ posts, but we 
+                    counted all four corners twice. We must subtract $4$ to get 
+                    a total of $60$ posts.
+
+                    Alternatively, we can compute the perimeter of the fence, 
+                    which is $2(60 + 30) = 180$. The fence posts divide this 
+                    perimeter into three yard sections, and since the fence is a 
+                    cycle, each section corresponds to one fence post.  
+                    Therefore, there are $\frac{180}{3}$ fence posts.
+                \end{solution}
         \end{enumerate}
-        \item How many distinct pairs of consecutive integers have a product less than 10,000?
+    \item How many distinct pairs of consecutive integers have a product less 
+        than \num{10000}?
         \begin{solution}
-            Remember to include consecutive negative integers. We can start with $-100 \cdot -99$ and get
-            all the way up to $100 \cdot 99$. The first integer in each pair can be anywhere from $-100$ to $99$,
-            inclusive. $99 - (-100) + 1 = 200$ pairs of consecutive integers whose product is less than 10,000.
+            Remember to include consecutive negative integers. We can start with 
+            $-100 \cdot -99$ and get all the way up to $100 \cdot 99$. The first 
+            integer in each pair can be anywhere from $-100$ to $99$, inclusive.  
+            Therefore, there are $99 - (-100) + 1 = 200$ pairs of consecutive 
+            integers whose product is less than \num{10000}.
         \end{solution}
-        \item Tom randomly selects three different numbers from the set $\{1, 2, 3, 4\}$.
-        Jerry randomly selects one number from the set $\{2, 4, 6, 8 ,10, 12\}$. What is the
-        probability that Jerry's number is greater than the sum of Tom's numbers? Express your
-        answer as a common fraction.
+    \item Tom randomly selects three different numbers from the set $\{1, 2, 3, 
+        4\}$. Jerry randomly selects one number from the set $\{2, 4, 6, 8 ,10, 
+        12\}$. What is the probability that Jerry's number is greater than the 
+        sum of Tom's numbers? Express your answer as a common fraction.
         \begin{solution}
-            Since Tom is selecting three different numbers from a set of four numbers, there are 4 ways
-            to choose which number will no be selected. The possible sums of the three numbers Tom selects
-            are $1 + 2 + 3 = 6$, $1 + 2 + 4 = 7$, $1 + 3 + 4 = 8$, and $2 + 3 + 4 = 9$. Tom has a
-            $\frac{2}{4} = \frac{1}{2}$ chance of randomly selecting three numbers with a sum of 6 or 7.
-            If Tom's randomly selected numbers do have a sum of 6 or 7, then Jerry has a $\frac{3}{6} = \frac{1}{2}$
-            chance of selecting one of the three numbers $(8, 10, 12)$ in his set that are greater than 6 or 7.
-            Similarly, Tom has a $\frac{2}{4} = \frac{1}{2}$ chance of randomly selecting three numbers with a sum
-            of 8 or 9. If tom's randomly selected numbers do have a sum of 8 or 9, then Jerry has a $\frac{2}{6} = \frac{1}{3}$
-            chance of selecting one of the two numbers $(10, 12)$ in his set that are greater than 8 or 9. The probability, then,
-            that Jerry's randomly selected number is greater than the sum of Tom's three randomly selected numbers
-            is $\frac{1}{2} \cdot \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{4} + \frac{1}{6} = \frac{6}{24} + \frac{4}{24}
-            = \frac{10}{24} = \frac{5}{12}$.
+            Since Tom is selecting three different numbers from a set of four 
+            numbers, there are $4$ ways to choose which number will no be 
+            selected. The possible sums of the three numbers Tom selects are $1 
+            + 2 + 3 = 6$, $1 + 2 + 4 = 7$, $1 + 3 + 4 = 8$, and $2 + 3 + 4 = 9$.  
+            Tom has a $\frac{2}{4} = \frac{1}{2}$ chance of randomly selecting 
+            three numbers with a sum of $6$ or $7$. If Tom's randomly selected 
+            numbers do have a sum of $6$ or $7$, then Jerry has a $\frac{3}{6} = 
+            \frac{1}{2}$ chance of selecting one of the three numbers $(8, 10, 
+            12)$ in his set that are greater than $6$ or $7$.  Similarly, Tom 
+            has a $\frac{2}{4} = \frac{1}{2}$ chance of randomly selecting three 
+            numbers with a sum of $8$ or $9$. If tom's randomly selected numbers 
+            do have a sum of $8$ or $9$, then Jerry has a $\frac{2}{6} = 
+            \frac{1}{3}$ chance of selecting one of the two numbers $(10, 12)$ 
+            in his set that are greater than $8$ or $9$. The probability, then, 
+            that Jerry's randomly selected number is greater than the sum of 
+            Tom's three randomly selected numbers is $\frac{1}{2} \cdot 
+            \frac{1}{2} + \frac{1}{2} \cdot \frac{1}{3} = \frac{1}{4} + 
+            \frac{1}{6} = \frac{6}{24} + \frac{4}{24} = \frac{10}{24} = 
+            \frac{5}{12}$.
         \end{solution}
-        \item All squares are both rectangles and rhombuses. All rhombuses and rectangles are
-        parallelograms. On a sheet of paper, Josh draws 19 rectangles, 15 rhombuses, and 7 squares.
-        How many parallelograms did Josh draw?
+    \item All squares are both rectangles and rhombuses. All rhombuses and 
+        rectangles are parallelograms. On a sheet of paper, Josh draws $19$ 
+        rectangles, $15$ rhombuses, and $7$ squares. How many parallelograms did 
+        Josh draw?
         \begin{solution}
-                Draw a venn diagram. The area in a diagram where rectangles and rhombuses overlap represents squares.
-                There are 7 squares, 8 non-rectangle rhombuses, and 12 non-rhombus rectangles. That sums up to 27 parallelograms.
+            Draw a Venn diagram. The area in a diagram where rectangles and 
+            rhombuses overlap represents squares. There are $7$ squares, $8$ 
+            non-rectangle rhombuses, and $12$ non-rhombus rectangles. That sums 
+            up to $27$ parallelograms.
+
+            We can also just use the inclusion-exclusion principle. There are 
+            $19$ rectangles, $15$ rhombuses, and $7$ shapes which are both 
+            rectangles and rhombuses. Therefore there are $19 + 15 - 7 = 27$ 
+            shapes in total.
         \end{solution}
-    \end{enumerate}
+\end{enumerate}
 \end{document}
