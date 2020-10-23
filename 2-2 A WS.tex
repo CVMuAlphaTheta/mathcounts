@@ -118,6 +118,39 @@ specified. Remember to explain how you solved a problem.
             13 - 15 - 11 = 45$. We've added the area in the center three times 
             and subtracted it three times, so it didn't get counted. Therefore 
             we add it back to get $45 + 4 = 49$.
+
+            We can also solve this problem by filling in the Venn diagram.  
+            First, we'll write $4$ in the center. We know that $13$ students 
+            have both a fish and a cat, and $4$ students have a fish, a cat, and 
+            a dog, so $13 - 4 = 9$ students have a fish, a cat, but not a dog.  
+            Similarly, $11 - 4 = 7$ students have a cat, a dog, but not a fish, 
+            and $15 - 4 = 11$ students have a dog, a fish, but not a cat. Now we 
+            can find the number of students who only have a cat by subtracting 
+            $7$, $4$, and $9$ from $30$ to get $10$. Similarly, we find that 
+            there are $26 - 11 - 4 - 9 = 2$ students who only have a fish, and 
+            $28 - 6 - 7 - 4$ students who only have a dog. The completed Venn 
+            diagram looks like this:
+
+            \begin{center}
+                \begin{tikzpicture}
+                    \draw (90 : 1.5) circle (2);
+                    \node[above] at (90 : 3.5) {Cat};
+                    \draw (210 : 1.5) circle (2);
+                    \node[below left] at (210 : 3.5) {Dog};
+                    \draw (330 : 1.5) circle (2);
+                    \node[below right] at (330 : 3.5) {Fish};
+                    \node at (0, 0) {$4$};
+                    \node at (150 : 1.3) {$7$};
+                    \node at (270 : 1.3) {$11$};
+                    \node at (30 : 1.3) {$9$};
+                    \node at (90 : 1.9) {$10$};
+                    \node at (210 : 1.9) {$6$};
+                    \node at (330 : 1.9) {$2$};
+                \end{tikzpicture}
+            \end{center}
+            
+            Adding the sizes of all the regions together results in $10 + 7 + 4 
+            + 9 + 6 + 11 + 2 = 49$.
         \end{solution}
 \end{enumerate}
 \end{document}
