@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Permutations and Combinations Set A}
+\author{}
+\date{}
+
+\begin{document}
+    \maketitle
+    \noindent Problems should be solved without calculators unless otherwise specified.
+    Remember to explain how you solved a problem.
+    \begin{enumerate}
+        \item How many factors of $2^{95}$ are there which are greater than $1000000$?
+        \begin{solution}
+            This is most easily done by counting the wrong thing and subtracting. The number $2^{95}$
+            has $95 + 1 = 96$ factors, all of which are powers of $2$. The number of factors
+            which are smaller than $1000000$ may be found by finding the largest one which is
+            smaller. We have $2^{10} = 1024 > 10^3$, so $2^{20} > 10^6 = 1000000$. But
+            $2^{19} = 1024 \cdot 512$ is clearly smaller than $1000000$, so this is the largest.
+            The number of factors smaller than a million is thus $19 + 1 = 20$, and there are
+            $96 - 20 = 76$ factors greater than a million.
+        \end{solution}
+        \item What is the units digit of the sum $1! + 2! + 3! + \dots + 14! + 15!$?
+        \begin{solution}
+            Observe: $1! = 1$, $2! = 2$, $3! = 6$, $4! = 4$, $5! = 120$, $6! = 720 \dots$
+            Since $5!$ ends in a zero, all those following it muse also end in 0. Thus the units
+            digit of $1 + 2 + 6 + 4 = 13$, or $3$.
+        \end{solution}
+        \item Numbers that read the same forward and backward are called palindromes. How many
+        three-digit numbers are palindromes?
+        \begin{solution}
+            The first digit can be chosen in $9$ ways, since it can't be $0$. The last digit
+            must also be the same as the first. The middle digit can be chosen in $10$ ways.
+            The total number is thus $10 \cdot 9 = 90$.
+        \end{solution}
+        \item What is the value of the expression $\frac{8! - 7 \cdot 7! + 6 \cdot 6!}
+        {7! - 6 \cdot 6! + 5 \cdot 5!}$? Express your answer as a common fraction.
+        \begin{solution}
+            With factorials, we can often do some factoring to simplify things and avoid large
+            numbers. We can simplify this particular problem as shown. \\
+            Numerator:
+            \begin{align*}
+                8! \hspace{0.525cm} - 7 \cdot \hspace{0.1cm} 7! \hspace{0.07cm} + 6 \cdot 6! & \\
+                \overbrace{8 \cdot 7 \cdot 6!} - 7 \cdot \overbrace{7 \cdot 6!} + 6 \cdot 6! &= 
+                \hspace{0.25cm} 6! \hspace{0.25cm} \cdot \hspace{0.25cm} \underbrace{8 \cdot 7 - 7 \cdot 7 + 6} \\
+                &= \overbrace{6 \cdot 5!} \hspace{0.675cm} \cdot \hspace{0.675cm} 13
+            \end{align*}
+            Denominator:
+            \begin{align*}
+                7! \hspace{0.525cm} - 6 \cdot \hspace{0.1cm} 6! \hspace{0.07cm} + 5 \cdot 5! & \\
+                \overbrace{7 \cdot 6 \cdot 5!} - 6 \cdot \overbrace{6 \cdot 5!} + 5 \cdot 5! &= 
+                5! \hspace{0.25cm} \cdot \hspace{0.25cm} \underbrace{7 \cdot 6 - 6 \cdot 6 + 5} \\
+                &= 5! \hspace{0.725cm} \cdot \hspace{0.725cm} 11
+            \end{align*}
+            So, the original expression equals $\frac{6 \cdot 5! \cdot 13}{5! \cdot 11} =
+            6 \cdot \frac{13}{11} = \frac{78}{11}$.
+        \end{solution}
+        \item How many odd positive integers are factors of $480$?
+        \begin{solution}
+            We first factor $480$ into $2^5 \cdot 3 \cdot 5$. The total number of factors would be
+            $(5 + 1)(1 + 1)(1 + 1) = 24$, but the odd factors may not have any powers of $2$, so of
+            these there are only $(1 + 1)(1 + 1) = 4$.
+        \end{solution}
+    \end{enumerate}
+\end{document}
