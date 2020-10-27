@@ -46,16 +46,17 @@
             If these six people were standing in a line, then there would be $6!  
             = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720$ orders. Since 
             this is a round table, these same arrangements of people can be 
-            rotated in $6$ different places, so there would seem to be only $720 
-            \div 6 = 120$ seating arrangements. Since we are interested in 
-            seating arrangements with Andrew and Lindsey seated together, let's 
-            imagine that Andrew and Lindsey are stuck together and act as a 
-            single person. Then we have the same situation with five people, so 
-            there are $5! \div 5 = 120 \div 5 = 24$ seating arrangements.  
-            However, we can glue Andrew and Lindsey together in $2$ different 
-            ways, so there are actually $2 \cdot 24 = 48$ seating arrangements 
-            with Andrew and Lindsey seated together. Therefore, the probability 
-            that they are seated together is $\frac{48}{120} = \frac{2}{5}$.
+            rotated in $6$ different places, so there would seem to be only 
+            $\frac{720}{6} = 120$ seating arrangements. Since we are interested 
+            in seating arrangements with Andrew and Lindsey seated together, 
+            let's imagine that Andrew and Lindsey are stuck together and act as 
+            a single person. Then we have the same situation with five people, 
+            so there are $\frac{5!}{5} = \frac{120}{5}  = 24$ seating 
+            arrangements.  However, we can glue Andrew and Lindsey together in 
+            $2$ different ways, so there are actually $2 \cdot 24 = 48$ seating 
+            arrangements with Andrew and Lindsey seated together.  Therefore, 
+            the probability that they are seated together is $\frac{48}{120} = 
+            \frac{2}{5}$.
 
             Another way to do this problem would be to imagine randomly 
             assigning a seat to each person one-by-one. If we assign a seat to 
@@ -69,10 +70,11 @@
         \begin{solution}
             Each of the $10$ answers has an equal probability of being true and 
             false, so there are $2^{10} = 1024$ possible outcomes in total.  
-            There are ``10 choose 6'' or $\binom{10}{6} = \frac{10!}{4! \cdot 
-            6!} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4 \cdot 3 \cdot 2 \cdot 1} = 
-            10 \cdot 3 \cdot 7 = 210$ ways to get exactly $6$ correct answers.  
-            So, the probability is $\frac{210}{1024} = \frac{105}{512}$.
+            There are ``$10$ choose $6$'' or $\binom{10}{6} = \frac{10!}{4!  
+            \cdot 6!} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4 \cdot 3 \cdot 2 
+            \cdot 1} = 10 \cdot 3 \cdot 7 = 210$ ways to get exactly $6$ correct 
+            answers.  So, the probability is $\frac{210}{1024} = 
+            \frac{105}{512}$.
         \end{solution}
 \end{enumerate}
 \end{document}
