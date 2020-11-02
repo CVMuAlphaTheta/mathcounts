@@ -1,0 +1,59 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{flushend}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{More Combinatorics Set A}
+\date{}
+\author{}
+
+\begin{document}
+    \maketitle
+    \begin{enumerate}
+        \item How many ways can $5$ books be arranged on a shelf if $2$ of the books must 
+        remain together?
+        \begin{solution}
+            The key here is to realize that the books which must be together may be treated 
+            as a single unit. Within that unit, the books may be in $2$ different orders (AB 
+            or BA) but we can account for that by simply multiplying by $2$ at the end. We 
+            thus have $4$ books (one is our two-book unit) and these can be arranged in $4! = 
+            24$ ways. Multiplying by $2$ then yields $48$. (Make sure in your mind that all 
+            configurations are counted, and that none is counted twice!)
+        \end{solution}
+        \item In how many ways can the word RAMANUJAN be rearranged?
+        \begin{solution}
+            The word RAMANUJAN has $9$ letters, with $2$ N's and $3$ A's. The number of ways 
+            to rearrange it is thus $\frac{9!}{3!2!} = 30240$.
+        \end{solution}
+        \item At the end of a professional bowling tournament, the top $5$ bowlers have a 
+        playoff. First \#$5$ bowls \#$4$. The loser receives fifth prize and the winner 
+        bowls \#$3$ in another game. The loser of this game receives fourth prize and the 
+        winner bowls \#$2$. The loser of this game receives third prize and the winner bowls 
+        \#$1$. The winner of this game gets first prize and the loser gets second prize. 
+        In how many orders can bowlers \#$1$ through \#$5$ receive the prizes.
+        \begin{solution}
+            No matter what, there will be $4$ playoff games. A different result for each 
+            will lead to a completely different outcome, since a player is out who would 
+            otherwise have been in. Thus the games may be considered independent, and each 
+            contributes $2$ outcomes, for a total of $2 \cdot 2 \cdot 2 \cdot 2 = 16$ 
+            outcomes.
+        \end{solution}
+        \item In how many ways can the word MINIMIZATION be arranged?
+        \begin{solution}
+            MINIMIZATION has $12$ letters, with $4$ I's, $2$ M's, and $2$ N's, so it can be 
+            rearranged in $\frac{12!}{4!2!2!}$ ways. Simplifying the factorials yields 
+            $4989600$.
+        \end{solution}
+        \item In how many ways can $4$ identical red chips and $2$ identical white chips be 
+        arranged in a circle?
+        \begin{solution}
+            The white chips can either be adjacent, have one red between them, or have two 
+            reds between them. These three are the only ways it can be done!
+        \end{solution}
+    \end{enumerate}
+\end{document}
