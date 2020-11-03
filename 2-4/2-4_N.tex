@@ -4,6 +4,7 @@
 \usepackage{flushend}
 \usepackage{asymptote}
 \usepackage{amsmath}
+\usepackage{enumitem}
 
 \title{2.4 Notes}
 \author{}
@@ -57,7 +58,85 @@ number of four-digit positive integers which don't have a $2$ or a $3$. This is
 easier to do because now the possible values of each digit don't depend on the 
 values of other digits. We simply can't have $2$ or $3$. The first digit has $7$ 
 possibilities since we exclude $0$, $2$, and $3$. The other three digits each 
-have $8$ possibilites, for a total of $3584$. There are $9000$ four-digit 
+have $8$ possibilities, for a total of $3584$. There are $9000$ four-digit 
 positive integers, so the number of positive four-digit integers which have at 
 least one $2$ or $3$ is $9000 - 3584 = 5416$.
+
+\subsection*{Stars and Bars}
+Another non-obvious application of combinations is to count the number of ways 
+to distribute $n$ indistinguishable objects into $k$ distinguishable bins, such 
+that no bin is empty. To solve this problem, we can think of it as inserting $k 
+- 1$ dividers (represented by bars) between the $n$ objects (represented by 
+stars). The stars to the left of the first bar are in the first bin, the stars 
+between the first and second bars are in the second bin, and so on. We can't put 
+a bar to the left of the first star, to the right of the last star, or right 
+next to another bar, because that would represent an empty bin. Therefore there 
+are $n - 1$ gaps between the stars where we have to place $k - 1$ bars, so the 
+number of ways to distribute $n$ indistinguishable objects into $k$ 
+distinguishable boxes such that no bin is empty is $\binom{n - 1}{k - 1}$.
+
+We can also count the number of ways to distribute $n$ indistinguishable objects 
+into $k$ distinguishable bins where a bin can be empty. We can reduce this to 
+the previous problem simply by adding $k$ stars. There's a one-to-one 
+correspondence between distributions of $n$ objects into $k$ potentially empty 
+bins and distributions of $n + k$ objects into $k$ non-empty bins because for 
+each distribution of the first kind, we can add an object to every bin to get a 
+distribution of the second kind, and for each distribution of the second kind, 
+we can remove an object from every bin to get a distribution of the first kind. 
+Therefore, the number of ways to distribute $n$ indistinguishable objects into 
+$k$ distinguishable bins where a bin can be empty is $\binom{n + k - 1}{k - 1}$.
+
+\subsection*{$\binom{n}{k} = \binom{n}{n - k}$}
+This is one of the most basic properties of combinations. This is true because 
+choosing a set of $k$ objects out of $n$ objects is the same as choosing $n - k$ 
+objects out of $n$ objects to exclude from the set. We can also prove this using 
+the formula for combinations: $\binom{n}{k} = \frac{n!}{k!(n - k)!} = 
+\frac{n!}{(n - (n - k))!(n - k)!} = \frac{n!}{(n - k)!(n - (n - k))!} = 
+\binom{n}{n - k}$. If you wanted to compute $\binom{100}{98}$, you can instead 
+compute $\binom{100}{2}$, which is a little easier to think about.
+
+\section*{Problems}
+
+\subsection*{Combinations}
+\begin{enumerate}
+	\item In how many ways can a three-person subcommittee be chosen from a 
+		five-person committee?
+		\vspace{3cm}
+	\item In how many ways can a three-person subcommittee be chosen from a 
+		five-person committee if a particular person must be on the 
+		subcommittee?
+		\vspace{3cm}
+	\item How many ways are there to pick no objects from a set of $n$ objects?
+		\vspace{3cm}
+	\item Show that $\binom{n}{k} = \frac{n!}{(n - k)!k!}$.
+		\vspace{3cm}
+	\item Show that $\binom{n}{k} = \binom{n}{n - k}$.
+		\vspace{3cm}
+\end{enumerate}
+
+\subsection*{Complementary Counting}
+\begin{enumerate}[resume]
+	\item Anwar flips a fair coin eight times. In how many ways can he flip at 
+		least two heads?
+		\vspace{3cm}
+	\item Felix and Candice are on the same science bowl (that's a thing?!?) 
+		team. There are eight competitors on the team. If there are five people 
+		participating in the astronomy event on the science bowl team, how many 
+		different combinations include Felix, Candice, or both?
+		\vspace{3cm}
+\end{enumerate}
+
+\subsection*{Stars and Bars}
+\begin{enumerate}[resume]
+	\item Alex has ten one-dollar bills to distribute among the five members of 
+		Mu Alpha Theta. How many ways are there to distribute his money?
+		\vspace{3cm}
+	\item How many ways are there to roll a sum of $7$ with three standard 
+		six-sided dice?
+		\vspace{3cm}
+	\item Each of the numbers $1$ through $10$ is placed in a bag and drawn at 
+		random with replacement. How many ways can three numbers be drawn whose 
+		sum is $13$?
+		\vspace{3cm}
+\end{enumerate}
 \end{document}
