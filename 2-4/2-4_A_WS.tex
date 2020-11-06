@@ -13,47 +13,82 @@
 \author{}
 
 \begin{document}
-    \maketitle
-    \begin{enumerate}
-        \item How many ways can $5$ books be arranged on a shelf if $2$ of the books must 
-        remain together?
+\maketitle
+\begin{enumerate}
+    \item In how many ways can a five letter ``word'' be written using only the 
+        first half of the alphabet with no repetitions such that the third and 
+        fifth letters are vowels and the first letter is a consonant?
         \begin{solution}
-            The key here is to realize that the books which must be together may be treated 
-            as a single unit. Within that unit, the books may be in $2$ different orders (AB 
-            or BA) but we can account for that by simply multiplying by $2$ at the end. We 
-            thus have $4$ books (one is our two-book unit) and these can be arranged in $4! = 
-            24$ ways. Multiplying by $2$ then yields $48$. (Make sure in your mind that all 
-            configurations are counted, and that none is counted twice!)
+            There are three vowels and ten consonants in the first half of the 
+            alphabet. Following the strategy of counting the position with the 
+            most restrictions first, we'll first count the number of ways to 
+            choose the letters in the first, third, and fifth positions and then 
+            count the number of ways to choose the letters in the second and 
+            fourth positions. There are $10$ ways to choose the first letter and 
+            $3$ ways to choose the third letter. Note that we don't have to 
+            worry about the two letters being the same because one is a 
+            consonant and the other is a vowel. Next, there are $2$ ways to 
+            choose the fifth letter since we can't repeat the third letter. 
+            There are $10$ ways to choose the second letter since there are $13$ 
+            letters in the first half of the alphabet and $3$ of them are 
+            already used. Similarly, there are $9$ ways to choose the fourth 
+            letter. Therefore, the total is $10 \cdot 3 \cdot 2 \cdot 10 \cdot 9 
+            = 5400$.
         \end{solution}
-        \item In how many ways can the word RAMANUJAN be rearranged?
+    \item In how many ways can the letters SEANCHEN be rearranged?
         \begin{solution}
-            The word RAMANUJAN has $9$ letters, with $2$ N's and $3$ A's. The number of ways 
-            to rearrange it is thus $\frac{9!}{3!2!} = 30240$.
+            There are $8$ letters in total. There are two E's and two N's, and 
+            all the other letters are unique. There are $8!$ ways to arrange $8$ 
+            distinct things. If we considered the two E's and the two N's to be 
+            unique, then there would be $2$ ways to order the E's and $2$ ways 
+            to order the N's. Since reordering the E's and the N's doesn't 
+            actually change anything, the number of arrangements where all the 
+            letters are unique is $2! \cdot 2! = 4$ times the number of 
+            arrangements that we want to count. Therefore, there are 
+            $\frac{8!}{4} = 10080$ ways to arrange the letters SEANCHEN.
         \end{solution}
-        \item At the end of a professional bowling tournament, the top $5$ bowlers have a 
+    \item At the end of a professional bowling tournament, the top $5$ bowlers have a 
         playoff. First \#$5$ bowls \#$4$. The loser receives fifth prize and the winner 
         bowls \#$3$ in another game. The loser of this game receives fourth prize and the 
         winner bowls \#$2$. The loser of this game receives third prize and the winner bowls 
         \#$1$. The winner of this game gets first prize and the loser gets second prize. 
-        In how many orders can bowlers \#$1$ through \#$5$ receive the prizes.
+        In how many orders can bowlers \#$1$ through \#$5$ receive the prizes?
         \begin{solution}
-            No matter what, there will be $4$ playoff games. A different result for each 
-            will lead to a completely different outcome, since a player is out who would 
-            otherwise have been in. Thus the games may be considered independent, and each 
-            contributes $2$ outcomes, for a total of $2 \cdot 2 \cdot 2 \cdot 2 = 16$ 
-            outcomes.
+            There are four games. We might hypothesize that every sequence of 
+            outcomes for the four games result in a different prize order. To 
+            prove this, imagine changing the outcome for some of the games. No 
+            matter how we change the outcomes, there will always be at least one 
+            bowler who gets a higher prize than before, so the order of the 
+            prizes must be different. Since each sequence of outcomes result in 
+            a different prize order, the number of possible prize orders is 
+            equal to the number of possible outcome sequences, which is $2^4 = 
+            16$.
         \end{solution}
-        \item In how many ways can the word MINIMIZATION be arranged?
+    \item In how many ways can the letters in the word MINIMIZATION be arranged 
+        such that no two vowels are consecutive?
         \begin{solution}
-            MINIMIZATION has $12$ letters, with $4$ I's, $2$ M's, and $2$ N's, so it can be 
-            rearranged in $\frac{12!}{4!2!2!}$ ways. Simplifying the factorials yields 
-            $4989600$.
+            Notice that exactly half of the letters are vowels. First, we'll 
+            choose the positions for the vowels. It's easy to see that there are 
+            $7$ ways to choose $6$ non-adjacent positions out of $12$. Now that 
+            we have chosen the positions for the vowels and consonants, we can 
+            count the number of ways to arrange the vowels and consonants 
+            separately. For the vowels, we have one O, four I's, and one A. 
+            There are $6$ ways to choose the position of the O, and $5$ ways to 
+            choose the position of the A, and the rest must be I's. Therefore, 
+            there are $6 \cdot 5 = 30$ ways to order the vowels. For the 
+            consonants, we have two N's, two M's, one T, and one Z. There are 
+            $6!$ ways to arrange six letters, and we divide by $2! \cdot 2!$ to 
+            account for the two pairs of repeated letters. (See the notes for 
+            more details on why we do this.) The number of ways to arrange the 
+            consonants is then $\frac{6!}{2! \cdot 2!} = 180$.
         \end{solution}
-        \item In how many ways can $4$ identical red chips and $2$ identical white chips be 
+    \item In how many ways can $4$ identical red chips and $2$ identical white chips be 
         arranged in a circle?
         \begin{solution}
-            The white chips can either be adjacent, have one red between them, or have two 
-            reds between them. These three are the only ways it can be done!
+            The only thing that matters is the gap between the two white chips. 
+            The white chips can be adjacent, have one red chip between them, or 
+            have two red chips between them. Therefore there are $3$ 
+            arrangements.
         \end{solution}
-    \end{enumerate}
+\end{enumerate}
 \end{document}
