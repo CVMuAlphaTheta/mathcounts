@@ -1,0 +1,86 @@
+\documentclass[twocolumn]{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{flushend}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[group-separator={,}]{siunitx}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Prime and Composite Numbers Set B}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+    \item What is the smallest four-digit number that is divisible by $2, 3, 4, 5,
+        6, 8, 9, \textrm{and} 10$?
+        \begin{solution}
+            The number must end in a zero. Let's assume that to be the smallest, it should
+            start with a $1$. Since the digits must add up to $9$, the last three digits
+            must add up to $9$. $1080$ is the smallest four-digit integer divisible
+            by $2, 3, 4, 5, 6, 8, 9, \text{ and } 10$. \\
+            Consider the prime factorization of the result. You need a $2$ for divisibility
+            by $2$, a $3$ for divisibility by $3$, another $2$ for divisibility by $4$,
+            and a $5$ for divisibility by $5$. The number is already divisible by $6$.
+            Another $2$ must be included for divisibility by $8$, and another $3$ for
+            divisibilty by $9$. The resulting number is already divisible by $10$.
+            That gives us $2^3 \cdot 3^2 \cdot 5 = 360$. We were asked for a four-digit
+            integer, so we need to multiply $360$ by $3$ to get $1080$.
+        \end{solution}
+    \item Using only $1$'s and $2$'s, what is the smallest integer you can create
+        which is divisible by both $3$ and $8$?
+        \begin{solution}
+            The units digit must be $2$. Since $12$ and $22$ don't work, we need a
+            $3$-digit number that is divisible by $8$. $\frac{112}{8} = 14$, but it's
+            not divisible by $3$. Unfortunately, $122$, $212$, and $222$ are not divisible
+            by $8$. We must go to a $4$-digit number that ends in $112$ and whose digit
+            sum is a multiple of $3$. The only $4$-digit number that works is $2112$.
+        \end{solution}
+    \item Each of the digits $0$ through $9$ is used exactly once to create a ten-digit
+        integer. Find the greatest ten-digit number which uses each digit once and is
+        divisible by $8, 9, 10, \textrm{and} 11$.
+        \begin{solution}
+            Start with the largest problem possible \\
+            $(\num{9876543210})$ and modify it as necessary. It is already divisible by
+            $9$ and $10$, but not by $8$ and $11$. For $11$, the digit sum is $45$, so
+            the sum of alternating digits cannot be equal. The difference must be $11$
+            with alternating digit sums of $17$ and $28$. $\num{9876543210}$ has alternating
+            digit sums of $25$ and $20$, so we must increase the digit sum of $9 + 7 + 5
+            + 3 + 1$ to $28$. Trading the $1$ for a $4$ is the best way to do this. Leave
+            the largest five digits in order of the left and the zero on the right. Look
+            for arrangements of the underlined digits which make the number divisible by
+            $8$ while maintaining the alternating digit sums. $98765\underline{24310}$
+            is not divisible by $8$, neither is $98765\underline{23140}$, but
+            $\num{9876513240}$ is.
+        \end{solution}
+    \item What is the sum of the unique prime factors of $9991$?
+        \begin{solution}
+            To find the prime factorization of a number, we can systematically try to divide
+            by primes in the order of the primes. If we get to the square root of a number
+            without finding a prime factor, then we can be sure that the number is prime and
+            we can discontinue the search. The square root of $9991$ is about $99.95$, so we
+            need to check all the $25$ primes less than $99$. They are $2$, $3$, $5$, $7$, $11$,
+            $13$, $17$, $19$, $23$, $29$, $31$, $37$, $41$, $43$, $47$, $53$, $59$, $61$, $67$,
+            $71$, $73$, $79$, $83$, $89$ and $97$. For some of these primes, we have divisibility
+            rules, so we can quickly eliminate $2$, $3$, and $5$ as factors. For most primes,
+            we simply divide by that number and see if the quotient is a whole number. It turns
+            out that $97$ is a divisor of $9991$ and the quotient is $103$, which is also prime.
+            Thereforece, the sum of the unique prime factors of $9991$ is $97 + 103 = 200$.
+        \end{solution}
+    \item What is the largest prime factor $8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 \cdot 3 -
+        6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1$?
+        \begin{solution}
+            The expression is the difference of two products. We can factor $6 \cdot 5 \cdot 4
+            \cdot 3 \cdot 2$ from each product to get $6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot
+            (4 \cdot 7 - 1) = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot (28 - 1) = 6 \cdot 5 \cdot 4
+            \cdot 3 \cdot 2 \cdot 27$. Since $27 = 3 \cdot 3 \cdot 3$ and $6 = 3 \cdot 2$, the
+            largest prime factor of this product is $5$. Alternatively, calculating the products
+            and finding the diffrence, we get $\num{20160} - 720 = \num{19440} = 24 \cdot 35 \cdot 5$.
+            So, the greatest prime factor is $5$.
+        \end{solution}
+\end{enumerate}
+\end{document}
