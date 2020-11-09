@@ -4,76 +4,81 @@
 \usepackage{flushend}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{ulem}
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
+
 \title{More Combinatorics Set B}
 \author{}
 \date{}
 
 \begin{document}
-    \maketitle
-    \begin{enumerate}
-        \item Andrew and Lindsey are seated at a round table with four other people.
-        If everyone is randomly seated, what is the probability that Andrew and 
-        Lindsey are seated next to each other? Express your answer as a common 
-        fraction.
+\maketitle
+\begin{enumerate}
+    \item Less than $50$ people are at a party.
+        Each person \sout{shakes hands with} elbow bumps every other person exactly once.
+        If there is an odd number of total elbow bumps at the party,
+        what is the largest number of people that could be at the party?
         \begin{solution}
-            If these six people were standing in a line, then there would be $6!  
-            = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720$ orders. Since 
-            this is a round table, these same arrangements of people can be 
-            rotated in $6$ different places, so there would seem to be only 
-            $\frac{720}{6} = 120$ seating arrangements. Since we are interested 
-            in seating arrangements with Andrew and Lindsey seated together, 
-            let's imagine that Andrew and Lindsey are stuck together and act as 
-            a single person. Then we have the same situation with five people, 
-            so there are $\frac{5!}{5} = \frac{120}{5}  = 24$ seating 
-            arrangements.  However, we can glue Andrew and Lindsey together in 
-            $2$ different ways, so there are actually $2 \cdot 24 = 48$ seating 
-            arrangements with Andrew and Lindsey seated together.  Therefore, 
-            the probability that they are seated together is $\frac{48}{120} = 
-            \frac{2}{5}$.
+            Let the number of people be $n$,
+            so that the total number of handshakes is $\frac{n(n - 1)}{2}$.
+            For this to be odd, there must be only one factor of $2$ in the product $n(n - 1)$,
+            otherwise the $2$ in the denominator would cancel one $2$, but others would remain to make the number even. Since either $n$ or $n - 1$ must be even,
+            whichever is even must be divisible by $2$ and not $4$.
+            Thus the pairs $48, 48$ and $48, 47$ are ruled out, since $4$ divides $48$.
+            The next smaller pair, $47, 46$, works fine, since $2$ only divides $46$ once.
+            Therefore $n = 47$.
         \end{solution}
-        \item In how many ways can Antoinette give one M\&M each to two children. If she 
-        has $3$ different red, $4$ different brown, and $5$ different tan ones and two
-        children insist upon having M\&Ms of different colors?
+    \item In how many ways can Sean give one M\&M each to two children
+        if he has $3$ different red, $4$ different brown, and $5$ different tan ones
+        and two children insist upon having M\&Ms of different colors?
+        \vspace{3cm}
         \begin{solution}
-            We can separate individual cases, find the number of ways for each, and then
-            add them up. In this problem there are $6$ cases: red-brown, brown-red,
-            red-tan, tan-red, brown-tan, tan-brown. For each red-brown we have $3 \cdot 4
-            = 12$ ways (and the same for brown-red), for red-tan $3 \cdot 5 = 15$ ways
-            (same for tan-red), and for brown-tan $4 \cdot 5 = 20$ ways (same for
-            tan-brown). The total is $2(12 + 15 + 20) = 94$.
+            We can separate individual cases, find the number of ways for each,
+            and then add them up.
+            In this problem there are $6$ cases:
+            red-brown, brown-red, red-tan, tan-red, brown-tan, tan-brown.
+            For each red-brown we have $3 \cdot 4 = 12$ ways (and the same for brown-red),
+            for red-tan $3 \cdot 5 = 15$ ways (same for tan-red),
+            and for brown-tan $4 \cdot 5 = 20$ ways (same for tan-brown).
+            The total is $2(12 + 15 + 20) = 94$.
         \end{solution}
-        \item Palindromes, like $23432$, read the same forward and backward. Find the sum
-        of all four digit positive integer palindromes. (Hint: What is the sum of the
-        first and last four digit palindrome added together?)
+    \item Palindromes, like $23432$, read the same forward and backward.
+        Find the sum of all four digit positive integer palindromes.
+        (Hint: What is the sum of the first and last four digit palindrome added together?)
         \begin{solution}
-            Suppose we list all the palindromes: $\{1001, 1111, 1221, \dots, 9889, 9999\}$.
-            Notice that if we add the first and the last, we get $11000$. The same holds
-            if we add the second and the next-to-last and so on. Each such pair always sums
-            to $11000$. So how many pairs are there? There are ten palindromes starting with
-            each digit from $1$ to $9$, so there are $90$ palindromes. Hence, there are $45$
-            pairs and our desired sum is $45 \cdot 11000 = 495000$.
+            The list of all the palindromes would look like
+            $1001, 1111, 1221, \dots, 9889, 9999$.
+            Notice that if we add the first and the last, we get $11000$.
+            The same holds if we add the second and the next-to-last and so on.
+            Each such pair always sums to $11000$.
+            So how many pairs are there?
+            There are ten palindromes starting with each digit from $1$ to $9$,
+            so there are $90$ palindromes.
+            Hence, there are $45$ pairs and our desired sum is $45 \cdot 11000 = 495000$.
         \end{solution}
-        \item How many of the arrangements of the letters in the word COUNTING contain
-        a double-N?
+    \item How many of the arrangements of the letters in the word COUNTING contain
+        a double N?
         \begin{solution}
-            The restriction requires that the N's be grouped together, so we do just that:
-            treat them as a single letter. There are $7$ letters so we get $^7P_7 = 7! = 
-            5040$.
+            The restriction requires that the N's be grouped together,
+            so we do just that: treat them as a single letter.
+            There are $7$ letters so we get $^7P_7 = 7! = 5040$.
         \end{solution}
-        \item The $54$-member Council for Security and Cooperation in Europe wishes to 
-        choose $3$ member states for different leadership positions. The L lobby decrees that 
-        at least one of Lithuania, Lichtenstein, Latvia, and Luxembourg must be chosen. In 
-        how many ways can the committee be selected?
+    \item The $54$-member Council for Security and Cooperation in Europe wishes to 
+        choose $3$ member states for different leadership positions.
+        The L lobby decrees that at least one of
+        Lithuania, Lichtenstein, Latvia, and Luxembourg must be chosen.
+        In how many ways can the committee be selected?
         \begin{solution}
             The simplest approach is to count the number of choices of the offices
-            \emph{without} choosing any of the L countries. Then there are $50$ states and
-            $3$ different positions, making $50 \cdot 49 \cdot 48$ choices. We wish to
-            subtract the number of committees which can be formed without restriction, or
-            $54 \cdot 53 \cdot 52$. The committees left are those which satisfy the L lobby.
+            \emph{without} choosing any of the L countries.
+            Then there are $50$ states and $3$ different positions,
+            making $50 \cdot 49 \cdot 48$ choices.
+            We wish to subtract the number of committees
+            which can be formed without restriction, or $54 \cdot 53 \cdot 52$.
+            The committees left are those which satisfy the L lobby.
             The result is just $54 \cdot 53 \cdot 52 - 50 \cdot 49 \cdot 48 = 31224$.
         \end{solution}
-    \end{enumerate}
+\end{enumerate}
 \end{document}
