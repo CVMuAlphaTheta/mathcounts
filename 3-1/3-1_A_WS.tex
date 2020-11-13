@@ -1,10 +1,9 @@
-\documentclass[twocolumn]{article}
+\documentclass{article}
 
 \usepackage[margin=0.5in]{geometry}
-\usepackage{flushend}
+\usepackage{multicol}
 \usepackage{amsthm}
 \usepackage{amsmath}
-\usepackage{forest}
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
@@ -15,64 +14,69 @@
 
 \begin{document}
 \maketitle
-\begin{enumerate}
-    \item The greatest common factor of $42$ and $24$ is $m$. What is the least
-        common multiple of $m$ and $15$?
-        \begin{solution}
-            The prime factorization of $42$ is $2 \cdot 3 \cdot 7$ and the prime 
-            factorization of $24$ is $2 \cdot 3 \cdot 4$. So, for $42$ and $24$, 
-            the greatest common factor (GCF) is $2 \cdot 3 = 6$. The prime
-            factorization of $15$ is $3 \cdot 5$. So, the least common multiple
-            (LCM) of $6$ and $15$ is $2 \cdot 3 \cdot 5 = 30$.
-        \end{solution}
-    \item How many odd numbers are factors of $240$?
-        \begin{solution}
-            Begin by looking at the prime factorization of $240$: $240 = 2^4 \cdot
-            3^1 \cdot 5^1$. Any number multiplied by $2$ is even, so the odd factors
-            are the ones that have no $2$'s in their prime factorization. We can only
-            use the $3$'s and $5$'s as factors for a total of $2 \cdot 2 = 4$ factors:
-            $1, 3, 5, \textrm{ and } 15$. 
-        \end{solution}
-    \item How many even numbers are factors of $240$?
-        \begin{solution}
-            Use complementary counting. Count the total number of factors $(20)$ and
-            subtract the number of odd factors $(4)$ from above for a total of $16$
-            even factors. 
-        \end{solution}
-    \item What is the sum of the distinct prime factors of $156$?
-        \begin{solution}
-            One way to arrive at the prime factorization of a number is to repeatedly
-            divide the number and subsequent quotients by the primes in order $2, 3, 5$
-            and so on, until the result is a prime. In this case, we start with $156 \div 2
-            = 78$. This number is even and, therefore, not prime, so we divide $78 \div 2
-            = 39$. Since the result is odd, it is not evenly divisible by $2$, so we divide
-            by the next prime and get $39 \div 3 = 13$, which is prime. This process is
-            depicted in the factor tree shown. Thus, the prime factorization of $156$ is
-            $2 \cdot 2 \cdot 3 \cdot 13$. The sum of the distinct prime factors is $2 + 3 +
-            13 = 18$.
-            \begin{center}
-                \begin{forest}
-                    [156
-                        [2]
-                        [78 [2][39
-                            [3][13]]]
-                    ]     
-                \end{forest}
-            \end{center}
-        \end{solution}
-    \item Let $A = 1$, $B = 2$, $C = 3$, and so on. Call the product value of a word
-        the product of its letter values. For example, the product value of CAT is
-        $3 \cdot 1 \cdot 20 = 60$. The name of which state in the U.S. has a product
-        value of $3105$?
-        \begin{solution}
-            The prime factorization of $3105$ is $3 \cdot 3 \cdot 3 \cdot 5 \cdot 23$. W
-            must be one of the letters of this state, since it's the $23$rd letter of the
-            alphabet and no multiple of $23$ is a letter. Clearly, the other letters can't
-            be C, C, C, and E. So, we have to multiply some factors and see what letters we
-            get. If we use $3 \cdot 3 = 9$ and $3 \cdot 5 = 15$, we get the letters I and O.
-            Now we have three letters: W, I, and O. Since $A = 1$, we have $9 \cdot 15 \cdot
-            23 \cdot 1 = 3105$. These letters can be arranged to spell the name of the state
-            in the U.S. that has a product value of $3105$, which is IOWA.
-        \end{solution}
-\end{enumerate}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item The greatest common factor of $42$ and $24$ is $m$.
+            What is the least common multiple of $m$ and $15$?
+            \begin{solution}
+                The prime factorization of $42$ is $2 \cdot 3 \cdot 7$ and the prime factorization
+                of $24$ is $2 \cdot 3 \cdot 4$.
+                So, for $42$ and $24$, the greatest common factor (GCF) is $2 \cdot 3 = 6$.
+                The prime factorization of $15$ is $3 \cdot 5$.
+                So, the least common multiple (LCM) of $6$ and $15$ is $2 \cdot 3 \cdot 5 =
+                \boxed{30}$.
+            \end{solution}
+        \item How many even numbers are factors of $240$?
+            \begin{solution}
+                The prime factorization of $240$ is $2^4 \cdot 3 \cdot 5$.
+                Therefore, any factor of $240$ is made of zero to four $2$'s, zero or one $3$, and
+                zero or one $5$.
+                In other words, the prime factorization of any factor of $240$ consists of
+                $2$, $3$, and $5$, where the exponent of $2$ is $0$ to $4$, the exponent for $3$
+                is $0$ to $1$, and the exponent for $5$ is $0$ to $1$.
+                The even factors are the ones with at least one $2$ in their prime factorization,
+                so there are $4$ ways to choose the exponent for $2$ since it can be $1$ to $4$,
+                $2$ ways to choose the exponent for $3$,
+                and $2$ ways to choose the exponent for $5$.
+                It follows that the answer is $2 \cdot 2 \cdot 4 = \boxed{16}$.
+            \end{solution}
+        \item Let $A = 1$, $B = 2$, $C = 3$, and so on.
+            Call the product value of a word the product of its letter values.
+            For example, the product value of CAT is $3 \cdot 1 \cdot 20 = 60$.
+            The name of which state in the US has a product value of $3105$?
+            \begin{solution}
+                The prime factorization of $3105$ is $3 \cdot 3 \cdot 3 \cdot 5 \cdot 23$.
+                W must be one of the letters of this state, since it's the $23$rd letter of the
+                alphabet and no multiple of $23$ is a letter.
+                Clearly, the other letters can't be C, C, C, and E.
+                So, we have to multiply some factors and see what letters we get.
+                If we use $3 \cdot 3 = 9$ and $3 \cdot 5 = 15$, we get the letters I and O.
+                Now we have three letters: W, I, and O.
+                Since $A = 1$, we have $9 \cdot 15 \cdot 23 \cdot 1 = 3105$.
+                These letters can be arranged to spell the name of the state in the US
+                that has a product value of $3105$, which is \fbox{IOWA}.
+            \end{solution}
+        \item How many divisors of $3240$ are perfect squares?
+            \begin{solution}
+                The prime factorization of $3240$ is $2^3 \cdot 3^4 \cdot 5$.
+                The numbers which we want to count must have the primes $2$, $3$, and $5$ in their
+                prime factorizations, and the exponent of each prime must be from $0$ to the
+                corresponding exponent in the prime factorization of $3240$.
+                Each exponent must also be even, since this makes the number a perfect square.
+                Therefore, there are $2$ ways to choose the exponent for $2$, $3$ ways to choose
+                the exponent for $3$, and $1$ way to choose the exponent for $6$.
+                This means the answer is $2 \cdot 3 \cdot 1 = \boxed{6}$.
+            \end{solution}
+        \item How many positive divisors of $30!$ are prime?
+            \begin{solution}
+                All primes less than or equal to $30$ are factors of $30!$.
+                No prime greater than $30$ is a factor of $30!$,
+                since $30!$ can be completely factored into numbers less than or equal to $30$.
+                Therefore, the prime divisors of $30!$ are just the primes less than
+                or equal to $30$.
+                There are $\boxed{10}$ such primes:
+                $2$, $3$, $5$, $7$, $11$, $13$, $17$, $19$, $23$, and $29$.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}{2}
 \end{document}
