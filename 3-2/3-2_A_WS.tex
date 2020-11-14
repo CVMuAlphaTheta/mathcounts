@@ -1,0 +1,73 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[group-separator={,}]{siunitx}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+\title{General Number Theory Set A}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item What is the remainder when the absolute difference between $4 \cdot 199$
+        and $7 \cdot 219$ is divided by $3$?
+        \begin{solution}
+            Since we only want the remainder when this difference is divided by $3$,
+            we can make our calculations easier by working with the remainders from the start.
+            We can rewrite $4 \cdot 199$ as $1 \cdot 1 = 1$.
+            In other words, since each of these numbers is $1$ more than a multiple of $3$,
+            their product will be $1$ more than a multiple of $3$.
+            Similarly, we can rewrtie $7 \cdot 219$ as $1 \cdot 0 = 0$.
+            Since the second product is greater than the first, let's subtract the first product from the second product,
+            so our remainder is $0 - 1 = -1$
+            But a remainder of $-1$ when dividing by $3$ is equivalent to a remainder of $2$, since $-1 \equiv 2 \pmod{3}$.
+            So, our remainder is $2$.
+        \end{solution}
+        \item What fraction of positive integer factors of $1000^3$ are perfect squares?
+        Express your answer as a common fraction.
+        \begin{solution}
+            The prime factorization of $1000^3$, or $\num{1000000000}$, is $2^9 \cdot 5^9$.
+            This number has $10 \cdot 10 = 100$ positive factors.
+            To combine these prime factors in ways that produce perfect square factors,
+            we calculate that each of $5$ perfect square powers of $2$ (namely $2^0$, $2^2$, $2^4$, $2^6$ and $2^8$)
+            can be multiplied by each of $5$ perfect square powers of $5$ (namely $5^0$, $5^2$, $5^4$, $5^6$, and $5^8$).
+            That's $5 \cdot 5 = 25$ perfect square factors, which is $\frac{25}{100} = \frac{1}{4}$ of that factors of factors of $1000^3$
+        \end{solution}
+        \item What is the smallest possible integer multiple of $130$ that is divisible by $365$?
+        \begin{solution}
+            We are looking for the least common multiple of $130$ and $365$.
+            The prime factorization of $365$ is $5 \cdot 73$.
+            We know that $130$ has $5$ as a factor, but not $73$.
+            The LCM is $130 \cdot 73 = 9490$.
+        \end{solution}
+        \item When the three-digit number $ABC$ is multiplied by $9$, the result is the four-digit number $1ABC$.
+        What is the three-digit number $ABC$?
+        \begin{solution}
+            The digit $C$ multiplied by $9$ still leaves the digit $C$ in the ones place, so it must be either $0$ or $5$.
+            Zero will not carry anything to the next column, so $C$ has to be $5$ and a digit of $4$ will carry over to the tens column.
+            This means the digit $B$ times $9$ plus the $4$ that was carried has to leave $B$ in the tens place.
+            This works if $B$ is $2$, since $2 \cdot 9 + 4 = 22$, and now a $2$ will carry over to the hundreds column.
+            The digit $A$ times $9$ plus $2$ has to leave the digit $A$ in the hundreds place and only carry a $1$ to the thousands place.
+            This works if $A$ is $1$, since $1 \cdot 9 + 2 = 11$. We have $125 \cdot 9 = 1125$, so the three-digit number $ABC$ is $125$.
+        \end{solution}
+        \item Chase Coutinho has $p$ pennies, $n$ nickels, $d$ dimes and $q$ quarters with a total value of $\$1.08$.
+        If the numbers $p$, $n$, $d$ and $q$ are distinct and positive,
+        and the greatest common divisor of each pair of these numbers is $1$,
+        what is the least possible value of $p + n + d + q$?
+        \begin{solution}
+            Since we know that the quantities are distinct and pairwise relatively prime, the least we can hope for is $1 + 2 + 3 + 5 = 11$.
+            Let's see if we can find a scenario that works with those quantities and totals $\$1.08$.
+            We can start by letting $p = 3$. That leaves $1.08 - 0.03 = \$1.05$ left to make with only nickels, dimes and quarters.
+            If we then let $n = 1$, $d = 5$ and $q = 2$, our total is $\$1.08$.
+            Thus, the least possible value of $p + n + d + q$ is $11$.
+        \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}

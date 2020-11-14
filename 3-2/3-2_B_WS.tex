@@ -1,0 +1,84 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+\title{General Number Theory Set B}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item Syd doubles the $3$-digit number $TWO$ to get the $4$-digit number $FOUR$.
+        Each letter represents a distinct digit, and $O$ represents the digit $7$.
+        What is the $3$-digit number $TWO$?
+        \begin{solution}
+            We are told that $O$ represents the digit $7$.
+            Next, since $7 \cdot 2 = 14$, which has units digit $4$,
+            it follows that $R$ must represent the digit $4$ and that one $10$ will be carried over from the units place.
+            Then, the greatest possible result when a $3$-digit number is doubled is $1998 = 999 \cdot 2$, so $F$ can only represent the digit $1$.
+            Now we need to determine which distinct digits are represented by $T$, $W$ and $U$.
+            It turns out that $T$ must represent $8$ and there must be one $1000$ carried over from the hundreds place.
+            This is confirmed since $2 \cdot 8 + 1 =17$ and $1$ and $7$ are the first to digits of the product.
+            The only digits to choose from for $W$ and $U$ are $3$, $5$, $6$, $8$ and $9$.
+            Since we need to carry one $100$ over from the tens place, $W$ has to represent a digit greater than or equal to $5$.
+            But $2 \cdot 5 +1 = 11$ results in $U$ representing $1$,
+            which cannot be true since the digits are all distinct and we've already determined that $F$ represents the digit $1$.
+            Likewise, if $W$ represents $7$, $8$ or $9$, we end up with digits that are not distinct.
+            So, it must be the case that $W$ represents the digit $6$, in which case $U$ represents the digit $3$, since $6 \cdot 2 +1 = 13$
+            Now that we know what digit each letter represents, we can rewrite the equation $TWO \cdot 2 = FOUR$ as $867 \cdot 2 = 1734$.
+            Therefore, the $3$-digit number represented by $TWO$ is $867$.
+        \end{solution}
+        \item How many positive integers in the set of numbers from $1$ to $1000$, inclusive, multiples of $2$, $3$ and $5$ but not $8$?
+        \begin{solution}
+            Since $2$, $3$ and $5$ are relatively prime, the least common multiple is $2 \cdot 3 \cdot 5 = 30$.
+            From $30$ up to $990$ there are $\frac{960}{30} = 32$ multiples of $30$, $33$ multiples if we include $990$.
+            These are the only integers that are multiples of $4 \cdot 30 = 120$ that are divisible by $8$.
+            There are $8$ of them.
+            That leaves $33 - 8 = 25$ integers.
+        \end{solution}
+        \item If $n$ is the product of three consecutive positive integers and $n = 22 \cdot 14 \cdot k$,
+        what is the least possible value of $k$?
+        \begin{solution}
+            The prime factors of $n$ must include the prime factors of $22$ and $14$, which include $11$ and $7$.
+            These two primes are not close enough together to be among three consecutive integers.
+            Since we know that $n$ is a multiple of $22$, let's consider $21$ and $22$, which are consecutive and have factors $7$ and $11$.
+            We are looking for the least possible value of $k$, a factor of $n$, so let the three consecutive positive integers be $20$, $21$ and $22$.
+            Then their product is $20 \cdot 21 \cdot 22 = 9240$, and $k$ would have to be $\frac{9240}{22 \cdot 14} = 30$.
+        \end{solution}
+        \item Rahul Ilhangovan can arrange his dad's collection of quarters as a rectangular array with $10$ equal rows,
+        $12$ equal rows or $18$ equal rows, using all the quarters in each arrangement.
+        What is the least possible monetary value in dollars of the quarter collection?
+        \begin{solution}
+            The least common multiple (LCM) of $10$, $12$ and $18$ is $180$.
+            The monetary value of $180$ quarters is $\frac{180}{4} = \$45$.
+        \end{solution}
+        \item Maxine secretly chooses a positive integer between $1$ and $2018$, inclusive.
+        Martin wants to identify her number with a series of guesses.
+        Each time Martin makes a guess, Maxine tells him whether his number is correct, too high or too low.
+        With an appropriate strategy, Martin can always identify Maxine's number after at most $n$ guesses.
+        What is the least value of $n$ for which Martin can correctly guess Maxine's number?
+        \begin{solution}
+            The best strategy for Martin to follow can be found by looking at the problem backwards
+            and asking, ``How wide a range of numbers can Martin handle with $g$ guesses?''
+            Suppose he has just $1$ guess. Then clearly he cannot handle any range with more than $1$ number.
+            If he has $2$ guesses, then he can handle the range from $1$ to $3$, inclusive,
+            because he can first guess the middle number, $2$, and if that is not correct,
+            then by knowing whether his guess is too high or too low, he will be able to guess correctly the second time.
+            If he has $3$ guess, then he can handle the range from $1$ to $7$ by initially guessing $4$, again the middle number.
+            If that is wrong, then he has narrowed the range to $3$ numbers and can apply his strategy on that range with his remaining $2$ guesses.
+            The range pattern is $1$, $3$, $7$, $15$, $\dots$.
+            With $g$ guesses, Martin can handle a range of $2^g - 1$ numbers.
+            Because $2^{10} - 1 = 1023$ and $2^11 - 1 = 2047$, $10$ guesses will not be enough to handle the range from $1$ to $2018$, but $11$ guesses will be enough.
+            The strategy is to make a guess right in the middle of the narrowed range at each stage until the range has been narrowed to one number.
+            The answer is $n = 11$.
+        \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}
