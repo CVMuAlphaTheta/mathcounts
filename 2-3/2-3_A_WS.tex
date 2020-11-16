@@ -1,7 +1,7 @@
-\documentclass[twocolumn]{article}
+\documentclass{article}
 
 \usepackage[margin=0.5in]{geometry}
-\usepackage{flushend}
+\usepackage{multicol}
 \usepackage{amsmath}
 \usepackage{amsthm}
 
@@ -14,67 +14,70 @@
 
 \begin{document}
 \maketitle
-\begin{enumerate}
-    \item In how many different ways can a student guess a complete set of 
-        answers to a five-item true/false quiz?
-        \begin{solution}
-            For each question there are $2$ choices, so for all five there are 
-            $2^5 = 32$ choices by the Fundamental Counting Principle.
-        \end{solution}
-    \item How many ways can $5$ books be arranged on a shelf if $2$ of the books 
-        must remain together?
-        \begin{solution}
-            The key here is to realize that the books which must be together may 
-            be treated as a single unit. Within that unit, the books may be in 
-            $2$ different orders (AB or BA) but we can account for that by 
-            simply multiplying by $2$ at the end. We thus have $4$ books (one is 
-            our two-book unit) and these can be arranged in $4! = 24$ ways.  
-            Multiplying by $2$ then yields $48$. (Make sure in your mind that 
-            all configurations are counted, and that none are counted twice!)
-        \end{solution}
-    \item If $n = 100$, find the value of $\frac{(n+1)!}{(n-1)!}$.
-        \begin{solution}
-            We are asked to evaluate $\frac{101!}{99!}$. Remember that $101! = 
-            101 \cdot 100 \cdot 99!$, so $\frac{101!}{99!} = 101 \cdot 100 = 
-            10100$.
-        \end{solution}
-    \item Andrew and Lindsey are seated at a round table with four other people.  
-        If everyone is randomly seated, what is the probability that Andrew and 
-        Lindsey are seated next to each other? Express your answer as a common 
-        fraction.
-        \begin{solution}
-            If these six people were standing in a line, then there would be $6!  
-            = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720$ orders. Since 
-            this is a round table, these same arrangements of people can be 
-            rotated in $6$ different places, so there would seem to be only 
-            $\frac{720}{6} = 120$ seating arrangements. Since we are interested 
-            in seating arrangements with Andrew and Lindsey seated together, 
-            let's imagine that Andrew and Lindsey are stuck together and act as 
-            a single person. Then we have the same situation with five people, 
-            so there are $\frac{5!}{5} = \frac{120}{5}  = 24$ seating 
-            arrangements.  However, we can glue Andrew and Lindsey together in 
-            $2$ different ways, so there are actually $2 \cdot 24 = 48$ seating 
-            arrangements with Andrew and Lindsey seated together.  Therefore, 
-            the probability that they are seated together is $\frac{48}{120} = 
-            \frac{2}{5}$.
 
-            Another way to do this problem would be to imagine randomly 
-            assigning a seat to each person one-by-one. If we assign a seat to 
-            Andrew first, there will be $5$ seats left over, $2$ of which are 
-            next to him. Therefore, if we randomly pick a seat for Lindsey, the 
-            probability which they will be together is $\frac{2}{5}$.
-        \end{solution}
-    \item What is the probability of getting exactly $6$ correctly answers on a 
-        $10$-question true-false test by randomly guessing? Express your answer 
-        as a common fraction.
-        \begin{solution}
-            Each of the $10$ answers has an equal probability of being true and 
-            false, so there are $2^{10} = 1024$ possible outcomes in total.  
-            There are ``$10$ choose $6$'' or $\binom{10}{6} = \frac{10!}{4!  
-            \cdot 6!} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4 \cdot 3 \cdot 2 
-            \cdot 1} = 10 \cdot 3 \cdot 7 = 210$ ways to get exactly $6$ correct 
-            answers.  So, the probability is $\frac{210}{1024} = 
-            \frac{105}{512}$.
-        \end{solution}
-\end{enumerate}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item In how many different ways can a student guess a complete set of 
+            answers to a five-item true/false quiz?
+            \begin{solution}
+                For each question there are $2$ choices, so for all five there are 
+                $2^5 = 32$ choices by the Fundamental Counting Principle.
+            \end{solution}
+        \item How many ways can $5$ books be arranged on a shelf if $2$ of the books 
+            must remain together?
+            \begin{solution}
+                The key here is to realize that the books which must be together may 
+                be treated as a single unit. Within that unit, the books may be in 
+                $2$ different orders (AB or BA) but we can account for that by 
+                simply multiplying by $2$ at the end. We thus have $4$ books (one is 
+                our two-book unit) and these can be arranged in $4! = 24$ ways.  
+                Multiplying by $2$ then yields $48$. (Make sure in your mind that 
+                all configurations are counted, and that none are counted twice!)
+            \end{solution}
+        \item If $n = 100$, find the value of $\frac{(n+1)!}{(n-1)!}$.
+            \begin{solution}
+                We are asked to evaluate $\frac{101!}{99!}$. Remember that $101! = 
+                101 \cdot 100 \cdot 99!$, so $\frac{101!}{99!} = 101 \cdot 100 = 
+                10100$.
+            \end{solution}
+        \item Andrew and Lindsey are seated at a round table with four other people.  
+            If everyone is randomly seated, what is the probability that Andrew and 
+            Lindsey are seated next to each other? Express your answer as a common 
+            fraction.
+            \begin{solution}
+                If these six people were standing in a line, then there would be $6!  
+                = 6 \cdot 5 \cdot 4 \cdot 3 \cdot 2 \cdot 1 = 720$ orders. Since 
+                this is a round table, these same arrangements of people can be 
+                rotated in $6$ different places, so there would seem to be only 
+                $\frac{720}{6} = 120$ seating arrangements. Since we are interested 
+                in seating arrangements with Andrew and Lindsey seated together, 
+                let's imagine that Andrew and Lindsey are stuck together and act as 
+                a single person. Then we have the same situation with five people, 
+                so there are $\frac{5!}{5} = \frac{120}{5}  = 24$ seating 
+                arrangements.  However, we can glue Andrew and Lindsey together in 
+                $2$ different ways, so there are actually $2 \cdot 24 = 48$ seating 
+                arrangements with Andrew and Lindsey seated together.  Therefore, 
+                the probability that they are seated together is $\frac{48}{120} = 
+                \frac{2}{5}$.
+    
+                Another way to do this problem would be to imagine randomly 
+                assigning a seat to each person one-by-one. If we assign a seat to 
+                Andrew first, there will be $5$ seats left over, $2$ of which are 
+                next to him. Therefore, if we randomly pick a seat for Lindsey, the 
+                probability which they will be together is $\frac{2}{5}$.
+            \end{solution}
+        \item What is the probability of getting exactly $6$ correctly answers on a 
+            $10$-question true-false test by randomly guessing? Express your answer 
+            as a common fraction.
+            \begin{solution}
+                Each of the $10$ answers has an equal probability of being true and 
+                false, so there are $2^{10} = 1024$ possible outcomes in total.  
+                There are ``$10$ choose $6$'' or $\binom{10}{6} = \frac{10!}{4!  
+                \cdot 6!} = \frac{10 \cdot 9 \cdot 8 \cdot 7}{4 \cdot 3 \cdot 2 
+                \cdot 1} = 10 \cdot 3 \cdot 7 = 210$ ways to get exactly $6$ correct 
+                answers.  So, the probability is $\frac{210}{1024} = 
+                \frac{105}{512}$.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
 \end{document}
