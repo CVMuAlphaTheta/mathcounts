@@ -1,0 +1,94 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+
+\title{3.2 Notes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+	\section*{Base Numbers}
+	The system for writing numbers that most of us are used to is called base ten, or \textbf{decimal}.
+	It's called base ten because its based on powers of ten.
+	Each digit has ten possible values ($0, 1, 2, 3, 4, 5, 6, 7, 8, 9$), and each digit represents a different power of ten.
+	The units digit represent $10^0$, the tens digit represent $10^1$, the hundreds digit represents $10^2$, and so on.
+	$3861$ in base ten means $3 \cdot 10^3 + 8 \cdot 10^2 + 6 \cdot 10^1 + 1 \cdot 10^0$.
+	It's possible to use other numbers as the base.
+	For example, we can use base seven, where each digit has seven possible values ($0, 1, 2, 3, 4, 5, 6$) and the digits represent powers of seven.
+	We use a subscript to indicate the base of a number.
+	So $5461_7$ means $5 \cdot 7^3 + 4 \cdot 7^2 + 6 \cdot 7^1 + 1 \cdot 7^0 = 1954$ in decimal.
+
+	To convert from a base other than ten to decimal, we just multiply each digit by its corresponding power and add everything up like we just did.
+
+	To convert from decimal to another base, we start with the largest power that is less than or equal to the number, take as many multiples of it as we can, and then repeat this for each of the other digits.
+	For example, to convert $23984$ to base five, we first find the largest power of five that fits, which is $5^6 = 15625$.
+	We can only subtract $15625$ from $23984$ once, so the first digit is $1$.
+	Now we have $23984 - 15625 = 8359$ left over.
+	The next smaller power of five is $5^5 = 3125$, and we can subtract it twice from $8359$, so the second digit is $2$ and we have $8359 - 2 \cdot 3125 = 2109$ left over.
+	We can take $3$ multiples of $5^4 = 625$ from this, and $2109 - 3 \cdot 625 = 234$ is left over.
+	Continuing this process all the way to the units digit, we get $1231414_5$ as the base five representation of $23984$.
+
+	\subsection*{Bases Greater Than Ten}
+	When we use bases greater than ten, we need more than ten digits.
+	We get more digits by using letters, starting from $A$ as the digit $10$, $B$ for $11$, $C$ for $12$, and so on.
+	For example, $5A_{16}$ is $5 \cdot 16 + 10$ in decimal and $A7BD_{17}$ is $10 \cdot 17^3 + 7 \cdot 17^2 + 11 \cdot 17 + 13$.
+
+	\subsection*{Addition}
+	It's possible to add two numbers in the same base without converting them to decimal.
+	We just use the usual long addition method, but we carry differently.
+	To add $123_4$ and $132_4$, we first add the last digit.
+	The sum is $5$, but since we're in base four, it's actually $11_4$, or $1 \cdot 4 + 1$.
+	So the last digit of the sum is $1$ and we carry over a $1$.
+	Then we add the second-to-last digits and the carried $1$ to get $6$, which is $12_4$ in base four, so the second-to-last digit of the sum is $2$ and we again carry a $1$.
+	The first digit is just $3$, so the end result is $321_4$.
+
+	\subsection*{Subtraction}
+	Left as an exercise for the reader.
+
+	\section*{Units Digits}
+	The units digit has some interesting properties.
+	When we add or multiply two numbers together, the units digit of the result only depends on the units digits of the two numbers.
+	Think about the way we add or multiply numbers to see why.
+	If we wanted to find the units digit of $9827948792347 \cdot 91283791872387$, we don't need to evaluate that entire product.
+	We only have to multiply the units digit of the two numbers, which results in $7 \cdot 7 = 49$, so the units digit of the result is $9$.
+	You can use this to eliminate multiple choice answers or to check your work when you're short on time.
+	
+	This property of units digits can also help us discover useful facts.
+	If we square each of the digits, we see that all of the values end in $0$, $1$, $4$, $5$, $6$, or $9$.
+	Therefore, we can conclude that all perfect squares must end in one of these digits, since the last digit of the perfect square only depends on the last digit of its square root and we've checked all the possible values.
+
+	It's important to note that this property of units digits does not apply to exponents.
+	For example, the units digit of $2^7$ is different from the units digit of $2^17$.
+	It does apply to the base though, so the units digit of $2^7$ is the same as the units digit of $12^7$.
+
+	\section*{Modular Arithmetic}
+	\textbf{Modular arithmetic} deals with remainders.
+	In modular arithmetic, there's a positive integer called the \textbf{modulus}.
+	We can divide the set of integers into several groups based on their remainder when divided by the modulus.
+	For example, if the modulus is $5$, then there are $5$ groups, called \textbf{congruence classes}.
+	One class would contain the integers which have a remainder of $0$ when divided by $5$, such as $-10$, $0$, and $15$.
+	Another class would contain the integers which have a remainder of $3$, such as $-7$, $13$, and $18$.
+	Two integers are said to be \textbf{congruent} if they are in the same congruence class.
+	That is, numbers are congruent if their remainders when divided by the modulus is the same.
+	An equivalent way of stating this is that two numbers are congruent if their difference is a multiple of the modulus.
+	We use the $\equiv$ sign to denote congruence, and we indicate the base afterwards like this:
+	\[
+		13 \equiv 18 \pmod{5}
+	\]
+
+
+	Similar to the equals relationship, we can add or multiply the same number to both sides and the congruence will still hold.
+	For example, multiplying both sides of the previous congruence yields $13 \cdot 7 \equiv 126 \pmod{5}$, or $91 \equiv 126 \pmod{5}$, and you can verify that this is indeed true.
+	
+	If $a$ and $b$ are congruent, then $ac$ and $bc$ are also congruent, so if we wanted to evaluate $ac$ modulo some number, we can replace $a$ with any congruent number $b$ and the result will be the same.
+	Lets say we wanted to know the remainder when dividing $293847 \cdot 198798$ by $5$.
+	This is equivalent to finding the value of $r$ from $0$ to $4$ such that $293847 \cdot 198798 \equiv r \pmod{5}$.
+	Since $293847 \equiv 2 \pmod{5}$, we can just replace $293847$ with $2$.
+	Similarly, we can replace $198798$ with its remainder when divided by $5$, which is $3$.
+	Therefore, we now have $2 \cdot 3 \equiv r \pmod{5}$, so our remainder is $1$.
+\end{multicols}
+\end{document}
