@@ -4,70 +4,81 @@
 \usepackage{multicol}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{commath}
 \usepackage[group-separator={,}]{siunitx}
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
+
 \title{General Number Theory Set A}
 \date{}
 \author{}
 
 \begin{document}
 \maketitle
+
 \begin{multicols}{2}
     \begin{enumerate}
-        \item What is the remainder when the absolute difference between $4 \cdot 199$
-        and $7 \cdot 219$ is divided by $3$?
-        \begin{solution}
-            Since we only want the remainder when this difference is divided by $3$,
-            we can make our calculations easier by working with the remainders from the start.
-            We can rewrite $4 \cdot 199$ as $1 \cdot 1 = 1$.
-            In other words, since each of these numbers is $1$ more than a multiple of $3$,
-            their product will be $1$ more than a multiple of $3$.
-            Similarly, we can rewrtie $7 \cdot 219$ as $1 \cdot 0 = 0$.
-            Since the second product is greater than the first, let's subtract the first product from the second product,
-            so our remainder is $0 - 1 = -1$
-            But a remainder of $-1$ when dividing by $3$ is equivalent to a remainder of $2$, since $-1 \equiv 2 \pmod{3}$.
-            So, our remainder is $2$.
-        \end{solution}
+        \item What is the remainder when the absolute difference between $4 \cdot 199$ and $7 \cdot 219$ is divided by $3$?
+            \begin{solution}
+                The remainder when $\abs{4 \cdot 199 - 7 \cdot 219}$ is divided by $3$ is from $0$ to $2$, and it is congruent to $\abs{4 \cdot 100 - 7 \cdot 219}$.
+                So we need to find the value of $x$ such that $0 \leq x < 3$ and $\abs{4 \cdot 199 - 7 \cdot 219} \equiv x \pmod{3}$.
+                First, $7 \cdot 219$ is clearly greater than $4 \cdot 199$, so we have $7 \cdot 219 - 4 \cdot 199 \equiv x \pmod{3}$.
+                The rules of modular arithmetic state that we can replace any of the numbers on the left side with something that it is congruent to and the congruence will still be valid.
+                Therefore, we can replace each of the numbers on the left side with their remainder when divided by $3$, to get $1 \cdot 0 - 1 \cdot 1 \equiv x \pmod{3}$.
+                Therefore, $x \equiv -1 \pmod{3}$, which means $x = 2$.
+
+                Another way to think about this is that when we want to find the remainder of an expression containing addition, subtraction, and/or multiplication (not division), we can replace any number in the expression with its remainder and the result won't change.
+                So if we replace each of the numbers in $7 \cdot 219 - 4 \cdot 199$ with its remainder when divided by $3$, then we get $1 \cdot 0 - 1 \cdot 1 = -1$, and the remainder of $-1$ when divided by $3$ is $\boxed{2}$.
+
+                It's important that we get rid of the absolute value signs before we replace the numbers with their remainders, because the latter step could change the order of the two numbers.
+                If we replaced each number with its remainder first, we would have gotten $\abs{1 \cdot 1 - 1 \cdot 0} = 1$.
+                The right side of the subtraction operation is originally greater than the left side, so when calculating the absolute difference we should subtract $7 \cdot 219$ from $4 \cdot 199$ instead of the other way around.
+                However, after we replace each number with its remainder, $4 \cdot 199$ which becomes $1 \cdot 1$ is greater than $7 \cdot 219$, leading to a wrong answer.
+                We can't replace a number with its remainder when the expression involves absolute value operations.
+            \end{solution}
         \item What fraction of positive integer factors of $1000^3$ are perfect squares?
-        Express your answer as a common fraction.
-        \begin{solution}
-            The prime factorization of $1000^3$, or $\num{1000000000}$, is $2^9 \cdot 5^9$.
-            This number has $10 \cdot 10 = 100$ positive factors.
-            To combine these prime factors in ways that produce perfect square factors,
-            we calculate that each of $5$ perfect square powers of $2$ (namely $2^0$, $2^2$, $2^4$, $2^6$ and $2^8$)
-            can be multiplied by each of $5$ perfect square powers of $5$ (namely $5^0$, $5^2$, $5^4$, $5^6$, and $5^8$).
-            That's $5 \cdot 5 = 25$ perfect square factors, which is $\frac{25}{100} = \frac{1}{4}$ of that factors of factors of $1000^3$
-        \end{solution}
+            Express your answer as a common fraction.
+            \begin{solution}
+                The prime factorization of $1000^3$, or $\num{1000000000}$, is $2^9 \cdot 5^9$.
+                This number has $10 \cdot 10 = 100$ positive factors, since for each of the prime factors, the exponent of $2$ can be from $0$ to $9$ and the exponent for $5$ can also be from $0$ to $9$.
+                When a factor is a perfect square, its prime factorization contains only even exponents.
+                There are $5$ possible even exponents for $2$ ($0$, $2$, $4$, $6$, and $8$) and $5$ possible even exponents for $5$, so there are $5 \cdot 5 = 25$ perfect square factors.
+                The fraction of factors that are perfect squares is $\frac{25}{100} = \boxed{\frac{1}{4}}$.
+            \end{solution}
         \item What is the smallest possible integer multiple of $130$ that is divisible by $365$?
-        \begin{solution}
-            We are looking for the least common multiple of $130$ and $365$.
-            The prime factorization of $365$ is $5 \cdot 73$.
-            We know that $130$ has $5$ as a factor, but not $73$.
-            The LCM is $130 \cdot 73 = 9490$.
-        \end{solution}
+            \begin{solution}
+                ``The smallest possible integer multiple of $130$ that is divisible by $365$'' is just a fancy way of describing the least common multiple of $130$ and $365$.
+                The prime factorization of $365$ is $5 \cdot 73$, and the prime factorization of $130$ is $2 \cdot 5 \cdot 13$.
+                Therefore, the LCM is $2 \cdot 5 \cdot 13 \cdot 73 = 9490$.
+                
+                We can also use the Euclidean algorithm to find the GCD first, and then use that to find the LCM:
+                \[
+                    365 \quad 130 \quad 105 \quad 25 \quad 5 \quad 0
+                \]
+                The GCD is $5$, so the LCM is $\frac{130 \cdot 365}{5} = \boxed{9490}$.
+            \end{solution}
         \item When the three-digit number $ABC$ is multiplied by $9$, the result is the four-digit number $1ABC$.
-        What is the three-digit number $ABC$?
-        \begin{solution}
-            The digit $C$ multiplied by $9$ still leaves the digit $C$ in the ones place, so it must be either $0$ or $5$.
-            Zero will not carry anything to the next column, so $C$ has to be $5$ and a digit of $4$ will carry over to the tens column.
-            This means the digit $B$ times $9$ plus the $4$ that was carried has to leave $B$ in the tens place.
-            This works if $B$ is $2$, since $2 \cdot 9 + 4 = 22$, and now a $2$ will carry over to the hundreds column.
-            The digit $A$ times $9$ plus $2$ has to leave the digit $A$ in the hundreds place and only carry a $1$ to the thousands place.
-            This works if $A$ is $1$, since $1 \cdot 9 + 2 = 11$. We have $125 \cdot 9 = 1125$, so the three-digit number $ABC$ is $125$.
-        \end{solution}
+            What is the three-digit number $ABC$?
+            \begin{solution}
+                The digit $C$ multiplied by $9$ still leaves the digit $C$ in the ones place, so it must be either $0$ or $5$.
+                If $A$ is greater than $2$, then the first digit will be greater than $1$.
+                If $A$ is $2$, then we will need a carry in order to make the hundreds digit of the result $2$, which would again make the first digit greater than $1$.
+                Therefore, $A$ must be $1$.
+                $1 \cdot 9 = 9$, so we need a carry of $2$ from the tens digit in order to make the first two digits $11$.
+                If $C = 0$, then $B$ must be $0$ or $5$, which doesn't work, so $C$ must be $5$.
+                This results in $4$ being carried to the tens place, so $B$ must be $2$ in order to carry $2$ to the hundreds place.
+                So the answer is $\boxed{125}$, and we can verify that multiplying it by $9$ results in $1125$.
+            \end{solution}
         \item Chase Coutinho has $p$ pennies, $n$ nickels, $d$ dimes and $q$ quarters with a total value of $\$1.08$.
-        If the numbers $p$, $n$, $d$ and $q$ are distinct and positive,
-        and the greatest common divisor of each pair of these numbers is $1$,
-        what is the least possible value of $p + n + d + q$?
-        \begin{solution}
-            Since we know that the quantities are distinct and pairwise relatively prime, the least we can hope for is $1 + 2 + 3 + 5 = 11$.
-            Let's see if we can find a scenario that works with those quantities and totals $\$1.08$.
-            We can start by letting $p = 3$. That leaves $1.08 - 0.03 = \$1.05$ left to make with only nickels, dimes and quarters.
-            If we then let $n = 1$, $d = 5$ and $q = 2$, our total is $\$1.08$.
-            Thus, the least possible value of $p + n + d + q$ is $11$.
-        \end{solution}
+            If the numbers $p$, $n$, $d$ and $q$ are distinct and positive, and the greatest common divisor of each pair of these numbers is $1$, what is the least possible value of $p + n + d + q$?
+            \begin{solution}
+                Since we know that the quantities are distinct and pairwise relatively prime, the least we can hope for is $1 + 2 + 3 + 5 = 11$.
+                Let's see if we can find a scenario that works with those quantities and totals $\$1.08$.
+                We can start by letting $p = 3$. That leaves $1.08 - 0.03 = \$1.05$ left to make with only nickels, dimes and quarters.
+                If we then let $n = 1$, $d = 5$ and $q = 2$, our total is $\$1.08$.
+                Thus, the least possible value of $p + n + d + q$ is $\boxed{11}$.
+            \end{solution}
     \end{enumerate}
 \end{multicols}
 \end{document}
