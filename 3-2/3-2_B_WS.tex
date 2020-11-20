@@ -7,12 +7,14 @@
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
+
 \title{General Number Theory Set B}
 \date{}
 \author{}
 
 \begin{document}
 \maketitle
+
 \begin{multicols}{2}
     \begin{enumerate}
         \item Syd doubles the $3$-digit number $TWO$ to get the $4$-digit number $FOUR$.
@@ -20,64 +22,69 @@
         What is the $3$-digit number $TWO$?
         \begin{solution}
             We are told that $O$ represents the digit $7$.
-            Next, since $7 \cdot 2 = 14$, which has units digit $4$,
-            it follows that $R$ must represent the digit $4$ and that one $10$ will be carried over from the units place.
+            Next, $7 \cdot 2 = 14$, which has units digit $4$, so $R$ must represent the digit $4$ and that $1$ will be carried over to the tens place.
             Then, the greatest possible result when a $3$-digit number is doubled is $1998 = 999 \cdot 2$, so $F$ can only represent the digit $1$.
             Now we need to determine which distinct digits are represented by $T$, $W$ and $U$.
-            It turns out that $T$ must represent $8$ and there must be one $1000$ carried over from the hundreds place.
-            This is confirmed since $2 \cdot 8 + 1 =17$ and $1$ and $7$ are the first to digits of the product.
+            The hundreds digit of $FOUR$ is $7$, which means $T = 8$, because the carry from the tens digit is at most $1$.
             The only digits to choose from for $W$ and $U$ are $3$, $5$, $6$, $8$ and $9$.
-            Since we need to carry one $100$ over from the tens place, $W$ has to represent a digit greater than or equal to $5$.
-            But $2 \cdot 5 +1 = 11$ results in $U$ representing $1$,
-            which cannot be true since the digits are all distinct and we've already determined that $F$ represents the digit $1$.
+            Since we need to carry $1$ from the tens place to the hundreds place, $W$ has to represent a digit greater than or equal to $5$.
+            But $2 \cdot 5 + 1 = 11$ results in $U$ representing $1$, which doesn't work out since the digits are all distinct and we've already determined that $F$ represents the digit $1$.
             Likewise, if $W$ represents $7$, $8$ or $9$, we end up with digits that are not distinct.
-            So, it must be the case that $W$ represents the digit $6$, in which case $U$ represents the digit $3$, since $6 \cdot 2 +1 = 13$
+            So, it must be the case that $W$ represents the digit $6$, in which case $U$ represents the digit $3$, since $6 \cdot 2 + 1 = 13$
             Now that we know what digit each letter represents, we can rewrite the equation $TWO \cdot 2 = FOUR$ as $867 \cdot 2 = 1734$.
-            Therefore, the $3$-digit number represented by $TWO$ is $867$.
+            Therefore, the $3$-digit number represented by $TWO$ is $\boxed{867}$.
         \end{solution}
         \item How many positive integers in the set of numbers from $1$ to $1000$, inclusive, multiples of $2$, $3$ and $5$ but not $8$?
         \begin{solution}
+            The numbers which are multiples of $2$, $3$, and $5$ are the multiples of the LCM of $2$, $3$, and $5$.
             Since $2$, $3$ and $5$ are relatively prime, the least common multiple is $2 \cdot 3 \cdot 5 = 30$.
-            From $30$ up to $990$ there are $\frac{960}{30} = 32$ multiples of $30$, $33$ multiples if we include $990$.
-            These are the only integers that are multiples of $4 \cdot 30 = 120$ that are divisible by $8$.
-            There are $8$ of them.
-            That leaves $33 - 8 = 25$ integers.
+            The multiples of $30$ from $1$ to $1000$ are $1 \cdot 30 = 30$, $2 \cdot 30 = 60$, all the way to $33 \cdot 30 = 990$, so there are $33$ of them.
+            We need to subtract out the numbers included here which are multiples of $8$.
+            The numbers which are multiples of both $30$ and $8$ are the multiples of the LCM of $30$ and $8$, which is $120$.
+            The largest multiple of $120$ less than $1000$ is $120 \cdot 8 = 960$, so we need to subtract $8$ from $33$ to get $\boxed{25}$.
         \end{solution}
         \item If $n$ is the product of three consecutive positive integers and $n = 22 \cdot 14 \cdot k$,
         what is the least possible value of $k$?
         \begin{solution}
-            The prime factors of $n$ must include the prime factors of $22$ and $14$, which include $11$ and $7$.
-            These two primes are not close enough together to be among three consecutive integers.
-            Since we know that $n$ is a multiple of $22$, let's consider $21$ and $22$, which are consecutive and have factors $7$ and $11$.
-            We are looking for the least possible value of $k$, a factor of $n$, so let the three consecutive positive integers be $20$, $21$ and $22$.
-            Then their product is $20 \cdot 21 \cdot 22 = 9240$, and $k$ would have to be $\frac{9240}{22 \cdot 14} = 30$.
+            $k$ is proportional to $n$, so if we want to minimize $k$, we should minimize $n$.
+            The prime factorization of $n$ must include the prime factorization of $22 \cdot 14$, which is $2^2 \cdot 7 \cdot 11$.
+            If we had one number that is a multiple of both $11$ and $7$, that would make $n$ at least $75 \cdot 76 \cdot 77$, which is probably bigger than necessary.
+            Therefore, we should have one number that's a multiple of $11$ and another number that's a multiple of $7$.
+            $21$ and $22$ are smallest two such numbers that are close enough together, and $20$ is conveniently a multiple of $4$, the remaining factor of $22 \cdot 14$ besides $7$ and $11$.
+            Their product is $20 \cdot 21 \cdot 22 = 9240$, so $k$ would have to be $\frac{9240}{22 \cdot 14} = \boxed{30}$.
         \end{solution}
         \item Rahul Ilhangovan can arrange his dad's collection of quarters as a rectangular array with $10$ equal rows,
         $12$ equal rows or $18$ equal rows, using all the quarters in each arrangement.
         What is the least possible monetary value in dollars of the quarter collection?
         \begin{solution}
+            The number of quarters must be a multiple of $10$, $12$, and $18$.
             The least common multiple (LCM) of $10$, $12$ and $18$ is $180$.
-            The monetary value of $180$ quarters is $\frac{180}{4} = \$45$.
+            The monetary value of $180$ quarters is $\frac{180}{4} = \boxed{\$45}$.
         \end{solution}
         \item Maxine secretly chooses a positive integer between $1$ and $2018$, inclusive.
         Martin wants to identify her number with a series of guesses.
         Each time Martin makes a guess, Maxine tells him whether his number is correct, too high or too low.
         With an appropriate strategy, Martin can always identify Maxine's number after at most $n$ guesses.
-        What is the least value of $n$ for which Martin can correctly guess Maxine's number?
+        What is the least value of $n$ such that Martin can always correctly guess Maxine's number?
         \begin{solution}
             The best strategy for Martin to follow can be found by looking at the problem backwards
             and asking, ``How wide a range of numbers can Martin handle with $g$ guesses?''
             Suppose he has just $1$ guess. Then clearly he cannot handle any range with more than $1$ number.
-            If he has $2$ guesses, then he can handle the range from $1$ to $3$, inclusive,
-            because he can first guess the middle number, $2$, and if that is not correct,
-            then by knowing whether his guess is too high or too low, he will be able to guess correctly the second time.
-            If he has $3$ guess, then he can handle the range from $1$ to $7$ by initially guessing $4$, again the middle number.
+            If he has $2$ guesses, then he can handle the range from $1$ to $3$, inclusive.
+            He can first guess $2$, and if that's not correct, he will know if its $1$ or $3$ and be able to guess it correctly next time.
+            If he has $3$ guesses, then he can handle the range from $1$ to $7$ by initially guessing $4$, again the middle number.
             If that is wrong, then he has narrowed the range to $3$ numbers and can apply his strategy on that range with his remaining $2$ guesses.
-            The range pattern is $1$, $3$, $7$, $15$, $\dots$.
+            The pattern for the maximum range that can be handled with a given number of guesses is $1$, $3$, $7$, $15$, $\dots$.
             With $g$ guesses, Martin can handle a range of $2^g - 1$ numbers.
             Because $2^{10} - 1 = 1023$ and $2^11 - 1 = 2047$, $10$ guesses will not be enough to handle the range from $1$ to $2018$, but $11$ guesses will be enough.
             The strategy is to make a guess right in the middle of the narrowed range at each stage until the range has been narrowed to one number.
-            The answer is $n = 11$.
+            The answer is $n = \boxed{11}$.
+
+            To be $100\%$ sure that the pattern is $2^g - 1$, we can prove it using mathematical induction.
+            If the maximum range for $g$ guesses is $x$, then the maximum range for $g + 1$ guesses is $2x + 1$, since we can have double the range for $g$ guesses plus the number in the middle that we guess first.
+            The pattern works for $g = 1$, since $2^1 - 1 = 1$.
+            If we assume that the maximum range for some $g$ is $2^g - 1$, then the maximum range for $g + 1$ is $2(2^g - 1) + 1 = 2^{g + 1} - 1$, so the maximum range for $g$ guess is $2^g - 1$ for all $g$ by induction.
+            We will probably learn more about mathematical induction when we get to the unit on proofs.
         \end{solution}
     \end{enumerate}
 \end{multicols}
