@@ -1,0 +1,59 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsthm}
+\usepackage{amsmath}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Triangles Set A}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item What is the area of an isosceles triangle that has a base length of $12$ units and base angle measuring $30^{\circ}$?
+            Express your answer in simplest radical form.
+            \begin{solution}
+               If we drop an altitude from the vertex opposite the base, which has length $12$ units, then we create two $30$-$60$-$90$ right triangles.
+               Both triangles have a longer leg of length $\frac{12}{2} = 6$ units and a shorter leg of length $\frac{6}{\sqrt{3}} = \frac{6}{\sqrt{3}} \cdot \frac{\sqrt{3}}{\sqrt{3}} = \frac{6\sqrt{3}}{3} = 2\sqrt{3}$ units.
+               Since the shorter leg is also the altitude of the original isosceles triangle, it follows that the triangle has area $\frac{1}{2} \cdot 12 \cdot 2\sqrt{3} = 12\sqrt{3}$ units$^{2}$. 
+            \end{solution}
+        \item If in $\triangle ABC$, $\angle A + \angle B = 90^{\circ}$, $AC = 4$, and $AB = 5$, what is $BC$?
+            \begin{solution}
+                Since $\angle A + \angle B = 90^{\circ}$, we know that $\angle C = 90^{\circ}$, so we can apply the Pythagorean Theorem: $4^2 + (BC)^2 = 5^2$, so $BC = 3$.
+            \end{solution}
+        \item A $25$-foot ladder is placed against a vertical wall.
+            The foot of the ladder is $7$ feet from the base of the wall.
+            If the top of the ladder slips $4$ feet, then how far will the foot slide?
+            \begin{solution}
+                From the Pythagorean Theorem, the top of the ladder was originally $\sqrt{25^2 - 7^2} = 24$ feet from the base.
+                After sliding, it is $20$ feet from the base, so the foot of the ladder is $\sqrt{25^2 - 20^2} = 15$ feet from the base of the wall.
+                Thus the foot of the ladder slid $8$ feet.
+            \end{solution}
+        \item Find the area of $\triangle ABC$ if $AB = AC = 50$ and $BC = 80$
+            \begin{solution}
+                Since the triangle is isosceles, the altitude $AX$ to side $BC$ bisects $BC$.
+                Thus, from the Pythagorean Theorem on the right triangle $ABX$, we find $AX = 30$, so $ABC = \frac{BC \cdot AX}{2} = \frac{80 \cdot 30}{2} = 1200$ squared units.
+            \end{solution}
+        \item Find the length $AC$ in the regular hexagon $ABCDEF$ if the perimeter of the hexagon is $24$ cm.
+            \begin{solution}
+                If the perimeter is $24$ cm, the side length is $4$ cm.
+                Let's name one angle of the hexagon $\angle ABC$.
+                The sum of the angles of polygons with $n$ sides is $180(n - 2)$, thus the sum of the angles in a hexagon is $720^{\circ}$.
+                Because this is a regular hexagon, we can divide $720$ by the number of angles to find the degree of each interior angle.
+                $\angle ABC$ is $120^{\circ}$.
+                Drawing a line between $A$ and $C$, we've created an isosceles triangle $\triangle ABC$.
+                We can conclude that $\angle A and \angle C$ are both $30^{\circ}$ using the triangle angle sum theorem.
+                By dropping an altitude from vertex $B$ to line $AC$, we create two $30$-$60$-$90$ triangles.
+                $AB$ and $BC$ equal $4$, so $BX$ equals $2$, and $AX$ and $CX$ both equal $2\sqrt{3}$.
+                The sum of $AX$ and $CX$ equals the length of $AC$, or $4\sqrt{3}$.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}
