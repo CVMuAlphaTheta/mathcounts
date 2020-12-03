@@ -1,0 +1,45 @@
+\documentclass{article}
+
+\usepackage{siunitx}
+\usepackage{graphicx}
+
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }%
+}
+\makeatother
+
+\title{4-1 B Hints}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+	\item Use the inscribed angle theorem to find $m\angle BAQ$ and $m\angle DCQ$.
+		Then find $m\angle PAQ$ and $m\angle PCQ$.
+		Lastly, use the quadrilateral angle sum to find the sum of $\angle P$ and $\angle Q$.
+	\item The area of a regular hexagon with side length $a$ is $\frac{3\sqrt{3}}{2}a^2$.
+		You can derive this from the area of an equilateral triangle, which is $\frac{\sqrt{3}}{4}a^2$ if $a$ is the side length.
+	\item Draw a line from $D$ to $A$.
+		Use the inscribed angle theorem to find $m\angle ADC$ and $m\angle DAC$.
+		Then use the triangle angle sum.
+	\item The three radii of the incircle shown divides the triangle into two kites and a square.
+		Mark the equal sides of the kites and consider the difference between the length of the hypotenuse (side opposing the right angle) and the sum of the lengths of the two legs (sides which form the right angle).
+	\item Find the measure of $\arc{XWZ}$ (the arc from $X$ to $Z$ passing through $W$), then subtract from $\ang{360}$ to find the measure of the arc $\arc{XYZ}$.
+		Then use the inscribed angle theorem to find $m\angle XWZ$.
+		A consequence of the inscribed angle theorem is that opposing angles of a quadrilateral inscribed inside a circle are supplementary.
+\end{enumerate}
+\end{document}
