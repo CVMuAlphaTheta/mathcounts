@@ -2,8 +2,26 @@
 
 \usepackage[margin=0.5in]{geometry}
 \usepackage{multicol}
-\usepackage{arcs}
 \usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }%
+}
+\makeatother
 
 \title{Plane Geometry Set B}
 \date{}
@@ -15,7 +33,7 @@
 Remember to explain how you solved a problem.
 \begin{multicols}{2}
     \begin{enumerate}
-        \item Points $A$, $B$, $Q$, $D$, and $C$ lie on the circle shown and the measures of arcs $\stackrel{\mbox{\large$\frown$}}{BQ}$ and $\stackrel{\mbox{\large$\frown$}}{QD}$ are $42^{\circ}$ and $38^{\circ}$ respectively.
+        \item Points $A$, $B$, $Q$, $D$, and $C$ lie on the circle shown and the measures of arcs $\arc{BQ}$ and $\arc{QD}$ are $\ang{42}$ and $\ang{38}$ respectively.
             What is the sum of angles $P$ and $Q$?
             \begin{center}
                 \begin{tikzpicture}
@@ -31,7 +49,7 @@ Remember to explain how you solved a problem.
             The total area enclosed by Kent's drawing can be expressed in simplest radical form, in terms of $\pi$, as $(a \cdot \sqrt{b} + c\pi)$.
             What is the value of $\frac{a}{b} + c$?
             \vspace{3cm}
-        \item In the figure, if arc $\stackrel{\mbox{\large$\frown$}}{AB} = 60^{\circ}$ and arc $\stackrel{\mbox{\large$\frown$}}{DE} = 40^{\circ}$, then what is $\angle ACD$?
+        \item In the figure, if arc $m\arc{AB} = \ang{60}$ and arc $m\arc{DE} = \ang{40}$, then what is $m\angle ACD$?
             \begin{center}
                 \begin{tikzpicture}
                     \draw (0,0) circle (1.5cm);
@@ -41,8 +59,8 @@ Remember to explain how you solved a problem.
                     \coordinate[label=above left:E] (E) at (110:1.5);
                     \draw (A) -- (E) (B) -- (D);
                     \coordinate[label=below left:C] (C) at (intersection of A--E and B--D);
-                    \draw (92:1.8) node {$40^{\circ}$};
-                    \draw (360:1.9) node {$60^{\circ}$};
+                    \draw (92:1.8) node {$\ang{40}$};
+                    \draw (360:1.9) node {$\ang{60}$};
                 \end{tikzpicture}
             \end{center}
             \vspace{3cm}
@@ -62,8 +80,8 @@ Remember to explain how you solved a problem.
                 \end{tikzpicture}
             \end{center}
             \vspace{3cm}
-        \item Convex quadrilateral $WXYZ$ is inscribed in a circe.
-            If m$\angle XYZ = 54^{\circ}$, what is the degree measure of $XWZ$?
+        \item Convex quadrilateral $WXYZ$ is inscribed in a circle.
+            If $m\angle XYZ = \ang{54}$, what is the degree measure of $XWZ$?
             \vspace{3cm}
     \end{enumerate}
 \end{multicols}
