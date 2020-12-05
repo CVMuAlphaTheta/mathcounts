@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+\title{Polygons Set A}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item In parallelogram $ABCD$, diagonals $AC$ and $BD$ intersect at $E$.
+            If $AE = 2x + 9$ and $CE = 5x$, what is the length of diagonal $AC$?
+            \begin{solution}
+                The diagonals of a parallelogram bisect each other, so the length of $AE$ and $CE$ must be equal.
+                Solving for $2x + 9 = 5x$, we get $x = 3$, so $AE = CE = 15$ and $AC = 30$.
+            \end{solution}
+        \item What is the interior angle measure of a regular $15$-gon?
+            Solve using two methods.
+            \begin{solution}
+                The exterior angle measure is easiest to find: $\frac{360}{15} = 24$, so the interior angle is its supplement $\ang{156}$.
+                Alternatively, apply the equation $\frac{180(n - 2)}{n}$ to get the same result.
+            \end{solution}
+        \item What is the area of a triangle with integer side lengths and a perimeter of $8$ cm?
+            \begin{solution}
+                Consider the combinations of the integers that add up to $8$: $1 + 1 + 6$, $1 + 2 + 5$, $1 + 3 + 4$, $2 + 2+ 4$, $2 + 3 + 3$.
+                According to the Triangle Inequality, only one of these sets of integers can be the lengths of the sides of a triangle: $2, 3$, and $3$.
+                The altitude of this isosceles triangle meets the base at a right angle, so we can use the Pythagorean theorem to find the height $3^2 -1^2 = h^2$, so $h = \sqrt{8} = 2\sqrt{2}$ and the area is $1 \cdot 2\sqrt{2} = 2\sqrt{2}$.
+            \end{solution}
+        \item What is the smallest angle which can be created by connecting three vertices of a regular $36$-gon?
+            \begin{solution}
+                Connecting two adjacent points to any other vertex will create a $\ang{5}$ angle.
+            \end{solution}
+        \item In isosceles triangle $ABC$, $m\angle A = \ang{96}$.
+            What is the $m\angle B$?
+            \begin{solution}
+                At $\ang{96}$, $\angle A$ cannot be a base angle of an isosceles triangle.
+                Thus $\angle B$ and $\angle C$ are base angles, each measuring $\ang{42}$.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}

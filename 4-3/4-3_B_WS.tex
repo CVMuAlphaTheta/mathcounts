@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+\title{Polygons Set B}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item The angle measures of a scalene triangle, are $x$, $2x$ and $2x + 15$.
+            What is the measure of the smallest angle?
+            \begin{solution}
+                A triangle has a total interior angle of $\ang{180}$, therefore $(x) + (2x) + (2x +15)$ must equal $\ang{180}$.
+                Since the problem is asking for the smallest side, solve for $x$.
+                $5x + 15 = 180$, or $x = \ang{33}$.
+            \end{solution}
+        \item A polygon has $11$ sides and $10$ congruent $\ang{150}$ interior angles.
+            What is the measure of its largest exterior angle?
+            \begin{solution}
+                Because there are ten $\ang{150}$ interior angles, there are ten $\ang{30}$ exterior angles for a total of $\ang{300}$.
+                For the exterior angle sum to equal $\ang{360}$, the remaining exterior angle must measure $\ang{60}$, which is also the largest exterior angle.
+            \end{solution}
+        \item In parallelogram $ABCD$, diagonal $AC$ is twice the length of diagonal $BD$.
+            The perimeter of triangle $ABC$ is $21$ cm and the perimeter of triangle $BCD$ is $17$ cm.
+            What is the perimeter of parallelogram $ABCD$?
+            \begin{solution}
+                Triangles $ABC$ and $BCD$ share two side lengths ($AB = CD$ and $BC = BC$), so the difference in their perimeters $(4)$, is the difference between the lengths of $BD$ and $AC$, making $BD + 4 = AC$.
+                We know that $AC$ is twice the length of $BD$, so $BD = 4$, and $AC = 8$, making $AB + BC = BC + CD = 13$.
+                The perimeter of the parallelogram is twice that: $26$ cm.
+            \end{solution}
+        \item Regular octagon $ABCDEFGH$ has side length $2$ cm.
+            Find the area of square $ACEG$.
+            \begin{solution}
+                To find the area of the square, we will begin by finding the length of $AE$ (the diagonal length of the square) using the Pythagorean theorem with right triangle $AFE$.
+                The height of octagon $(AF)$ is equal to $2 + 2\sqrt{2}$.
+                Read the solution to problem $5$ in the Special Right Triangles Worksheet if you do not know how we have derived this number.
+                $FE = 2$.
+                By the Pythagorean Theorem: $2^2 + (2 + 2\sqrt{2})^2 = (AE)^2$, so $8\sqrt{2} + 16 = (AE)^2$.
+                $(AE)^2 = (AC)^2 + (CE)^2$, therefore $(AE)^2 = 2(AC)^2$.
+                We are trying to find the area of the square $(AC)^2 = \frac{(AE)^2}{2} = \frac{8\sqrt{2} + 16}{2} = 4\sqrt2 + 8$ cm$^2$.
+            \end{solution}
+        \item Four angles in a quadrilateral form an arithmetic sequence whose common difference is $28$.
+            What is the measure of the largest angle?
+            \begin{solution}
+                The angles can be expressed as an arithmetic sequence of $x, x + 28, x + 2(28), x + 3(28)$.
+                Solving for $x$, we get that the smallest angle is $\ang{48}$.
+                However the question is not asking for $x$, it is asking for the largest side which is $x + 3(28)$.
+                The largest angle is $\ang{132}$.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}
