@@ -5,6 +5,25 @@
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{siunitx}
+
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }%
+}
+\makeatother
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
@@ -17,7 +36,7 @@
 
 \begin{multicols}{2}
     \begin{enumerate}
-        \item Points $A$, $B$, $Q$, $D$, and $C$ lie on the circle shown and the measures of arcs $\stackrel{\mbox{\large$\frown$}}{BQ}$ and $\stackrel{\mbox{\large$\frown$}}{QD}$ are $42^{\circ}$ and $38^{\circ}$ respectively.
+        \item Points $A$, $B$, $Q$, $D$, and $C$ lie on the circle shown and the measures of arcs $\arc{BQ}$ and $\arc{QD}$ are $\ang{42}$ and $\ang{38}$ respectively.
             What is the sum of angles $P$ and $Q$?
             \begin{center}
                 \begin{tikzpicture}
@@ -29,9 +48,9 @@
                 \end{tikzpicture}
             \end{center}
             \begin{solution}
-                As the angle formed by two secants, $\angle P = \frac{\stackrel{\mbox{\large$\frown$}}{BD} - \stackrel{\mbox{\large$\frown$}}{AC}}{2}$.
-                As an inscribed angle, $\angle Q = \frac{\stackrel{\mbox{\large$\frown$}}{AC}}{2}$.
-                Thus, $\angle P + \angle Q = \frac{\stackrel{\mbox{\large$\frown$}}{BD}}{2} = \frac{\stackrel{\mbox{\large$\frown$}}{BQ} + \stackrel{\mbox{\large$\frown$}}{QD}}{2} = \frac{42^{\circ} + 38^{\circ}}{2} = 40^{\circ}$.
+                As the angle formed by two secants, $\angle P = \frac{\arc{BD} - \arc{AC}}{2}$.
+                As an inscribed angle, $\angle Q = \frac{\arc{AC}}{2}$.
+                Thus, $\angle P + \angle Q = \frac{\arc{BD}}{2} = \frac{\arc{BQ} + \arc{QD}}{2} = \frac{\ang{42} + \ang{38}}{2} = \ang{40}$.
             \end{solution}
         \item Kent draws a regular hexagon of side length $4$ cm and then draws a semicircle outward along each side.
             The total area enclosed by Kent's drawing can be expressed in simplest radical form, in terms of $\pi$, as $(a \cdot \sqrt{b} + c\pi)$.
@@ -50,7 +69,7 @@
                     \begin{tikzpicture}
                         \foreach \name /\startangle in {a/0,b/60,c/120,d/180,e/240,f/300}
                             \coordinate (\name) at (\startangle:1); 
-                        \coordinate[label=below:{\tiny $60^{\circ}$}] (g) at (270:0.15);
+                        \coordinate[label=below:{\tiny $\ang{60}$}] (g) at (270:0.15);
                         \draw (a) -- (b) -- (c) -- (d) -- (e) -- node[midway, above] {\tiny $4$} (f) -- cycle;
                         \draw (e) -- node[near start, below] {\tiny $2$} (f);
                         \draw (e) -- node[near end, below] {\tiny $2$} (f);
@@ -62,7 +81,7 @@
                     \end{tikzpicture}
                 \end{center}
             \end{solution}
-        \item In the figure, if arc $\stackrel{\mbox{\large$\frown$}}{AB} = 60^{\circ}$ and arc $\stackrel{\mbox{\large$\frown$}}{DE} = 40^{\circ}$, then what is $\angle ACD$?
+        \item In the figure, if arc $\arc{AB} = \ang{60}$ and arc $\arc{DE} = \ang{40}$, then what is $\angle ACD$?
             \begin{center}
                 \begin{tikzpicture}
                     \draw (0,0) circle (1.5cm);
@@ -72,13 +91,13 @@
                     \coordinate[label=above left:E] (E) at (110:1.5);
                     \draw (A) -- (E) (B) -- (D);
                     \coordinate[label=below left:C] (C) at (intersection of A--E and B--D);
-                    \draw (92:1.8) node {$40^{\circ}$};
-                    \draw (360:1.9) node {$60^{\circ}$};
+                    \draw (92:1.8) node {$\ang{40}$};
+                    \draw (360:1.9) node {$\ang{60}$};
                 \end{tikzpicture}
             \end{center}
             \begin{solution}
-                Since $\angle ABC$ is one-half the sum of arc $\stackrel{\mbox{\large$\frown$}}{AB}$ and arc $\stackrel{\mbox{\large$\frown$}}{DE}$, we have $\angle ACB = 50^{\circ}$.
-                Since $\angle ACB + \angle AC = 180^{\circ}$, we find that $\angle ACD = 130^{\circ}$.
+                Since $\angle ABC$ is one-half the sum of arc $\arc{AB}$ and arc $\arc{DE}$, we have $\angle ACB = \ang{50}$.
+                Since $\angle ACB + \angle AC = \ang{180}$, we find that $\angle ACD = \ang{130}$.
             \end{solution}
         \item The incircle of a triangle is a circle tangent to all three sides of the triangle, as shown in this example.
             What is the radius of the incircle of a right triangle with side lengths of $12$, $35$ and $37$ mm?
@@ -101,11 +120,11 @@
                 The radius of the incircle, then, is $r = \frac{1}{2} (12 + 35 - 37) = \frac{1}{2} \cdot 10 = 5$ mm.
             \end{solution}
         \item Convex quadrilateral $WXYZ$ is inscribed in a circle.
-            If m$\angle XYZ = 54^{\circ}$, what is the degree measure of $XWZ$?
+            If $m\angle XYZ = \ang{54}$, what is the degree measure of $XWZ$?
             \begin{solution}
                 A quadrilateral that is inscribed in a circle is called cyclic.
                 In a cyclic quadrilateral, opposite angles are supplementary.
-                So, the measure of $XWZ$ is $180 - 52 = 126^{\circ}$.
+                So, the measure of $XWZ$ is $180 - 52 = \ang{126}$.
             \end{solution}
     \end{enumerate}
 \end{multicols}

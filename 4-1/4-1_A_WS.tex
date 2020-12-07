@@ -4,8 +4,27 @@
 \usepackage{multicol}
 \usepackage{amsthm}
 \usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{quotes,angles}
+
+\makeatletter
+\DeclareFontFamily{U}{tipa}{}
+\DeclareFontShape{U}{tipa}{m}{n}{<->tipa10}{}
+\newcommand{\arc@char}{{\usefont{U}{tipa}{m}{n}\symbol{62}}}%
+
+\newcommand{\arc}[1]{\mathpalette\arc@arc{#1}}
+
+\newcommand{\arc@arc}[2]{%
+  \sbox0{$\m@th#1#2$}%
+  \vbox{
+    \hbox{\resizebox{\wd0}{\height}{\arc@char}}
+    \nointerlineskip
+    \box0
+  }%
+}
+\makeatother
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
@@ -22,13 +41,13 @@
             What is the measure of angle $A$?
             Express your answer to the nearest integer.
             \begin{solution}
-                The sum of the angle measures in a quadrilateral is $360^{\circ}$.
+                The sum of the angle measures in a quadrilateral is $\ang{360}$.
                 Let's say the sum of the measures of angles $B$, $C$, and $D$ is $x$.
                 The measure of angle $A$ is half of that, or $\frac{1}{2}x$, so $360 = \frac{1}{2}x + x = \frac{3}{2}x$.
-                This means $x = 360 \div \frac{3}{2} = 360 \cdot \frac{2}{3} = 240$ and $A = \frac{1}{2} \cdot 240 = 120^{\circ}$.
+                This means $x = 360 \div \frac{3}{2} = 360 \cdot \frac{2}{3} = 240$ and $A = \frac{1}{2} \cdot 240 = \ang{120}$.
             \end{solution}
         \item The two circles in the figure are tangent at $G$.
-            Prove that $\angle E = \angle F$.
+            Prove that $m\angle E = m\angle F$.
             \begin{center}
                 \begin{tikzpicture}
                     \draw (0,0) circle (1cm);
@@ -52,7 +71,7 @@
                 Thus, $\angle E = \angle AGB = \angle DGC = \angle F$.
             \end{solution}
         \item Triangle $ABC$ is inscribed in a semicircle as shown.
-            If $m\angle ABC = 24^{\circ}$, what is the degree measure of $\angle BCA$?
+            If $m\angle ABC = \ang{24}$, what is the degree measure of $\angle BCA$?
             \begin{center}
                 \begin{tikzpicture}
                     \draw (2,0) arc (0:180:2cm) -- cycle;
@@ -60,16 +79,16 @@
                     \coordinate[label=right:B] (B) at (2,0);
                     \coordinate[label=left:C] (C) at (-2,0);
                     \draw (A) -- (B) (A) -- (C);
-                    \pic["$24^{\circ}$", angle radius=1.5cm] {angle=A--B--C};
+                    \pic["$\ang{24}$", angle radius=1.5cm] {angle=A--B--C};
                 \end{tikzpicture}
             \end{center}
             \begin{solution}
                 Rather than being inscribed in a semicircle, let's imagine that triangle $ABC$ is inscribed in a circle.
-                Notice that the arc intercepted by $\angle BAC$ is a semicircle and has measure $180^{\circ}$.
-                Since the degree measure of an inscribed angle is half the measure of the intercepted arc, m$\angle BAC = 180 \div 2 = 90^{\circ}$.
-                The problem states that m$\angle ABC = 24^{\circ}$, so $\angle BGA$ has degree measure $180 - 24 - 90 = 66^{\circ}$.
+                Notice that the arc intercepted by $\angle BAC$ is a semicircle and has measure $\ang{180}$.
+                Since the degree measure of an inscribed angle is half the measure of the intercepted arc, m$\angle BAC = 180 \div 2 = \ang{90}$.
+                The problem states that m$\angle ABC = \ang{24}$, so $\angle BGA$ has degree measure $180 - 24 - 90 = \ang{66}$.
             \end{solution}
-        \item In the figure, given that $\angle ABC = 60^{\circ}$ and $\angle BC = 70^{\circ}$, find $\angle CBD$.
+        \item In the figure, given that $m\angle ABC = \ang{60}$ and $m\angle BCD = \ang{70}$, find $m\angle CBD$.
             \begin{center}
                 \begin{tikzpicture}
                     \draw (-2,-2) -- (-2,2);
@@ -80,34 +99,34 @@
                     \coordinate[label=above right:C] (C) at (60:2);
                     \coordinate[label=below right:D] (D) at (320:2);
                     \draw (B) -- (C) (C) -- (D) (B) -- (D);
-                    \pic["$60^{\circ}$", angle radius=1cm] {angle=C--B--A};
-                    \pic["$70^{\circ}$", angle radius=1cm] {angle=B--C--D};
+                    \pic["$\ang{60}$", angle radius=1cm] {angle=C--B--A};
+                    \pic["$\ang{70}$", angle radius=1cm] {angle=B--C--D};
                 \end{tikzpicture}
             \end{center}
             \begin{solution}
-                We know that $\angle CBD$ is one-half arc $\stackrel{\mbox{\large$\frown$}}{CD}$, but we don't know what arc $\stackrel{\mbox{\large$\frown$}}{CD}$ is.
-                We can also find $\angle CBD$ by finding the other two angles of $\triangle CBD$ and subtracting their sum from $180^{\circ}$
-                We already have $\angle C$, and $\angle D$ is one-half arc $\stackrel{\mbox{\large$\frown$}}{BC}$.
-                Since arc $\stackrel{\mbox{\large$\frown$}}{BC} = 2 \cdot \angle ABC = 120^{\circ}$, we have $\angle D = 60^{\circ}$, and $\angle CBD = 180^{\circ} - \angle C - \angle D = 50^{\circ}$.
+                We know that $\angle CBD$ is one-half arc $\arc{CD}$, but we don't know what arc $\arc{CD}$ is.
+                We can also find $\angle CBD$ by finding the other two angles of $\triangle CBD$ and subtracting their sum from $\ang{180}$
+                We already have $\angle C$, and $\angle D$ is one-half arc $\arc{BC}$.
+                Since arc $\arc{BC} = 2 \cdot \angle ABC = \ang{120}$, we have $\angle D = \ang{60}$, and $\angle CBD = \ang{180} - \angle C - \angle D = \ang{50}$.
             \end{solution}
         \item Segments $PA$ and $PT$ are tangent to the circle.
-            Find the measure of $\angle TXA$ if $\angle P = 42^{\circ}$.
+            Find the measure of $\angle TXA$ if $\angle P = \ang{42}$.
             \begin{center}
                 \begin{tikzpicture}
                     \draw (0,0) circle (1cm);
                     \coordinate[label=above left:T] (T) at (120:1);
-                    \coordinate[label=left:P] (P) at (180:3);
+                    \coordinate[label=left:P] (P) at (180:2);
                     \coordinate[label=below left:A] (A) at (240:1);
                     \coordinate[label=right:X] (X) at (340:1);
                     \draw (T) -- (P) -- (A) -- (X) -- cycle;
                 \end{tikzpicture}
             \end{center}
             \begin{solution}
-                Let arc $\stackrel{\mbox{\large$\frown$}}{TA} = x$.
-                Then arc $\stackrel{\mbox{\large$\frown$}}{TXA} = 360^{\circ} - x$.
-                Since $\angle TPA = \frac{\stackrel{\mbox{\large$\frown$}}{TXA} - \stackrel{\mbox{\large$\frown$}}{TA}}{2} = \frac{360 -2x}{2}$, we have $180 - x = 42$, so $x = 138^{\circ}$.
-                Since $\angle TXA$ is an inscribed angle, its measure is half that of $\stackrel{\mbox{\large$\frown$}}{TA}$.
-                Thus $\angle TXA = 69^{\circ}$.
+                Let arc $\arc{TA} = x$.
+                Then arc $\arc{TXA} = \ang{360} - x$.
+                Since $\angle TPA = \frac{\arc{TXA} - \arc{TA}}{2} = \frac{360 -2x}{2}$, we have $180 - x = 42$, so $x = \ang{138}$.
+                Since $\angle TXA$ is an inscribed angle, its measure is half that of $\arc{TA}$.
+                Thus $\angle TXA = \ang{42}$.
             \end{solution}
     \end{enumerate}
 \end{multicols}
