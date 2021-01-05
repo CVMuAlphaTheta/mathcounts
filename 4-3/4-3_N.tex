@@ -1,0 +1,61 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{siunitx}
+
+\title{4.3 Notes}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{multicols}{2}
+	\section*{Polygons}
+	\subsection*{Classification}
+	A polygon is \textbf{convex} if all of its interior angles are less than $\ang{180}$.
+	Otherwise, it's \textbf{concave}.
+	If all the edges have the same length, the polygon is \textbf{equilateral}, and if all the angles are the same, the polygon is \textbf{equiangular}.
+	Note that with the exception of triangles, equilateral polygons are not necessarily equiangular and equiangular polygons are not necessarily equilateral.
+	A \textbf{regular} polygon is both equilateral and equiangular.
+
+	\subsection*{Interior Angle Sums}
+	Recall that the sum of the interior angles of a triangle is always $\ang{180}$.
+	A polygon with $n$ sides can always be divided into $n - 2$ triangles by drawing lines between vertices, so the sum of the interior angles is $180(n - 2)$.
+	The sum of the exterior angles of a polygon is always $\ang{360}$.
+	To see why, imagine walking along the edges of a polygon.
+	When you encounter a vertex, you turn, and the amount by which you turn is the exterior angle at that vertex.
+	If you walk all the way around a polygon, you would have turned $\ang{360}$ in total, so the sum of the exterior angles is $\ang{360}$.
+	Note that if the interior angle is greater than $\ang{180}$, the corresponding exterior angle is negative.
+
+	\subsection*{Diagonals}
+	A \textbf{diagonal} of a polygon is a line segment connecting two vertices that is not one of the edges.
+	A polygon with $n$ sides has $\frac{n(n - 3)}{2}$ diagonals, since each of the $n$ vertices has a diagonal to each of the $n - 3$ other non-adjacent vertices, and each diagonal connects two vertices.
+
+	\section*{Trapezoids}
+	\subsection*{Trapezoid Midsegment Theorem}
+	A midsegment of a trapezoid is a segment connecting the midpoints of the two legs (the opposite sides that aren't parallel).
+	The \textbf{trapezoid midsegment theorem} states that the midsegment of the trapezoid is parallel to the bases of the trapezoid, and its length is the average of the lengths of the bases.
+
+	\subsection*{Area}
+	The area of a trapezoid with height $h$ and with base lengths $b_1$ and $b_2$ is $\frac{h(b_1 + b_2)}{2}$.
+	You can prove this by constructing a parallelogram using two copies of a trapezoid.
+
+	\section*{Parallelograms}
+	\subsection*{Rhombuses}
+	A \textbf{rhombus} is an equilateral quadrilateral.
+	All rhombuses are parallelograms, and all squares are rhombuses.
+	The two diagonals of a rhombus are perpendicular bisectors of each other.
+
+	\subsection*{Rectangles}
+	The diagonals of rectangles bisect each other and have the same length.
+
+	\subsection*{Squares}
+	Squares are both rhombuses and rectangles, so the two diagonals of a square have the same length and are perpendicular bisectors of each other.
+
+	\section*{Kites}
+	A \textbf{kite} is a quadrilateral with two pairs of adjacent, equal-length sides.
+	The area of a kite is half the product of the length of the diagonals.
+\end{multicols}
+\end{document}
