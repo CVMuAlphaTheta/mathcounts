@@ -1,0 +1,62 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+\title{Problem-Solving Set A}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item Happy Trails Cycles have a collection of unicycles, bicycles, and tricycles in stock, with at least one of each item in inventory.
+            If there are a total of $73$ wheels on the collection of unicycles, bicycles, and tricycles, what is the maximum possible number of bicycles in the shop's inventory?
+            \begin{solution}
+                We know there are $73$ tires on the unicycles, bicycles, and tricycles in inventory.
+                To maximize the number of bicycles, we need to minimize the number of unicycles and tricycles.
+                Assuming there is only one of each accounts for $1 + 3 = 4$ tires and leaves $73 - 4 = 69$ tires.
+                This could be from $1$ unicycle and the maximum of $\frac{69 - 1}{2} = 34$ bicycles.
+            \end{solution}
+        \item Ali's middle school has a total of $300$ students on Team A and Team B.
+            After $30$ students are moved from Team A to Team B, there are twice as many students on Team A as there are on Team B.
+            How many students were originally on Team B?
+            \begin{solution}
+                After $30$ students move from Team A to Team B, twice as many students are on Team A as on Team B.
+                So, Team A has $\frac{2}{3} \cdot 300 = 200$ students, and Team B has $\frac{1}{3} \cdot 300 = 100$ students.
+                That means the number of students originally on Team B was $100 - 30 = 70$ students.
+            \end{solution}
+        \item Marco's age is between $20$ and $60$.
+            The square of his age is a four-digit number, and the sum of the digits of his age is $8$.
+            How old is Marco if his age has two different digits and is not prime?
+            \begin{solution}
+                We are initially told that Marco is older than $20$ but younger than $60$.
+                Reading on, we see that Marco must be at least $32$ years old in order for the square of his age to be a four-digit number.
+                But the sum of the digits of his age is $8$, resulting in three possibilities for Marco's age: $35$, $44$, and $53$.
+                Since we are told that the digits of his age are different and his age is not prime, that rules out $44$ and $53$ as possible ages.
+                So, we conclude that Marco is $35$ years old.
+            \end{solution}
+        \item Nya starts with an integer $N$ and repeatedly subtracts $6$.
+            Mya starts with an integer $M$ and repeatedly adds $8$.
+            When Nya and Mya have each performed their respective operation $13$ times, both have a resulting value of $25$.
+            What is the value of $N + M$?
+            \begin{solution}
+                For Nya, $N - 6 \cdot 13 = 25$, so $N = 25 + 78 = 103$.
+                For Mya, $M + 8 \cdot 13 = 25$, so $M = 25 - 104 = -79$.
+                Thus, $N + M = 103 + (-79) = 24$.
+                Alternatively, the sum of Mya and Nya's numbers increases by $8 - 6$ = 2 at each step for a total increase of $13 \cdot 2 = 26$.
+                The sum of their numbers ends at $25 + 25 = 50$, so the sum would have started at $50 - 26 = 24$.
+            \end{solution}
+        \item Andrew mowed one-half of a lawn, and Ben mowed one-third of the same lawn, each at a constant rate.
+            If Andrew, continuing at the same rate, finished mowing the rest of the lawn in $12$ minutes, how many minutes would it have taken to mow the entire lawn by himself?
+            \begin{solution}
+                Andrew and Ben mowed $\frac{1}{2} + \frac{1}{3} = \frac{3}{6} + \frac{2}{6} = \frac{5}{6}$ of the lawn, and then Andrew mowed the remaining $1 - \frac{5}{6} = \frac{1}{6}$ of the lawn in $12$ minutes.
+                To mow the entire lawn by himself, at that rate, would have taken Andrew $12 \cdot 6 = 72$ minutes.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}
