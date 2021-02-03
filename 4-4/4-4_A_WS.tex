@@ -4,6 +4,7 @@
 \usepackage{multicol}
 \usepackage{siunitx}
 \usepackage{amsthm}
+\usepackage{amsmath}
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
@@ -19,10 +20,10 @@
             What is the height of the cone?
             Express your answer in simplest radical form.
             \begin{solution}
-                Recall the formula for the surface area of a right circular cone $\text{SA} = \pi \cdot r^2 + \pi \cdot r \cdot \sqrt{r^2 + h^2}$.
+                Recall the formula for the surface area of a right circular cone $\text{SA} = \pi r^2 + \pi r \sqrt{r^2 + h^2}$.
                 For this cone, $r = \SI{4}{cm}$ and $\text{SA} = \SI{56\pi}{cm\cubed}$.
-                Substituting the known values into the formula gives $56\pi = \pi \cdot 4^2 + \pi \cdot 4 \cdot \sqrt{4^2 + h^2}$.
-                Simplifying and combining like terms yields $56 = 16 + 4 \cdot \sqrt{16 + h^2} \rightarrow 40 = 4 \cdot \sqrt{16 + h^2} \rightarrow 10 = \sqrt{16 + h^2}$.
+                Substituting the known values into the formula gives $56\pi = \pi \cdot 4^2 + \pi \cdot 4 \sqrt{4^2 + h^2}$.
+                Simplifying and combining like terms yields $56 = 16 + 4 \sqrt{16 + h^2} \implies 40 = 4 \sqrt{16 + h^2} \implies 10 = \sqrt{16 + h^2}$.
                 Squaring both sides, we get $100 = 16 + h^2$, so $h^2 = 84$, and $h = \sqrt{84} = 2\sqrt{21}$ centimeters.
             \end{solution}
         \item What is the greatest distance between any two vertices of a rectangular prism with dimensions $\SI{8}{cm}$ by $\SI{9}{cm}$ by $\SI{12}{cm}$?
