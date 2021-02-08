@@ -1,0 +1,95 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{tkz-euclide}
+\usepackage{amsthm}
+\usepackage{csquotes}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Problem-Solving Set A}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\noindent Problems should be solved without a calculator unless otherwise specified.
+Remember to explain how you solved a problem.
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item A rectangular garden $60$ feet long and $20$ feet wide is enclosed by a fence.
+            To make the garden larger, while using the same fence, its shape is changed to a square.
+            By how many square feet does this enlarge garden?
+            \begin{solution}
+                We need the same perimeter as a $60$ by $20$ rectangle, but the greatest area we can get.
+                Right now the perimeter is $160$.
+                To get the greatest area while keeping a perimeter of $160$, the sides should all by $40$.
+                That means an area of $1600$.
+                Right now, the area is $20$ times $60$ which is $1200$.
+                $1600 - 1200 = 400$.
+            \end{solution}
+        \item Bo, Coe, Flo, Joe, and Moe have different amounts of money.
+            Neither Joe nor Bo has as much money as Flo.
+            Both Bo and Coe have more than Moe.
+            Joe has more than Moe, but less than Bo.
+            Who has the least amount of money?
+            \begin{solution}
+                Use logic to solve this problem.
+                You don't actually need to use any equations. \\
+                Neither Jo nor Bo has as much money as Flo.
+                So Flo clearly does not have the least amount of money.
+                Rule out Flo. \\
+                Both Bo and Coe have more money than Moe.
+                Rule out Bo and Coe; they clearly do not have the least amount of money. \\
+                Jo has more than Mo.
+                Rule out Jo. \\
+                The only person who has not been ruled out is Moe.
+            \end{solution}
+        \item The third exit on a highway is located at milepost $50$ and the tenth exit is at milepost $160$.
+            There is service center on the highway located three-fourths of the way from the third exit to the tenth exit.
+            At what milepost would you expect to find this service center?
+            \begin{solution}
+                There are $160 - 40 = 120$ miles between the third and tenth exits, so the service center is at milepost $40 + \frac{3}{4} (120) = 40 + 90 = 130$
+            \end{solution}
+        \item Each of the five numbers \numlist{1;4;7;10;13} is placed in one of the five squares so that the sum of the three numbers in the horizontal row equals the sum of the three numbers in the vertical column.
+            What is the largest possible value for the horizontal of vertical sum?
+            \begin{center}
+                \begin{tikzpicture}
+                    \tkzDefPoint(0,1){A}
+                    \tkzDefPoint(3,1){B}
+                    \tkzDefPoint(0,2){C}
+                    \tkzDefPoint(3,2){D}
+
+                    \tkzDefPoint(1,0){E}
+                    \tkzDefPoint(1,3){F}
+                    \tkzDefPoint(2,0){G}
+                    \tkzDefPoint(2,3){H}
+                    
+                    \tkzDrawSegments(A,B C,D E,F G,H A,C B,D E,G F,H)
+                \end{tikzpicture}
+            \end{center}
+            \begin{solution}
+                The largest sum occurs when $13$ is placed in the center.
+                The sum is $13 + 10 + 1 = 13 + 7 + 4 = 24$.
+                Note: Two other common sums, $18$ and $21$, are also possible.
+            \end{solution}
+        \item Tori's mathematics test had $75$ problems: $10$ arithmetic, $30$ algebra, and $35$ geometry problems.
+            Although she answered $70\%$ of the arithmetic, $40\%$ of the algebra, and $60\%$ of the geometry problems correctly, she did not pass the test because she got less than $60\%$ of the problems right.
+            How many more problems would she have needed to answer correctly to earn a $60\%$ passing grade?
+            \begin{solution}
+                First, calculate how many of each type of problem she got right:
+                \begin{displayquote}
+                    Arithmetic: $70\% \cdot 10 = 0.70 \cdot 10 = 7$ \\
+                    Algebra: $40\% \cdot 30 = 0.40 \cdot 30 = 12$ \\
+                    Geometry: $60\% \cdot 35 = 0.60 \cdot 35 = 21$
+                \end{displayquote}
+                Altogether, Tori answered $7 + 12 + 21 = 40$ questions correct.
+                To get $60\%$ on her test overall, she needed to get $60\% \cdot 75 = 0.60 \cdot 75 = 45$ questions right.
+                Therefore, she needed to answer $45 - 40 = 5$ more questions to pass.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}
