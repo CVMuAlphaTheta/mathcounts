@@ -1,0 +1,57 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+
+\title{Modular Arithmetic Set B}
+\date{}
+\author{}
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+    \raggedcolumns
+    \begin{enumerate}
+        \item Given that $5x \equiv 6 \, (\bmod 8)$, find the smallest value of $x$.
+            \begin{solution}
+                The least common multiple of $5$ and $6$ is $30$, so $x = 6$.
+            \end{solution}
+        \item There are seven teacups lined up in a row.
+            One of the cups is made of pure gold.
+            The cups are labeled $A$, $B$, $C$, $D$, $E$, $F$, and $G$.
+            If you start counting at $A$ and wind back and forth while counting ($A$, $B$, $C$, $D$, $E$, $F$, $G$, $F$, $E$, $D$, \dots), then the golden cup would be the $1000$th one you count.
+            Which cup is made of pure gold?
+            \begin{solution}
+                The first $12$ steps are $A$, $B$, $C$, $D$, $E$, $F$, $G$, $F$, $E$, $D$, $C$, $B$ and then it repeats itself again.
+                So, we just need to see how many sets of $12$ steps there are, and then find the remainder number of steps.
+                Since $1000 \equiv 4 (\bmod 12)$, you should pick cup $D$.
+            \end{solution}
+        \item Find the last digit of $7^{100}$.
+            \begin{solution}
+                $7^{100} \equiv \left( 7^2 \right)^50 \equiv 49^50 \equiv (-1)^50 \equiv 1 \bmod 10$
+            \end{solution}
+        \item What is the last digit of $(\dots(((7)^7)^7)\dots)^7$ if there are $1000$ $7$s as exponents and only one $7$ in the middle?
+            \begin{solution}
+                We can solve this problem using mods. This can also be stated as ${7^7}^{1000}$.
+                After that, we see that $7$ is congruent to $-1$ in $\bmod 4$, so we can use this fact to replace the $7$'s with $-1$'s, because $7$ has a pattern of repetitive period $4$ for the units digits.
+                $(-1)^{1000}$ is simply $1$, so therefore $7^1 = 7$, which really is the last digit.
+            \end{solution}
+        \item What is the remainder when $(1! + 2! + 3! + 4! + 5! + 6! + \dots)$ is divided by $9$?
+            \begin{solution}
+                First of all, we know that $k! \equiv 0 \, (\bmod 9)$ for all $k \geq 6$.
+                Thus, we only need to find $(1! + 2! + 3! + 4! + 5!) \, (\bmod 9)$.
+                $$1! \equiv 1 \, (\bmod 9)$$
+                $$2! \equiv 2 \, (\bmod 9)$$
+                $$3! \equiv 6 \, (\bmod 9)$$
+                $$4! \equiv 24 \equiv 6 \, (\bmod 9)$$
+                $$5! \equiv 5 \cdot 6 \equiv 30 \equiv 3 \, (\bmod 9)$$
+                Thus, $$(1! + 2! + 3! + 4! + 5!) \equiv 1 + 2 + 6 + 6 + 3 \equiv 18 \equiv 0 \, (\bmod 9)$$
+                so the remainder is 0.
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}
