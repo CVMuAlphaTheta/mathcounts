@@ -1,0 +1,53 @@
+\documentclass{article}
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{multicol}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem*{solution}{Solution}
+\title{Problem-Solving Set A}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item What is the largest integer less than $100$ which is \\ congruent to $3\bmod 5$?
+            \begin{solution}
+                Clearly $103$ is congruent to $3 \bmod{5}$, but $103$ is too big. 
+                If we subtract $5$. however, we get $98$, which is both congruent to $3 \bmod{5}$ and less than $100$. 
+            \end{solution}
+        \item How many positive integers less than $100$ are congruent to $3\bmod 5$?
+            \begin{solution}
+                The smallest is clearly $3$. In the previous problem, you should have found that the largest is $98$. 
+                How many are there in between? 
+                We have $3 = 0(5) + 3$ and $98 = 19(5) +3$, and the other numbers congruent to $3 \bmod{5}$ will be $1(5) + 3$, $2(5) + 3$, and so on. 
+                The number by which $5$ is multiplied can be $0$, $1$, $2$, ..., $19$, so there are $20$ possibilities.
+            \end{solution}
+        \item How many integers are there between $50$ and $250$ inclusive which are congruent to $1\bmod 7$?
+            \begin{solution}
+                We first find the smallest and largest numbers congruent to $1 \bmod{7}$. 
+                To find the smallest, we just take a multiple of $7$ which is close and well-known, like $49$. 
+                The corresponding number which is congruent to $1 \bmod{7}$ is $49 + 1 = 50$. 
+                (Or we could have started with $71$ and subtracted: $71$, $64$, $57$, $50$.) 
+                We can find the largest in a similar way. 
+                Since $280$ is $4$ times $70$, it is a multiple of $7$, and $281$ is thus congruent to $1 \bmod{7}$. 
+                Subtracting sevens, we get $274$, $267$, $260$, $253$, $246$. 
+                The smallest is $50 = 7 \cdot 7 + 1 = 29$ and the largest is $246 = 7 \cdot 75 + 1$. 
+                Thus the total number is $35 - 7 + 1 = 29$.
+            \end{solution}
+        \item Find the smallest positive integer which $123$ is \\ congruent to $\bmod 4$.
+            \begin{solution}
+                We could try to subtract out all the $4$'s: $123$, $119$, $115$... 
+                However, the easiest way is to get rid of all the $4$'s at once, dividing by $4$ and keeping only the remainder. 
+                Long dividing $123$ by $4$ gives $30$, with remainder $3$.
+            \end{solution}
+        \item Find the smallest positive integer that $321$ is congruent to $\bmod 7$.
+            \begin{solution}
+                Similarly to problem 4, long dividing by $321$ by $7$ gives $45$, with remainder $6$. 
+            \end{solution}
+    \end{enumerate}
+\end{multicols}
+\end{document}
