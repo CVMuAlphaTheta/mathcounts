@@ -33,13 +33,15 @@
             \end{solution}
         \item Find the last digit of $7^{100}$.
             \begin{solution}
-                $7^{100} \equiv (7^2)^{50} \equiv 49^{50} \equiv (-1)^{50} \equiv 1 \bmod 10$
+				$7^{100} \equiv (7^2)^{50} \equiv 49^{50} \equiv (-1)^{50} \equiv 1 \pmod{10}$
             \end{solution}
         \item What is the last digit of $(\cdots(((7)^7)^7)\cdots)^7$ if there are $1000$ $7$'s as exponents and only one $7$ in the middle?
             \begin{solution}
                 This can also be stated as ${7^7}^{1000}$.
-                After that, we see that $7$ is congruent to $-1$ in $\bmod \; 4$, so we can use this fact to replace the $7$'s with $-1$'s, because $7$ has a pattern of repetitive period $4$ for the units digit.
-                $(-1)^{1000}$ is simply $1$, so therefore $7^1 = 7$, which really is the last digit.
+				If we look at powers of $7$ mod $10$, we see that it repeats with a period of $4$.
+				Therefore, we just need to find the exponent mod $4$.
+				$7$ is congruent to $-1$ mod $4$, so the exponent is congruent to $(-1)^{1000}$ mod $4$ which is just $1$.
+				Therefore, $7^{7^{1000}}$ is congruent to $7^1$ mod $10$, so the last digit is $10$.
             \end{solution}
         \item What is the remainder when $(1! + 2! + 3! + 4! + 5! + 6! + \cdots)$ is divided by $9$?
             \begin{solution}
