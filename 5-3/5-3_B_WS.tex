@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{siunitx}
 \usepackage{amsthm}
+\usepackage{amsmath}
 
 \theoremstyle{definition}
 \newtheorem*{solution}{Solution}
@@ -22,8 +23,8 @@
                 \includegraphics[scale=0.15]{star.png}
             \end{center}
             \begin{solution}
-                The third angle of the triangle containing the $\ang{100}$ angle and the $\ang{40}$ is $\ang{180} - \ang{100} - \ang{40} = \ang{40}$.
-                If follows that $A$ is the third angle of the triangle consisting of the found $\ang{40}$ angle and the given $\ang{110}$ angle.
+                The rightmost angle is $\ang{180} - \ang{100} - \ang{40} = \ang{40}$.
+                It follows that $A$ is the third angle of the triangle consisting of the found $\ang{40}$ angle and the given $\ang{110}$ angle.
                 Thus, $A$ is a $\ang{180} - \ang{110} - \ang{40} = \ang{30}$ angle.
             \end{solution}
         \item What is the remainder of $1999^{2000}$ when it is divided by $5$?
@@ -38,12 +39,13 @@
         \item Harold tosses a nickel four times.
             What is the probability that he gets at least as many heads as tails?
             \begin{solution}
+				We'll split this into three cases based on the number of heads.
                 \textbf{Case 1:} There are two heads, two tails.
-                The number of ways to choose which two tosses are heads is ${4}\choose{2} = 6$, and the other two must be tails. \\
+				The number of ways to choose which two tosses are heads is $\binom{4}{2} = 6$, and the other two must be tails.
                 \textbf{Case 2:} There are three heads, one tail.
-                There are ${4}\choose{1} = 4$ ways to choose which of the four tosses is a tail. \\
+				There are $\binom{4}{1} = 4$ ways to choose which of the four tosses is a tail.
                 \textbf{Case 3:} There are four heads, no tails.
-                This can only happen $1$ way. \\
+                This can only happen $1$ way.
                 There are a total of $2^4 = 16$ possible configurations, giving a probability of $\frac{6 + 4 + 1}{16} = \frac{11}{16}$.
             \end{solution}
         \item Loki, Moe, Nick, and Ott are good friends.
