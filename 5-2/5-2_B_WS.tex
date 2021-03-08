@@ -26,8 +26,8 @@
             \begin{solution}
                 What we want to find is the number of hamburgers sold in the winter.
                 Since we don't know what it is, let's call it $x$.
-                From the graph, we know that in Spring, $4.5$ million hamburgers were sold, in the Summer was $5$ million and in the Fall was $4$ million.
-                We know that the number of hamburgers sold in Fall is exactly $\frac{1}{4}$ of the total number of hamburgers sold, so we can say that \dots
+				From the graph, we know that $4.5$ million hamburgers were sold in the spring, $5$ million in the summer, and $4$ million in the fall.
+                We know that the number of hamburgers sold in the fall is exactly $\frac{1}{4}$ of the total number of hamburgers sold, so we can say that:
                 \begin{align*}
                     4 \times \text{Fall} &= \text{Spring} + \text{Winter} + \text{Fall} + \text{Summer} \\
                     4 \times 4 &= 4.5 + 4 + x + 5 \\
@@ -35,8 +35,8 @@
                     2.5 &= x
                 \end{align*}
             \end{solution}
-        \item Suppose one of the eight lettered identical squares included with the four squares in the T-shaped figure outlined.
-            How many of the resulting figures can be folded into a topless cubical box.
+        \item Suppose only one of the eight lettered identical squares is included with the four squares in the T-shaped figure outlined.
+            How many of the resulting figures can be folded into a topless cubical box?
             \begin{center}
                 \begin{tikzpicture}[scale=0.7]
                     \foreach \xcoord\ycoord\name in {0/1/A1, 0/4/A2, 1/0/B1, 1/5/B2, 2/0/C1, 2/5/C2, 3/1/D1, 3/4/D2, 4/2/E1, 4/3/E2, 0/2/F1, 0/3/F2}
@@ -61,17 +61,18 @@
             \end{center}
             \begin{solution}
                 Fold the four squares into four sides of a cube.
-                Then, there are six edges ``open'' (for lack of better term).
+                Then, there are six unconnected edges.
                 For each open edge, we can add a square/side, so the answer is $6$
             \end{solution}
-        \item If $A$ and $B$ are nonzero digits, then the number of digits (not necessarily different) in the sum of three whole numbers is:
-            $$\begin{tabular}{ccccc}
-                9 & 8 & 7 & 6 \\
-                & A & 3 & 2 \\
-                & B & 1 & \\
-                \hline
-            \end{tabular}$$
-            How many digits are in the answer?
+        \item If $A$ and $B$ are nonzero digits, how many digits does the sum of these three numbers have?
+			\[
+				\begin{array}{ccccc}
+					  & 9 & 8 & 7 & 6 \\
+					  &   & A & 3 & 2 \\
+					+ &   &   & B & 1 \\
+					\hline
+				\end{array}
+			\]
             \begin{solution}
                 The minimum possible value of this sum is when $A = B = 1$, which is $9876 + 132 + 11 = 10019$.
                 The largest possible value of the sum is when $A = B = 9$, making the sum $9876 + 932 + 91 = 10899$.
